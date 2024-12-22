@@ -6,7 +6,7 @@ using System.Data;
 using System.Windows.Forms;
 
 namespace DBapplication
-{ 
+{
     //essAWY
     //essawy21
 
@@ -41,6 +41,11 @@ namespace DBapplication
         public int UpdateUserPass(string s,int id)
         {
             string query = "Update Users SET upassword='"+s+"' WHERE userid="+id+"";
+            return dbMan.ExecuteNonQuery(query);
+        }
+        public int fvr(string s, int id)
+        {
+            string query = "Update Users SET upassword='" + s + "' WHERE userid=" + id + "";
             return dbMan.ExecuteNonQuery(query);
         }
     }
