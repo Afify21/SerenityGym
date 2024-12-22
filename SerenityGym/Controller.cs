@@ -7,7 +7,7 @@ using System.Windows.Forms;
 
 namespace DBapplication
 {
-
+    //eee
     public class Controller
     {
         DBManager dbMan;
