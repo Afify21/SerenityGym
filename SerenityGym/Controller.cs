@@ -16,6 +16,7 @@ namespace DBapplication
     //yyyhht
     //pull
     //new
+    //conflict
     public class Controller
     {
         DBManager dbMan;
