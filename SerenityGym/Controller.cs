@@ -16,6 +16,7 @@ namespace DBapplication
     //moselhi
     //yyyhht
     //pull
+    //conflict
     public class Controller
     {
         DBManager dbMan;
