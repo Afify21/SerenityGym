@@ -16,6 +16,7 @@ namespace DBapplication
     //yyyhht
     //pull
 //sex
+//sex2
 //ess
 //moselhi
     public class Controller
@@ -49,6 +50,11 @@ namespace DBapplication
             return dbMan.ExecuteNonQuery(query);
         }
         public int fvr(string s, int id)
+        {
+            string query = "Update Users SET upassword='" + s + "' WHERE userid=" + id + "";
+            return dbMan.ExecuteNonQuery(query);
+        }
+        public int afify(string s, int id)
         {
             string query = "Update Users SET upassword='" + s + "' WHERE userid=" + id + "";
             return dbMan.ExecuteNonQuery(query);
