@@ -8,7 +8,7 @@ using System.Windows.Forms;
 namespace DBapplication
 { 
     //afify
-    //moselhi
+    //comment1
     public class Controller
     {
         DBManager dbMan;
