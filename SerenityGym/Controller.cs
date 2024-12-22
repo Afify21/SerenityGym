@@ -6,7 +6,8 @@ using System.Data;
 using System.Windows.Forms;
 
 namespace DBapplication
-{
+{ 
+    //afify
     public class Controller
     {
         DBManager dbMan;
