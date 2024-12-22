@@ -7,19 +7,7 @@ using System.Windows.Forms;
 
 namespace DBapplication
 {
-    //essAWY
-    //essawy21
 
- //please work111
-    //comment1
-    //moselhi
-    //yyyhht
-    //pull
-//sex
-//sex2
-//ess
-//yousef
-//moselhi
     public class Controller
     {
         DBManager dbMan;
@@ -50,15 +38,6 @@ namespace DBapplication
             string query = "Update Users SET upassword='"+s+"' WHERE userid="+id+"";
             return dbMan.ExecuteNonQuery(query);
         }
-        public int fvr(string s, int id)
-        {
-            string query = "Update Users SET upassword='" + s + "' WHERE userid=" + id + "";
-            return dbMan.ExecuteNonQuery(query);
-        }
-        public int afify(string s, int id)
-        {
-            string query = "Update Users SET upassword='" + s + "' WHERE userid=" + id + "";
-            return dbMan.ExecuteNonQuery(query);
-        }
+
     }
 }
