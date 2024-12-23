@@ -53,26 +53,29 @@
             panel1.Controls.Add(pictureBox1);
             panel1.Dock = DockStyle.Left;
             panel1.Location = new Point(0, 0);
+            panel1.Margin = new Padding(2, 2, 2, 2);
             panel1.Name = "panel1";
-            panel1.Size = new Size(300, 530);
+            panel1.Size = new Size(240, 424);
             panel1.TabIndex = 0;
             // 
             // label1
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Century Gothic", 16F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label1.Location = new Point(36, 235);
+            label1.Location = new Point(29, 188);
+            label1.Margin = new Padding(2, 0, 2, 0);
             label1.Name = "label1";
-            label1.Size = new Size(223, 39);
+            label1.Size = new Size(191, 33);
             label1.TabIndex = 1;
             label1.Text = "Serenity Gym";
             // 
             // pictureBox1
             // 
             pictureBox1.Image = Properties.Resources.Sports_Dumbbell_icon;
-            pictureBox1.Location = new Point(95, 56);
+            pictureBox1.Location = new Point(76, 45);
+            pictureBox1.Margin = new Padding(2, 2, 2, 2);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(117, 101);
+            pictureBox1.Size = new Size(94, 81);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
@@ -86,10 +89,12 @@
             panel2.Controls.Add(label2);
             panel2.Controls.Add(button1);
             panel2.Dock = DockStyle.Fill;
-            panel2.Location = new Point(300, 0);
+            panel2.Location = new Point(240, 0);
+            panel2.Margin = new Padding(2, 2, 2, 2);
             panel2.Name = "panel2";
-            panel2.Size = new Size(450, 530);
+            panel2.Size = new Size(360, 424);
             panel2.TabIndex = 1;
+            panel2.Paint += panel2_Paint;
             // 
             // Stafff
             // 
@@ -97,9 +102,10 @@
             Stafff.FlatStyle = FlatStyle.Flat;
             Stafff.Font = new Font("Century Gothic", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
             Stafff.ForeColor = Color.White;
-            Stafff.Location = new Point(240, 317);
+            Stafff.Location = new Point(192, 254);
+            Stafff.Margin = new Padding(2, 2, 2, 2);
             Stafff.Name = "Stafff";
-            Stafff.Size = new Size(148, 35);
+            Stafff.Size = new Size(118, 28);
             Stafff.TabIndex = 8;
             Stafff.Text = "STAFF";
             Stafff.UseVisualStyleBackColor = false;
@@ -110,9 +116,10 @@
             Userr.FlatStyle = FlatStyle.Flat;
             Userr.Font = new Font("Century Gothic", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
             Userr.ForeColor = Color.White;
-            Userr.Location = new Point(63, 317);
+            Userr.Location = new Point(50, 254);
+            Userr.Margin = new Padding(2, 2, 2, 2);
             Userr.Name = "Userr";
-            Userr.Size = new Size(148, 35);
+            Userr.Size = new Size(118, 28);
             Userr.TabIndex = 7;
             Userr.Text = "USER";
             Userr.UseVisualStyleBackColor = false;
@@ -120,9 +127,10 @@
             // pictureBox3
             // 
             pictureBox3.Image = (Image)resources.GetObject("pictureBox3.Image");
-            pictureBox3.Location = new Point(265, 212);
+            pictureBox3.Location = new Point(212, 170);
+            pictureBox3.Margin = new Padding(2, 2, 2, 2);
             pictureBox3.Name = "pictureBox3";
-            pictureBox3.Size = new Size(86, 99);
+            pictureBox3.Size = new Size(69, 79);
             pictureBox3.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox3.TabIndex = 5;
             pictureBox3.TabStop = false;
@@ -130,9 +138,10 @@
             // pictureBox2
             // 
             pictureBox2.Image = Properties.Resources.User;
-            pictureBox2.Location = new Point(109, 235);
+            pictureBox2.Location = new Point(87, 188);
+            pictureBox2.Margin = new Padding(2, 2, 2, 2);
             pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(62, 52);
+            pictureBox2.Size = new Size(50, 42);
             pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox2.TabIndex = 3;
             pictureBox2.TabStop = false;
@@ -142,9 +151,10 @@
             label2.AutoSize = true;
             label2.Font = new Font("Century Gothic", 16F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label2.ForeColor = Color.FromArgb(41, 128, 185);
-            label2.Location = new Point(24, 118);
+            label2.Location = new Point(19, 94);
+            label2.Margin = new Padding(2, 0, 2, 0);
             label2.Name = "label2";
-            label2.Size = new Size(179, 39);
+            label2.Size = new Size(152, 33);
             label2.TabIndex = 2;
             label2.Text = "Reception";
             // 
@@ -154,9 +164,10 @@
             button1.FlatStyle = FlatStyle.Flat;
             button1.Font = new Font("Verdana", 16F, FontStyle.Bold, GraphicsUnit.Point, 0);
             button1.ForeColor = Color.FromArgb(41, 128, 185);
-            button1.Location = new Point(410, 0);
+            button1.Location = new Point(328, 0);
+            button1.Margin = new Padding(2, 2, 2, 2);
             button1.Name = "button1";
-            button1.Size = new Size(40, 40);
+            button1.Size = new Size(32, 32);
             button1.TabIndex = 0;
             button1.Text = "X";
             button1.UseVisualStyleBackColor = true;
@@ -164,13 +175,14 @@
             // 
             // Receptionist
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(750, 530);
+            ClientSize = new Size(600, 424);
             ControlBox = false;
             Controls.Add(panel2);
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
+            Margin = new Padding(2, 2, 2, 2);
             Name = "Receptionist";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Form1";

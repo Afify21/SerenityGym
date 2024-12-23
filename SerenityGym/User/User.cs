@@ -1,22 +1,24 @@
-using DBapplication;
-
 namespace SerenityGym
 {
-    public partial class Receptionist : Form
+    public partial class User : Form
     {
-        int RID;
-        Controller controllerObj;
-        public Receptionist(int x)
+        int UID;
+        public User(int x)
         {
-            RID = x;
+            UID = x;
             InitializeComponent();
-            controllerObj = new Controller();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             Application.Exit();
 
+        }
+
+        private void Userr_Click(object sender, EventArgs e)
+        {
+            UpdatePersonal updatePersonal = new UpdatePersonal(UID);
+            updatePersonal.Show();
         }
 
         private void panel2_Paint(object sender, PaintEventArgs e)
