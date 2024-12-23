@@ -1,8 +1,8 @@
 namespace SerenityGym
 {
-    public partial class Trainer : Form
+    public partial class Design : Form
     {
-        public Trainer()
+        public Design()
         {
             InitializeComponent();
         }

@@ -33,8 +33,8 @@
             label1 = new Label();
             pictureBox1 = new PictureBox();
             panel2 = new Panel();
-            Staff = new Button();
-            User = new Button();
+            Stafff = new Button();
+            Userr = new Button();
             pictureBox3 = new PictureBox();
             pictureBox2 = new PictureBox();
             label2 = new Label();
@@ -79,8 +79,8 @@
             // 
             // panel2
             // 
-            panel2.Controls.Add(Staff);
-            panel2.Controls.Add(User);
+            panel2.Controls.Add(Stafff);
+            panel2.Controls.Add(Userr);
             panel2.Controls.Add(pictureBox3);
             panel2.Controls.Add(pictureBox2);
             panel2.Controls.Add(label2);
@@ -91,33 +91,33 @@
             panel2.Size = new Size(450, 530);
             panel2.TabIndex = 1;
             // 
-            // Staff
+            // Stafff
             // 
-            Staff.BackColor = Color.FromArgb(41, 128, 185);
-            Staff.FlatStyle = FlatStyle.Flat;
-            Staff.Font = new Font("Century Gothic", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            Staff.ForeColor = Color.White;
-            Staff.Location = new Point(240, 317);
-            Staff.Name = "Staff";
-            Staff.Size = new Size(148, 35);
-            Staff.TabIndex = 8;
-            Staff.Text = "STAFF";
-            Staff.UseVisualStyleBackColor = false;
-            Staff.Click += Staff_Click;
+            Stafff.BackColor = Color.FromArgb(41, 128, 185);
+            Stafff.FlatStyle = FlatStyle.Flat;
+            Stafff.Font = new Font("Century Gothic", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            Stafff.ForeColor = Color.White;
+            Stafff.Location = new Point(240, 317);
+            Stafff.Name = "Stafff";
+            Stafff.Size = new Size(148, 35);
+            Stafff.TabIndex = 8;
+            Stafff.Text = "STAFF";
+            Stafff.UseVisualStyleBackColor = false;
+            Stafff.Click += Staff_Click;
             // 
-            // User
+            // Userr
             // 
-            User.BackColor = Color.FromArgb(41, 128, 185);
-            User.FlatStyle = FlatStyle.Flat;
-            User.Font = new Font("Century Gothic", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            User.ForeColor = Color.White;
-            User.Location = new Point(63, 317);
-            User.Name = "User";
-            User.Size = new Size(148, 35);
-            User.TabIndex = 7;
-            User.Text = "USER";
-            User.UseVisualStyleBackColor = false;
-            User.Click += User_Click;
+            Userr.BackColor = Color.FromArgb(41, 128, 185);
+            Userr.FlatStyle = FlatStyle.Flat;
+            Userr.Font = new Font("Century Gothic", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            Userr.ForeColor = Color.White;
+            Userr.Location = new Point(63, 317);
+            Userr.Name = "Userr";
+            Userr.Size = new Size(148, 35);
+            Userr.TabIndex = 7;
+            Userr.Text = "USER";
+            Userr.UseVisualStyleBackColor = false;
+            Userr.Click += User_Click;
             // 
             // pictureBox3
             // 
@@ -197,7 +197,7 @@
         private Label label2;
         private PictureBox pictureBox3;
         private PictureBox pictureBox2;
-        private Button Staff;
-        private Button User;
+        private Button Stafff;
+        private Button Userr;
     }
 }
