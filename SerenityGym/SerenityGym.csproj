@@ -17,6 +17,15 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="Receptionist.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Designnnnnnn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Trainer.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Properties\Resources.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
@@ -25,10 +34,13 @@
     <Compile Update="StaffLogin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Receptionist.cs">
+    <Compile Update="Manager.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="UserLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="User.cs">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>

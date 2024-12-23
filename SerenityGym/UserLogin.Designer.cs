@@ -39,7 +39,7 @@
             Pass = new TextBox();
             pictureBox3 = new PictureBox();
             panel3 = new Panel();
-            User = new TextBox();
+            Userr = new TextBox();
             pictureBox2 = new PictureBox();
             label2 = new Label();
             button1 = new Button();
@@ -158,21 +158,21 @@
             // panel3
             // 
             panel3.BackColor = Color.White;
-            panel3.Controls.Add(User);
+            panel3.Controls.Add(Userr);
             panel3.Controls.Add(pictureBox2);
             panel3.Location = new Point(0, 185);
             panel3.Name = "panel3";
             panel3.Size = new Size(450, 47);
             panel3.TabIndex = 3;
             // 
-            // User
+            // Userr
             // 
-            User.Font = new Font("Century Gothic", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            User.ForeColor = Color.FromArgb(41, 128, 185);
-            User.Location = new Point(47, 6);
-            User.Name = "User";
-            User.Size = new Size(370, 32);
-            User.TabIndex = 1;
+            Userr.Font = new Font("Century Gothic", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            Userr.ForeColor = Color.FromArgb(41, 128, 185);
+            Userr.Location = new Point(47, 6);
+            Userr.Name = "Userr";
+            Userr.Size = new Size(370, 32);
+            Userr.TabIndex = 1;
             // 
             // pictureBox2
             // 
@@ -247,7 +247,7 @@
         private Panel panel3;
         private PictureBox pictureBox2;
         private PictureBox pictureBox3;
-        private TextBox User;
+        private TextBox Userr;
         private TextBox Pass;
         private Button Login;
         private Button button3;

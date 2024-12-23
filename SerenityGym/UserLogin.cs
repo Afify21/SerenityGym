@@ -41,10 +41,10 @@ namespace SerenityGym
 
         private void Login_Click(object sender, EventArgs e)
         {
-            int result = controllerObj.MatchingUser(Convert.ToInt16(User.Text), Pass.Text);
+            int result = controllerObj.MatchingUser(Convert.ToInt16(Userr.Text), Pass.Text);
             if (result == 1)
             {
-                User user = new User(Convert.ToInt16(User.Text));
+                User user = new User(Convert.ToInt16(Userr.Text));
                 user.Show();
             }
             else
