@@ -38,5 +38,26 @@ namespace DBapplication
             return dbMan.ExecuteNonQuery(query);
         }
 
+        public int UpdateUserFname(string s, int id)
+        {
+            string query = "Update Users SET fname='" + s + "' WHERE userid=" + id + "";
+            return dbMan.ExecuteNonQuery(query);
+        }
+        public int UpdateUserLname(string s, int id)
+        {
+            string query = "Update Users SET lname='" + s + "' WHERE userid=" + id + "";
+            return dbMan.ExecuteNonQuery(query);
+        }
+        public int UpdateUserAddress(string s, int id)
+        {
+            string query = "Update Users SET user_address='" + s + "' WHERE userid=" + id + "";
+            return dbMan.ExecuteNonQuery(query);
+        }
+        public int UpdateUserPhone(int no, int id)
+        {
+            string query = "Update Users SET phone_num=" + no + " WHERE userid=" + id + "";
+            return dbMan.ExecuteNonQuery(query);
+        }
+
     }
 }
