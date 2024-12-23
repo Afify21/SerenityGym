@@ -1,4 +1,5 @@
 using DBapplication;
+using Microsoft.VisualBasic.ApplicationServices;
 
 namespace SerenityGym
 {
@@ -21,6 +22,11 @@ namespace SerenityGym
 
         private void Userr_Click(object sender, EventArgs e)
         {
+            if (Staffid.Text == "" || pass.Text == "" || repass.Text == "")
+            {
+                MessageBox.Show("Please Enter A Proper Combination");
+                return;
+            }
             SID = Convert.ToInt32(Staffid.Text);
             if (pass.Text == repass.Text)
             {
