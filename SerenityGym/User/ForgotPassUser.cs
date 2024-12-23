@@ -21,6 +21,12 @@ namespace SerenityGym
 
         private void Userr_Click(object sender, EventArgs e)
         {
+
+            if (Userid.Text == "" || pass.Text == "" || repass.Text == "")
+            {
+                MessageBox.Show("Please Enter A Proper Combination");
+                return;
+            }
             UID = Convert.ToInt32(Userid.Text);
             if (pass.Text == repass.Text)
             {
@@ -32,6 +38,8 @@ namespace SerenityGym
             }
             else
                 MessageBox.Show("Passwords dont match");
+
+            
         }
     }
     }
