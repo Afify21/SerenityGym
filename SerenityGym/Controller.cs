@@ -37,7 +37,11 @@ namespace DBapplication
             string query = "Update Users SET upassword='"+s+"' WHERE userid="+id+"";
             return dbMan.ExecuteNonQuery(query);
         }
-
+        public int UpdateStaffPass(string s, int id)
+        {
+            string query = "Update Staff SET spassword='" + s + "' WHERE staffid=" + id + "";
+            return dbMan.ExecuteNonQuery(query);
+        }
         public int UpdateUserFname(string s, int id)
         {
             string query = "Update Users SET fname='" + s + "' WHERE userid=" + id + "";

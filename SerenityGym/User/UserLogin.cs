@@ -36,7 +36,8 @@ namespace SerenityGym
 
         private void button3_Click(object sender, EventArgs e)
         {
-
+            ForgotPassUser forgotpass = new ForgotPassUser();
+            forgotpass.Show();
         }
 
         private void Login_Click(object sender, EventArgs e)
