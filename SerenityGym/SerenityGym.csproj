@@ -17,7 +17,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="ForgotPassStaff.cs">
+    <Compile Update="Staff\ForgotPassStaff.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="User\ForgotPassUser.cs">
@@ -26,13 +26,13 @@
     <Compile Update="User\UpdatePersonal.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Receptionist.cs">
+    <Compile Update="Staff\Receptionist.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Designnnnnnn.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Trainer.cs">
+    <Compile Update="Staff\Trainer.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Properties\Resources.Designer.cs">
@@ -40,10 +40,10 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Update="StaffLogin.cs">
+    <Compile Update="Staff\StaffLogin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Manager.cs">
+    <Compile Update="Staff\Manager.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="UserLogin.cs">

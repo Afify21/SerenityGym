@@ -69,7 +69,6 @@
             label1.AutoSize = true;
             label1.Font = new Font("Century Gothic", 16F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label1.Location = new Point(36, 235);
-            label1.Location = new Point(36, 235);
             label1.Margin = new Padding(2, 0, 2, 0);
             label1.Name = "label1";
             label1.Size = new Size(223, 39);
@@ -80,10 +79,8 @@
             // 
             pictureBox1.Image = Properties.Resources.Sports_Dumbbell_icon;
             pictureBox1.Location = new Point(95, 56);
-            pictureBox1.Location = new Point(95, 56);
             pictureBox1.Margin = new Padding(2);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(117, 101);
             pictureBox1.Size = new Size(118, 101);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 0;
@@ -99,7 +96,6 @@
             panel2.Controls.Add(button1);
             panel2.Dock = DockStyle.Fill;
             panel2.Location = new Point(300, 0);
-            panel2.Location = new Point(300, 0);
             panel2.Margin = new Padding(2);
             panel2.Name = "panel2";
             panel2.Size = new Size(450, 530);
@@ -113,11 +109,10 @@
             button3.FlatStyle = FlatStyle.Flat;
             button3.Font = new Font("Century Gothic", 8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             button3.ForeColor = Color.FromArgb(41, 128, 185);
-            button3.Location = new Point(205, 362);
-            button3.Location = new Point(205, 362);
+            button3.Location = new Point(221, 362);
             button3.Margin = new Padding(2);
             button3.Name = "button3";
-            button3.Size = new Size(155, 35);
+            button3.Size = new Size(198, 56);
             button3.TabIndex = 6;
             button3.Text = "Forgot Password?";
             button3.UseVisualStyleBackColor = false;
@@ -129,11 +124,10 @@
             Login.FlatStyle = FlatStyle.Flat;
             Login.Font = new Font("Century Gothic", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
             Login.ForeColor = Color.White;
-            Login.Location = new Point(24, 362);
-            Login.Location = new Point(24, 362);
+            Login.Location = new Point(35, 362);
             Login.Margin = new Padding(2);
             Login.Name = "Login";
-            Login.Size = new Size(148, 35);
+            Login.Size = new Size(148, 56);
             Login.TabIndex = 5;
             Login.Text = "LOGIN";
             Login.UseVisualStyleBackColor = false;
@@ -145,17 +139,14 @@
             panel4.Controls.Add(TB_Pass);
             panel4.Controls.Add(pictureBox3);
             panel4.Location = new Point(0, 256);
-            panel4.Location = new Point(0, 256);
             panel4.Margin = new Padding(2);
             panel4.Name = "panel4";
-            panel4.Size = new Size(450, 47);
             panel4.Size = new Size(450, 48);
             panel4.TabIndex = 4;
             // 
             // TB_Pass
             // 
             TB_Pass.Font = new Font("Century Gothic", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            TB_Pass.Location = new Point(47, 6);
             TB_Pass.Location = new Point(48, 6);
             TB_Pass.Margin = new Padding(2);
             TB_Pass.Name = "TB_Pass";
@@ -166,7 +157,6 @@
             // pictureBox3
             // 
             pictureBox3.Image = (Image)resources.GetObject("pictureBox3.Image");
-            pictureBox3.Location = new Point(6, 10);
             pictureBox3.Location = new Point(6, 10);
             pictureBox3.Margin = new Padding(2);
             pictureBox3.Name = "pictureBox3";
@@ -180,10 +170,8 @@
             panel3.Controls.Add(TB_id);
             panel3.Controls.Add(pictureBox2);
             panel3.Location = new Point(0, 185);
-            panel3.Location = new Point(0, 185);
             panel3.Margin = new Padding(2);
             panel3.Name = "panel3";
-            panel3.Size = new Size(450, 47);
             panel3.Size = new Size(450, 48);
             panel3.TabIndex = 3;
             // 
@@ -191,7 +179,6 @@
             // 
             TB_id.Font = new Font("Century Gothic", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
             TB_id.ForeColor = Color.FromArgb(41, 128, 185);
-            TB_id.Location = new Point(47, 6);
             TB_id.Location = new Point(48, 6);
             TB_id.Margin = new Padding(2);
             TB_id.Name = "TB_id";
@@ -201,7 +188,6 @@
             // pictureBox2
             // 
             pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
-            pictureBox2.Location = new Point(6, 10);
             pictureBox2.Location = new Point(6, 10);
             pictureBox2.Margin = new Padding(2);
             pictureBox2.Name = "pictureBox2";
@@ -214,7 +200,6 @@
             label2.AutoSize = true;
             label2.Font = new Font("Century Gothic", 16F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label2.ForeColor = Color.FromArgb(41, 128, 185);
-            label2.Location = new Point(24, 118);
             label2.Location = new Point(24, 118);
             label2.Margin = new Padding(2, 0, 2, 0);
             label2.Name = "label2";
@@ -229,7 +214,6 @@
             button1.FlatStyle = FlatStyle.Flat;
             button1.Font = new Font("Verdana", 16F, FontStyle.Bold, GraphicsUnit.Point, 0);
             button1.ForeColor = Color.FromArgb(41, 128, 185);
-            button1.Location = new Point(410, 0);
             button1.Location = new Point(410, 0);
             button1.Margin = new Padding(2);
             button1.Name = "button1";

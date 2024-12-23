@@ -37,7 +37,6 @@
             label4 = new Label();
             label3 = new Label();
             Staffid = new TextBox();
-            Stafff = new Button();
             Userr = new Button();
             label2 = new Label();
             button1 = new Button();
@@ -87,7 +86,6 @@
             panel2.Controls.Add(label3);
             panel2.Controls.Add(Staffid);
             panel2.Controls.Add(label1);
-            panel2.Controls.Add(Stafff);
             panel2.Controls.Add(Userr);
             panel2.Controls.Add(label2);
             panel2.Controls.Add(button1);
@@ -152,27 +150,13 @@
             Staffid.Size = new Size(249, 32);
             Staffid.TabIndex = 9;
             // 
-            // Stafff
-            // 
-            Stafff.BackColor = Color.FromArgb(41, 128, 185);
-            Stafff.FlatStyle = FlatStyle.Flat;
-            Stafff.Font = new Font("Century Gothic", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            Stafff.ForeColor = Color.White;
-            Stafff.Location = new Point(341, 346);
-            Stafff.Margin = new Padding(2);
-            Stafff.Name = "Stafff";
-            Stafff.Size = new Size(148, 35);
-            Stafff.TabIndex = 8;
-            Stafff.Text = "STAFF";
-            Stafff.UseVisualStyleBackColor = false;
-            // 
             // Userr
             // 
             Userr.BackColor = Color.FromArgb(41, 128, 185);
             Userr.FlatStyle = FlatStyle.Flat;
             Userr.Font = new Font("Century Gothic", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
             Userr.ForeColor = Color.White;
-            Userr.Location = new Point(37, 346);
+            Userr.Location = new Point(207, 344);
             Userr.Margin = new Padding(2);
             Userr.Name = "Userr";
             Userr.Size = new Size(148, 35);
@@ -236,7 +220,6 @@
         private Label label1;
         private Button button1;
         private Label label2;
-        private Button Stafff;
         private Button Userr;
         private TextBox Staffid;
         private Label label4;
