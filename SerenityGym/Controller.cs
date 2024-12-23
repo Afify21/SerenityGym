@@ -37,5 +37,6 @@ namespace DBapplication
             string query = "Update Users SET upassword='"+s+"' WHERE userid="+id+"";
             return dbMan.ExecuteNonQuery(query);
         }
+
     }
 }

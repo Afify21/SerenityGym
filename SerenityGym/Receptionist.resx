@@ -117,4 +117,33 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="pictureBox3.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        vAAADrwBlbxySQAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAGrSURBVEhLtVZN
+        L8RQFG2Yd1/HBlthw44FsRWRiB07bCRsJiESk95nY5b4ET7+CxsSEWE/8+4TEWHDT2Aqt6HG7Uy1yklO
+        0rzzNdOknfG8jOjZqg+UTGOayddS/zW4UKM9B6QmIIUfbGp0ZyV0U9KfCwppE5BewdC1QlqFKo0yVeDW
+        AOmGNRXYDZnLBB/dLCC9aaQDbznsljqf6cAd8kjJ0IyUfwR/akC68HbDLqnFWA67AekS0F5JKRW6SiPR
+        vQ7sotQkAGmJvb6xw1LrCB3YBQ6VqzQoNYnythtir0Y7L7WOAGNXOOTt3PZKLYGd297o2xq7IqWO+PcB
+        FVCFQ2q7Mc73No3sibwBVWRPErt3vkI6bXmgclEZe8IdsjbGxwOUCOYhP5CyNwYYqslAbhqqyd4YaQMa
+        6RkM7QG6/ei6jafQgEI78elTSJNSLzrwkvAivbTx/XrgDQyNtfjGxOu78ADzMSqOyt1TG73wQPS+Ycrz
+        PxxwRxrtsTz/s4FMTBvgn79EICeVceuy9wub9/2A1JCh7HR1D+/6ZO13mIcy/5PwjZ3LQ85wVta9A/Ez
+        jrYiRNj6AAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="pictureBox2.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        vAAADrwBlbxySQAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAGgSURBVEhLzZU9
+        LwRRFIYnmHPXEjoiCnoS4gfwB+hIBPWquOewiG4bpehVEp1O+BWikfiIe2Z3o0CiUCl87FqZtVlx5s7M
+        zmi8yZNMsu/7zOxkJuM4cclfdAGaTUBzBsgv35gzpc2Gk3vIynqiwKo3CuiVAbkWQhGIR+SupXTS7SBo
+        frRIJfdZvB6Q+9gA8aFFFoI5kPvobBV7AfktKArl1VnhHqkJTQfxlEUSSYc2k9ITGkU8IwVxKG2mpSc0
+        LvKEFMThohmXnvDM1dpbfIIaeA9OodYmNZFRxBQU2VHarMp9fPx/QXwiZRaOE199M4UrcJH3APnDIn53
+        kXed3LkrZ4mTwZthhbymiPcbUGa9NCR7/yyFcgY0LwHxESBfKuQnIH72qR8jXzZ+W/S7ch4ZQJ4F5DvL
+        fQ/D785KjzWgecciaIVPfyt9v+J/RCzDRCjy1qW3Hv9VB+SKHKSg4q7djkm/A+idWsrpID75Je/Oe32A
+        XA0U01Pt0qX+n6sns2Ap/Q3y5n9OgLwdKPwVzVvNE7jaLNcfM1lKz6dLXs53fwFEIugduwQF1gAAAABJ
+        RU5ErkJggg==
+</value>
+  </data>
 </root>
