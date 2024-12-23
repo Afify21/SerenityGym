@@ -17,6 +17,12 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="ForgotPassStaff.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="User\ForgotPassUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="User\UpdatePersonal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -40,10 +46,10 @@
     <Compile Update="Manager.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="User\UserLogin.cs">
+    <Compile Update="UserLogin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="User\User.cs">
+    <Compile Update="User.cs">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>
