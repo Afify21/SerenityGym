@@ -33,10 +33,7 @@ namespace SerenityGym
 
         }
 
-        private void button3_Click(object sender, EventArgs e)
-        {
 
-        }
 
         private void Login_Click(object sender, EventArgs e)
         {
@@ -53,17 +50,17 @@ namespace SerenityGym
             {
                 if (givenid >= 10000 && givenid <= 19999)
                 {
-                    Receptionist receptionist = new Receptionist();
+                    Receptionist receptionist = new Receptionist(Convert.ToInt32(TB_id.Text));
                     receptionist.Show();
                 }
                 else if (givenid >= 20000 && givenid <= 29999)
                 {
-                    Trainer trainer = new Trainer();
+                    Trainer trainer = new Trainer(Convert.ToInt32(TB_id.Text));
                     trainer.Show();
                 }
                 else if (givenid >= 30000 && givenid <= 39999)
                 {
-                    Manager manager = new Manager();
+                    Manager manager = new Manager(Convert.ToInt32(TB_id.Text));
                     manager.Show();
                 }
             }
@@ -72,6 +69,23 @@ namespace SerenityGym
                 MessageBox.Show("Please Enter A Proper Combination");
                 return;
             }
+
+            if (TB_id.Text == "" || TB_Pass.Text == "")
+            {
+                MessageBox.Show("Please Enter A Proper Combination");
+                return;
+            }
+        }
+
+        private void TB_id_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            ForgotPassStaff forgotpass = new ForgotPassStaff();
+            forgotpass.Show();
         }
     }
 }

@@ -36,12 +36,18 @@ namespace SerenityGym
 
         private void button3_Click(object sender, EventArgs e)
         {
-
+            ForgotPassUser forgotpass = new ForgotPassUser();
+            forgotpass.Show();
         }
 
         private void Login_Click(object sender, EventArgs e)
         {
-            int result = controllerObj.MatchingUser(Convert.ToInt16(Userr.Text), Pass.Text);
+            if (Userr.Text == "" || Pass.Text == "")
+            {
+                MessageBox.Show("Please Enter A Proper Combination");
+                return;
+            }
+                int result = controllerObj.MatchingUser(Convert.ToInt16(Userr.Text), Pass.Text);
             if (result == 1)
             {
                 User user = new User(Convert.ToInt16(Userr.Text));
@@ -49,6 +55,9 @@ namespace SerenityGym
             }
             else
                 MessageBox.Show("Please Enter A Proper Combination");
+
+
+            
         }
     }
 }
