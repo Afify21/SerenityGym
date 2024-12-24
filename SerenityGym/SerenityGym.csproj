@@ -17,6 +17,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="UpdatePlans.cs" />
     <Compile Update="User\UserFeedB.cs">
       <SubType>Form</SubType>
     </Compile>

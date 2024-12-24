@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Data;
 using System.Windows.Forms;
+using System.Security.Cryptography;
 
 namespace DBapplication
 {
@@ -67,6 +68,27 @@ namespace DBapplication
         {
             string query = "INSERT into Feedback Values(" + id + ",'" + msg + "','" + DateTime.Now + "')";
             return dbMan.ExecuteNonQuery(query);
+        }
+        public int UpdatePlan(string type, int Tid, int Uid)
+        {
+            string query = "Update Users SET phone_num=" + Tid + " WHERE userid=" + Uid + "";
+            return dbMan.ExecuteNonQuery(query);
+        }
+        public string ShowName(int UID)
+        {
+            string query = "SELECT fname, lname FROM Users WHERE userid=" + UID;
+            DataTable result = dbMan.ExecuteReader(query); // Assuming dbMan.ExecuteReader returns a DataTable
+
+            if (result.Rows.Count > 0)
+            {
+                string fname = result.Rows[0]["fname"].ToString();
+                string lname = result.Rows[0]["lname"].ToString();
+                return (fname + " " + lname); // Concatenate first name and last name
+            }
+            else
+            {
+                return "User not found";
+            }
         }
     }
 }

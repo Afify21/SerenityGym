@@ -8,7 +8,7 @@ namespace SerenityGym
         Controller controllerObj;
         public Trainer(int x)
         {
-            TID= x;
+            TID = x;
             InitializeComponent();
             controllerObj = new Controller();
         }
@@ -17,6 +17,12 @@ namespace SerenityGym
         {
             Application.Exit();
 
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            UpdatePlans updateplans = new UpdatePlans(TID);
+            updateplans.Show();
         }
     }
 }
