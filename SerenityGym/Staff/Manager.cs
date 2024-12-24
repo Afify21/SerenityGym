@@ -23,5 +23,15 @@ namespace SerenityGym
         {
 
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void Stafff_Click(object sender, EventArgs e)
+        {
+            Transactions_table Form= new Transactions_table();
+            Form.Show();
+        }
     }
 }

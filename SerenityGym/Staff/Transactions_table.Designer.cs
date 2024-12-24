@@ -1,6 +1,6 @@
 ﻿namespace SerenityGym
 {
-    partial class Manager
+    partial class Transactions_table
     {
         /// <summary>
         ///  Required designer variable.
@@ -31,15 +31,13 @@
             panel1 = new Panel();
             pictureBox1 = new PictureBox();
             panel2 = new Panel();
-            Stafff = new Button();
-            Userr = new Button();
-            label2 = new Label();
             button1 = new Button();
-            button2 = new Button();
-            button3 = new Button();
+            label1 = new Label();
+            dataGridView1 = new DataGridView();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
             // panel1
@@ -50,7 +48,7 @@
             panel1.Location = new Point(0, 0);
             panel1.Margin = new Padding(2);
             panel1.Name = "panel1";
-            panel1.Size = new Size(115, 424);
+            panel1.Size = new Size(112, 424);
             panel1.TabIndex = 0;
             // 
             // pictureBox1
@@ -66,60 +64,15 @@
             // 
             // panel2
             // 
-            panel2.Controls.Add(button3);
-            panel2.Controls.Add(button2);
-            panel2.Controls.Add(Stafff);
-            panel2.Controls.Add(Userr);
-            panel2.Controls.Add(label2);
+            panel2.Controls.Add(dataGridView1);
+            panel2.Controls.Add(label1);
             panel2.Controls.Add(button1);
             panel2.Dock = DockStyle.Fill;
-            panel2.Location = new Point(115, 0);
+            panel2.Location = new Point(112, 0);
             panel2.Margin = new Padding(2);
             panel2.Name = "panel2";
-            panel2.Size = new Size(485, 424);
+            panel2.Size = new Size(488, 424);
             panel2.TabIndex = 1;
-            panel2.Paint += panel2_Paint;
-            // 
-            // Stafff
-            // 
-            Stafff.BackColor = Color.FromArgb(41, 128, 185);
-            Stafff.FlatStyle = FlatStyle.Flat;
-            Stafff.Font = new Font("Century Gothic", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            Stafff.ForeColor = Color.White;
-            Stafff.Location = new Point(153, 110);
-            Stafff.Margin = new Padding(2);
-            Stafff.Name = "Stafff";
-            Stafff.Size = new Size(155, 37);
-            Stafff.TabIndex = 8;
-            Stafff.Text = "Transactions";
-            Stafff.UseVisualStyleBackColor = false;
-            Stafff.Click += Stafff_Click;
-            // 
-            // Userr
-            // 
-            Userr.BackColor = Color.FromArgb(41, 128, 185);
-            Userr.FlatStyle = FlatStyle.Flat;
-            Userr.Font = new Font("Century Gothic", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            Userr.ForeColor = Color.White;
-            Userr.Location = new Point(153, 235);
-            Userr.Margin = new Padding(2);
-            Userr.Name = "Userr";
-            Userr.Size = new Size(155, 32);
-            Userr.TabIndex = 7;
-            Userr.Text = "Statistics ";
-            Userr.UseVisualStyleBackColor = false;
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Century Gothic", 16F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label2.ForeColor = Color.FromArgb(41, 128, 185);
-            label2.Location = new Point(20, 39);
-            label2.Margin = new Padding(2, 0, 2, 0);
-            label2.Name = "label2";
-            label2.Size = new Size(136, 33);
-            label2.TabIndex = 2;
-            label2.Text = "Manager";
             // 
             // button1
             // 
@@ -127,7 +80,7 @@
             button1.FlatStyle = FlatStyle.Flat;
             button1.Font = new Font("Verdana", 16F, FontStyle.Bold, GraphicsUnit.Point, 0);
             button1.ForeColor = Color.FromArgb(41, 128, 185);
-            button1.Location = new Point(453, 0);
+            button1.Location = new Point(456, 0);
             button1.Margin = new Padding(2);
             button1.Name = "button1";
             button1.Size = new Size(32, 32);
@@ -136,35 +89,28 @@
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click;
             // 
-            // button2
+            // label1
             // 
-            button2.BackColor = Color.FromArgb(41, 128, 185);
-            button2.FlatStyle = FlatStyle.Flat;
-            button2.Font = new Font("Century Gothic", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button2.ForeColor = Color.White;
-            button2.Location = new Point(153, 174);
-            button2.Margin = new Padding(2);
-            button2.Name = "button2";
-            button2.Size = new Size(155, 33);
-            button2.TabIndex = 9;
-            button2.Text = "Equipments";
-            button2.UseVisualStyleBackColor = false;
+            label1.AutoSize = true;
+            label1.Font = new Font("Century Gothic", 16F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label1.Location = new Point(156, 0);
+            label1.Margin = new Padding(2, 0, 2, 0);
+            label1.Name = "label1";
+            label1.Size = new Size(173, 33);
+            label1.TabIndex = 1;
+            label1.Text = "Transactions";
+            label1.Click += label1_Click;
             // 
-            // button3
+            // dataGridView1
             // 
-            button3.BackColor = Color.FromArgb(41, 128, 185);
-            button3.FlatStyle = FlatStyle.Flat;
-            button3.Font = new Font("Century Gothic", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button3.ForeColor = Color.White;
-            button3.Location = new Point(153, 295);
-            button3.Margin = new Padding(2);
-            button3.Name = "button3";
-            button3.Size = new Size(155, 31);
-            button3.TabIndex = 10;
-            button3.Text = "Feedbaks";
-            button3.UseVisualStyleBackColor = false;
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.Location = new Point(14, 68);
+            dataGridView1.Name = "dataGridView1";
+            dataGridView1.RowHeadersWidth = 51;
+            dataGridView1.Size = new Size(462, 344);
+            dataGridView1.TabIndex = 2;
             // 
-            // Manager
+            // Transactions_table
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -174,13 +120,14 @@
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
             Margin = new Padding(2);
-            Name = "Manager";
+            Name = "Transactions_table";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Form1";
             panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
         }
 
@@ -190,10 +137,7 @@
         private Panel panel2;
         private PictureBox pictureBox1;
         private Button button1;
-        private Label label2;
-        private Button Stafff;
-        private Button Userr;
-        private Button button2;
-        private Button button3;
+        private Label label1;
+        private DataGridView dataGridView1;
     }
 }
