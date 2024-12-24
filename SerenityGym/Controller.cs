@@ -68,5 +68,17 @@ namespace DBapplication
             string query = "INSERT into Feedback Values(" + id + ",'" + msg + "','" + DateTime.Now + "')";
             return dbMan.ExecuteNonQuery(query);
         }
+
+        public DataTable Equipmenttable()
+        {
+            string query = "SELECT * FROM Equipment";
+            return dbMan.ExecuteReader(query);
+        }
+        
+        public DataTable Feedbacktable()
+        {
+            string query = "SELECT * FROM Feedback";
+            return dbMan.ExecuteReader(query);
+        }
     }
 }

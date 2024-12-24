@@ -17,6 +17,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="Staff\Transactions_table.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="User\GetMYNotis.cs">
       <SubType>Form</SubType>
     </Compile>
