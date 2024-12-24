@@ -25,5 +25,11 @@ namespace SerenityGym
         {
 
         }
+
+        private void Stafff_Click(object sender, EventArgs e)
+        {
+            UserFeedB userFeedB = new UserFeedB(UID);
+            userFeedB.Show();
+        }
     }
 }

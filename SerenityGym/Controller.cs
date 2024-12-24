@@ -63,5 +63,10 @@ namespace DBapplication
             return dbMan.ExecuteNonQuery(query);
         }
 
+        public int SubmitFeedback(string msg,int id)
+        {
+            string query = "INSERT into Feedback Values(" + id + ",'" + msg + "','" + DateTime.Now + "')";
+            return dbMan.ExecuteNonQuery(query);
+        }
     }
 }
