@@ -68,5 +68,17 @@ namespace DBapplication
             string query = "INSERT into Feedback Values(" + id + ",'" + msg + "','" + DateTime.Now + "')";
             return dbMan.ExecuteNonQuery(query);
         }
+
+        public DataTable Getnotis(string type) 
+        {
+            string query="Select notif_message From Gets_Notified g,Notifications n where membershiptype='"+type+"' AND notifid=notificationid ";
+            return dbMan.ExecuteReader(query);
+
+        }
+        public DataTable getmembership(int id)
+        {
+            string query = "select membership_type from users where userid="+id+"";
+            return dbMan.ExecuteReader(query);
+        }
     }
 }

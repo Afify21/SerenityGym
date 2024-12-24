@@ -31,9 +31,9 @@
             panel1 = new Panel();
             pictureBox1 = new PictureBox();
             panel2 = new Panel();
-            button1 = new Button();
-            label1 = new Label();
             dataGridView1 = new DataGridView();
+            label1 = new Label();
+            button1 = new Button();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel2.SuspendLayout();
@@ -74,6 +74,27 @@
             panel2.Size = new Size(488, 424);
             panel2.TabIndex = 1;
             // 
+            // dataGridView1
+            // 
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.Location = new Point(14, 68);
+            dataGridView1.Name = "dataGridView1";
+            dataGridView1.RowHeadersWidth = 51;
+            dataGridView1.Size = new Size(462, 344);
+            dataGridView1.TabIndex = 2;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Century Gothic", 16F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label1.Location = new Point(156, 0);
+            label1.Margin = new Padding(2, 0, 2, 0);
+            label1.Name = "label1";
+            label1.Size = new Size(173, 33);
+            label1.TabIndex = 1;
+            label1.Text = "Transactions";
+            label1.Click += label1_Click;
+            // 
             // button1
             // 
             button1.FlatAppearance.BorderSize = 0;
@@ -88,27 +109,6 @@
             button1.Text = "X";
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Century Gothic", 16F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label1.Location = new Point(156, 0);
-            label1.Margin = new Padding(2, 0, 2, 0);
-            label1.Name = "label1";
-            label1.Size = new Size(173, 33);
-            label1.TabIndex = 1;
-            label1.Text = "Transactions";
-            label1.Click += label1_Click;
-            // 
-            // dataGridView1
-            // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(14, 68);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(462, 344);
-            dataGridView1.TabIndex = 2;
             // 
             // Transactions_table
             // 
