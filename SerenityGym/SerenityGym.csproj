@@ -17,7 +17,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="UserFeedB.cs">
+    <Compile Update="User\UserFeedB.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Staff\ForgotPassStaff.cs">
