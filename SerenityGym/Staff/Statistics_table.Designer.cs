@@ -33,9 +33,9 @@
             pictureBox1 = new PictureBox();
             label1 = new Label();
             panel2 = new Panel();
-            button2 = new Button();
             pictureBox4 = new PictureBox();
             dataGridView1 = new DataGridView();
+            button2 = new Button();
             label2 = new Label();
             Stafff = new Button();
             Userr = new Button();
@@ -55,7 +55,7 @@
             panel1.Location = new Point(0, 0);
             panel1.Margin = new Padding(2);
             panel1.Name = "panel1";
-            panel1.Size = new Size(42, 675);
+            panel1.Size = new Size(34, 540);
             panel1.TabIndex = 0;
             // 
             // pictureBox1
@@ -64,7 +64,7 @@
             pictureBox1.Location = new Point(0, 0);
             pictureBox1.Margin = new Padding(2);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(42, 82);
+            pictureBox1.Size = new Size(34, 66);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
@@ -73,10 +73,10 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Century Gothic", 16F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label1.Location = new Point(465, 11);
+            label1.Location = new Point(372, 9);
             label1.Margin = new Padding(2, 0, 2, 0);
             label1.Name = "label1";
-            label1.Size = new Size(223, 39);
+            label1.Size = new Size(191, 33);
             label1.TabIndex = 1;
             label1.Text = "Serenity Gym";
             // 
@@ -91,68 +91,59 @@
             panel2.Controls.Add(Userr);
             panel2.Controls.Add(button1);
             panel2.Dock = DockStyle.Fill;
-            panel2.Location = new Point(42, 0);
+            panel2.Location = new Point(34, 0);
             panel2.Margin = new Padding(2);
             panel2.Name = "panel2";
-            panel2.Size = new Size(1160, 675);
+            panel2.Size = new Size(928, 540);
             panel2.TabIndex = 1;
             panel2.Paint += panel2_Paint;
             // 
             // pictureBox4
             // 
             pictureBox4.Image = (Image)resources.GetObject("pictureBox4.Image");
-            pictureBox4.Location = new Point(5, 3);
+            pictureBox4.Location = new Point(0, 2);
+            pictureBox4.Margin = new Padding(2, 2, 2, 2);
             pictureBox4.Name = "pictureBox4";
-            pictureBox4.Size = new Size(28, 37);
+            pictureBox4.Size = new Size(22, 30);
             pictureBox4.TabIndex = 8;
             pictureBox4.TabStop = false;
             pictureBox4.Click += pictureBox4_Click;
             // 
             // dataGridView1
             // 
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.Location = new Point(12, 65);
+            dataGridView1.Name = "dataGridView1";
+            dataGridView1.RowHeadersWidth = 51;
+            dataGridView1.Size = new Size(539, 95);
+            dataGridView1.TabIndex = 13;
+            // 
+            // button2
+            // 
             button2.BackColor = Color.FromArgb(41, 128, 185);
             button2.FlatStyle = FlatStyle.Flat;
             button2.Font = new Font("Century Gothic", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
             button2.ForeColor = Color.White;
-            button2.Location = new Point(359, 257);
+            button2.Location = new Point(251, 276);
             button2.Margin = new Padding(2);
             button2.Name = "button2";
-            button2.Size = new Size(217, 33);
+            button2.Size = new Size(165, 37);
             button2.TabIndex = 13;
             button2.Text = "show feedbacks";
             button2.UseVisualStyleBackColor = false;
             button2.Click += button2_Click;
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(19, 86);
-            dataGridView1.Margin = new Padding(4);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(1111, 235);
-            dataGridView1.TabIndex = 13;
             // 
             // label2
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Century Gothic", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label2.Location = new Point(211, 631);
-            label2.Location = new Point(166, 488);
+            label2.Location = new Point(133, 390);
             label2.Margin = new Padding(2, 0, 2, 0);
             label2.Name = "label2";
-            label2.Size = new Size(156, 25);
+            label2.Size = new Size(129, 21);
             label2.TabIndex = 12;
             label2.Text = "Serenity Gym";
             label2.Click += label2_Click;
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Century Gothic", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label3.Location = new Point(776, 631);
-            label3.Margin = new Padding(2, 0, 2, 0);
-            label3.Name = "label3";
-            label3.Size = new Size(156, 25);
-            label3.TabIndex = 11;
-            label3.Text = "Serenity Gym";
             // 
             // Stafff
             // 
@@ -160,12 +151,10 @@
             Stafff.FlatStyle = FlatStyle.Flat;
             Stafff.Font = new Font("Century Gothic", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
             Stafff.ForeColor = Color.White;
-            Stafff.Location = new Point(731, 476);
-            Stafff.Location = new Point(999, 626);
+            Stafff.Location = new Point(568, 248);
             Stafff.Margin = new Padding(2);
             Stafff.Name = "Stafff";
-            Stafff.Size = new Size(134, 33);
-            Stafff.Size = new Size(148, 35);
+            Stafff.Size = new Size(118, 28);
             Stafff.TabIndex = 8;
             Stafff.Text = "view reviews";
             Stafff.UseVisualStyleBackColor = false;
@@ -177,11 +166,10 @@
             Userr.FlatStyle = FlatStyle.Flat;
             Userr.Font = new Font("Century Gothic", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
             Userr.ForeColor = Color.White;
-            Userr.Location = new Point(34, 626);
-            Userr.Location = new Point(15, 481);
+            Userr.Location = new Point(31, 276);
             Userr.Margin = new Padding(2);
             Userr.Name = "Userr";
-            Userr.Size = new Size(148, 35);
+            Userr.Size = new Size(135, 37);
             Userr.TabIndex = 7;
             Userr.Text = "PROFIT";
             Userr.UseVisualStyleBackColor = false;
@@ -193,10 +181,10 @@
             button1.FlatStyle = FlatStyle.Flat;
             button1.Font = new Font("Verdana", 16F, FontStyle.Bold, GraphicsUnit.Point, 0);
             button1.ForeColor = Color.FromArgb(41, 128, 185);
-            button1.Location = new Point(1118, 0);
+            button1.Location = new Point(894, 0);
             button1.Margin = new Padding(2);
             button1.Name = "button1";
-            button1.Size = new Size(40, 40);
+            button1.Size = new Size(32, 32);
             button1.TabIndex = 0;
             button1.Text = "X";
             button1.UseVisualStyleBackColor = true;
@@ -204,9 +192,9 @@
             // 
             // Statistics_table
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1202, 675);
+            ClientSize = new Size(962, 540);
             ControlBox = false;
             Controls.Add(panel2);
             Controls.Add(panel1);
