@@ -50,5 +50,11 @@ namespace SerenityGym
             Feedbacks_table Form = new Feedbacks_table();
             Form.Show();
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Updatestaff Form = new Updatestaff();
+            Form.Show();
+        }
     }
 }

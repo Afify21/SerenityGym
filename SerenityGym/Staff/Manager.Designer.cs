@@ -37,6 +37,7 @@
             Userr = new Button();
             label2 = new Label();
             button1 = new Button();
+            updatestaffbutton = new Button();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel2.SuspendLayout();
@@ -66,6 +67,7 @@
             // 
             // panel2
             // 
+            panel2.Controls.Add(updatestaffbutton);
             panel2.Controls.Add(button3);
             panel2.Controls.Add(button2);
             panel2.Controls.Add(Stafff);
@@ -86,12 +88,12 @@
             button3.FlatStyle = FlatStyle.Flat;
             button3.Font = new Font("Century Gothic", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
             button3.ForeColor = Color.White;
-            button3.Location = new Point(153, 295);
+            button3.Location = new Point(153, 279);
             button3.Margin = new Padding(2);
             button3.Name = "button3";
             button3.Size = new Size(155, 31);
             button3.TabIndex = 10;
-            button3.Text = "Feedbaks";
+            button3.Text = "Feedbacks";
             button3.UseVisualStyleBackColor = false;
             button3.Click += button3_Click;
             // 
@@ -101,7 +103,7 @@
             button2.FlatStyle = FlatStyle.Flat;
             button2.Font = new Font("Century Gothic", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
             button2.ForeColor = Color.White;
-            button2.Location = new Point(153, 174);
+            button2.Location = new Point(153, 158);
             button2.Margin = new Padding(2);
             button2.Name = "button2";
             button2.Size = new Size(155, 33);
@@ -116,7 +118,7 @@
             Stafff.FlatStyle = FlatStyle.Flat;
             Stafff.Font = new Font("Century Gothic", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
             Stafff.ForeColor = Color.White;
-            Stafff.Location = new Point(153, 110);
+            Stafff.Location = new Point(153, 94);
             Stafff.Margin = new Padding(2);
             Stafff.Name = "Stafff";
             Stafff.Size = new Size(155, 37);
@@ -131,7 +133,7 @@
             Userr.FlatStyle = FlatStyle.Flat;
             Userr.Font = new Font("Century Gothic", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
             Userr.ForeColor = Color.White;
-            Userr.Location = new Point(153, 235);
+            Userr.Location = new Point(153, 219);
             Userr.Margin = new Padding(2);
             Userr.Name = "Userr";
             Userr.Size = new Size(155, 32);
@@ -167,6 +169,21 @@
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click;
             // 
+            // updatestaffbutton
+            // 
+            updatestaffbutton.BackColor = Color.FromArgb(41, 128, 185);
+            updatestaffbutton.FlatStyle = FlatStyle.Flat;
+            updatestaffbutton.Font = new Font("Century Gothic", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            updatestaffbutton.ForeColor = Color.White;
+            updatestaffbutton.Location = new Point(153, 339);
+            updatestaffbutton.Margin = new Padding(2);
+            updatestaffbutton.Name = "updatestaffbutton";
+            updatestaffbutton.Size = new Size(155, 31);
+            updatestaffbutton.TabIndex = 11;
+            updatestaffbutton.Text = "Update staff";
+            updatestaffbutton.UseVisualStyleBackColor = false;
+            updatestaffbutton.Click += button4_Click;
+            // 
             // Manager
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -198,5 +215,6 @@
         private Button Userr;
         private Button button2;
         private Button button3;
+        private Button updatestaffbutton;
     }
 }

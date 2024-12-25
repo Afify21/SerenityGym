@@ -97,5 +97,33 @@ namespace DBapplication
             string query = "select membership_type from users where userid="+id+"";
             return dbMan.ExecuteReader(query);
         }
+        public int UpdateStaffFname(string s, int id)
+        {
+            string query = "Update Staff SET fname='" + s + "' WHERE staffid=" + id + "";
+            return dbMan.ExecuteNonQuery(query);
+        }
+        public int UpdateStaffLname(string s, int id)
+        {
+            string query = "Update Staff SET lname='" + s + "' WHERE staffid=" + id + "";
+            return dbMan.ExecuteNonQuery(query);
+        }
+        public int UpdateStaffAddress(string s, int id)
+        {
+            string query = "Update Staff SET staff_address='" + s + "' WHERE staffid=" + id + "";
+            return dbMan.ExecuteNonQuery(query);
+        }
+        public int UpdateStaffPhone(int no, int id)
+        {
+            string query = "Update Staff SET phone_num=" + no + " WHERE staffid=" + id + "";
+            return dbMan.ExecuteNonQuery(query);
+        }
+
+        public int DeleteStaff(int id)
+        {
+            string query = "DELETE FROM Staff WHERE staffid = " + id+ "";
+            return dbMan.ExecuteNonQuery(query);
+        }
+
+
     }
 }

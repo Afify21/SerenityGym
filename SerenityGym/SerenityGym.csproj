@@ -20,6 +20,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="Staff\Updatestaff.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Staff\Transactions_table.cs">
       <SubType>Form</SubType>
     </Compile>
