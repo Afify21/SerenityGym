@@ -113,9 +113,9 @@
             B_T8.Location = new Point(148, 311);
             B_T8.Margin = new Padding(2);
             B_T8.Name = "B_T8";
-            B_T8.Size = new Size(120, 35);
+            B_T8.Size = new Size(150, 35);
             B_T8.TabIndex = 29;
-            B_T8.Text = "Update";
+            B_T8.Text = "22:00-23:00";
             B_T8.UseVisualStyleBackColor = false;
             // 
             // B_T9
@@ -124,12 +124,12 @@
             B_T9.FlatStyle = FlatStyle.Flat;
             B_T9.Font = new Font("Century Gothic", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
             B_T9.ForeColor = Color.White;
-            B_T9.Location = new Point(272, 311);
+            B_T9.Location = new Point(302, 311);
             B_T9.Margin = new Padding(2);
             B_T9.Name = "B_T9";
             B_T9.Size = new Size(120, 35);
             B_T9.TabIndex = 28;
-            B_T9.Text = "Update";
+            B_T9.Text = "23:00-24:00";
             B_T9.UseVisualStyleBackColor = false;
             // 
             // B_T7
@@ -143,7 +143,7 @@
             B_T7.Name = "B_T7";
             B_T7.Size = new Size(120, 35);
             B_T7.TabIndex = 27;
-            B_T7.Text = "Update";
+            B_T7.Text = "21:00-22:00";
             B_T7.UseVisualStyleBackColor = false;
             // 
             // B_T1
@@ -157,7 +157,7 @@
             B_T1.Name = "B_T1";
             B_T1.Size = new Size(120, 35);
             B_T1.TabIndex = 26;
-            B_T1.Text = "Update";
+            B_T1.Text = "15:00-16:00";
             B_T1.UseVisualStyleBackColor = false;
             // 
             // comboBox1
@@ -210,12 +210,12 @@
             B_T6.FlatStyle = FlatStyle.Flat;
             B_T6.Font = new Font("Century Gothic", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
             B_T6.ForeColor = Color.White;
-            B_T6.Location = new Point(272, 272);
+            B_T6.Location = new Point(302, 272);
             B_T6.Margin = new Padding(2);
             B_T6.Name = "B_T6";
             B_T6.Size = new Size(120, 35);
             B_T6.TabIndex = 21;
-            B_T6.Text = "Update";
+            B_T6.Text = "20:00-21:00";
             B_T6.UseVisualStyleBackColor = false;
             // 
             // B_T4
@@ -229,7 +229,7 @@
             B_T4.Name = "B_T4";
             B_T4.Size = new Size(120, 35);
             B_T4.TabIndex = 20;
-            B_T4.Text = "Update";
+            B_T4.Text = "18:00-19:00";
             B_T4.UseVisualStyleBackColor = false;
             // 
             // B_T5
@@ -241,9 +241,9 @@
             B_T5.Location = new Point(148, 272);
             B_T5.Margin = new Padding(2);
             B_T5.Name = "B_T5";
-            B_T5.Size = new Size(120, 35);
+            B_T5.Size = new Size(150, 35);
             B_T5.TabIndex = 19;
-            B_T5.Text = "Update";
+            B_T5.Text = "19:00-20:00";
             B_T5.UseVisualStyleBackColor = false;
             // 
             // B_T3
@@ -252,12 +252,12 @@
             B_T3.FlatStyle = FlatStyle.Flat;
             B_T3.Font = new Font("Century Gothic", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
             B_T3.ForeColor = Color.White;
-            B_T3.Location = new Point(272, 233);
+            B_T3.Location = new Point(302, 233);
             B_T3.Margin = new Padding(2);
             B_T3.Name = "B_T3";
             B_T3.Size = new Size(120, 35);
             B_T3.TabIndex = 18;
-            B_T3.Text = "Update";
+            B_T3.Text = "17:00-18:00";
             B_T3.UseVisualStyleBackColor = false;
             // 
             // B_T2
@@ -269,9 +269,9 @@
             B_T2.Location = new Point(148, 233);
             B_T2.Margin = new Padding(2);
             B_T2.Name = "B_T2";
-            B_T2.Size = new Size(120, 35);
+            B_T2.Size = new Size(150, 35);
             B_T2.TabIndex = 17;
-            B_T2.Text = "Update";
+            B_T2.Text = "16:00-17:00";
             B_T2.UseVisualStyleBackColor = false;
             // 
             // CB_SesType
