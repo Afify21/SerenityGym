@@ -10,9 +10,7 @@ namespace SerenityGym
         {
             InitializeComponent();
             controllerObj = new Controller();
-            DataTable dt = controllerObj.Transactionstable();
-            dataGridView1.DataSource = dt;
-            dataGridView1.Refresh();
+
             label2.Visible = false;
         }
 
@@ -32,6 +30,24 @@ namespace SerenityGym
         private void label2_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void Stafff_Click(object sender, EventArgs e)
+        {
+           /* DataTable dt = controllerObj.Transactionstable();
+            dataGridView1.DataSource = dt;
+            dataGridView1.Refresh();*/
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Feedbacks_table Form = new Feedbacks_table();
+            Form.Show();
         }
     }
 }
