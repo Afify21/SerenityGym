@@ -101,7 +101,7 @@
             // pictureBox4
             // 
             pictureBox4.Image = (Image)resources.GetObject("pictureBox4.Image");
-            pictureBox4.Location = new Point(0, 3);
+            pictureBox4.Location = new Point(5, 3);
             pictureBox4.Name = "pictureBox4";
             pictureBox4.Size = new Size(28, 37);
             pictureBox4.TabIndex = 8;
