@@ -31,12 +31,12 @@
             panel1 = new Panel();
             pictureBox1 = new PictureBox();
             panel2 = new Panel();
+            button3 = new Button();
+            button2 = new Button();
             Stafff = new Button();
             Userr = new Button();
             label2 = new Label();
             button1 = new Button();
-            button2 = new Button();
-            button3 = new Button();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel2.SuspendLayout();
@@ -80,6 +80,36 @@
             panel2.TabIndex = 1;
             panel2.Paint += panel2_Paint;
             // 
+            // button3
+            // 
+            button3.BackColor = Color.FromArgb(41, 128, 185);
+            button3.FlatStyle = FlatStyle.Flat;
+            button3.Font = new Font("Century Gothic", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            button3.ForeColor = Color.White;
+            button3.Location = new Point(153, 295);
+            button3.Margin = new Padding(2);
+            button3.Name = "button3";
+            button3.Size = new Size(155, 31);
+            button3.TabIndex = 10;
+            button3.Text = "Feedbaks";
+            button3.UseVisualStyleBackColor = false;
+            button3.Click += button3_Click;
+            // 
+            // button2
+            // 
+            button2.BackColor = Color.FromArgb(41, 128, 185);
+            button2.FlatStyle = FlatStyle.Flat;
+            button2.Font = new Font("Century Gothic", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            button2.ForeColor = Color.White;
+            button2.Location = new Point(153, 174);
+            button2.Margin = new Padding(2);
+            button2.Name = "button2";
+            button2.Size = new Size(155, 33);
+            button2.TabIndex = 9;
+            button2.Text = "Equipments";
+            button2.UseVisualStyleBackColor = false;
+            button2.Click += button2_Click;
+            // 
             // Stafff
             // 
             Stafff.BackColor = Color.FromArgb(41, 128, 185);
@@ -108,6 +138,7 @@
             Userr.TabIndex = 7;
             Userr.Text = "Statistics ";
             Userr.UseVisualStyleBackColor = false;
+            Userr.Click += Userr_Click;
             // 
             // label2
             // 
@@ -135,34 +166,6 @@
             button1.Text = "X";
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click;
-            // 
-            // button2
-            // 
-            button2.BackColor = Color.FromArgb(41, 128, 185);
-            button2.FlatStyle = FlatStyle.Flat;
-            button2.Font = new Font("Century Gothic", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button2.ForeColor = Color.White;
-            button2.Location = new Point(153, 174);
-            button2.Margin = new Padding(2);
-            button2.Name = "button2";
-            button2.Size = new Size(155, 33);
-            button2.TabIndex = 9;
-            button2.Text = "Equipments";
-            button2.UseVisualStyleBackColor = false;
-            // 
-            // button3
-            // 
-            button3.BackColor = Color.FromArgb(41, 128, 185);
-            button3.FlatStyle = FlatStyle.Flat;
-            button3.Font = new Font("Century Gothic", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button3.ForeColor = Color.White;
-            button3.Location = new Point(153, 295);
-            button3.Margin = new Padding(2);
-            button3.Name = "button3";
-            button3.Size = new Size(155, 31);
-            button3.TabIndex = 10;
-            button3.Text = "Feedbaks";
-            button3.UseVisualStyleBackColor = false;
             // 
             // Manager
             // 

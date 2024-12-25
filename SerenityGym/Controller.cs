@@ -69,6 +69,23 @@ namespace DBapplication
             return dbMan.ExecuteNonQuery(query);
         }
 
+        public DataTable Equipmenttable()
+        {
+            string query = "SELECT * FROM Equipment";
+            return dbMan.ExecuteReader(query);
+        }
+        
+        public DataTable Feedbacktable()
+        {
+            string query = "SELECT * FROM Feedback";
+            return dbMan.ExecuteReader(query);
+        }
+        public DataTable Transactionstable()
+        {
+            string query = "SELECT r.registrationid, p.paymentid, p.method, p.amount, p.paymentdate FROM Payments p, registration r  ; ";
+            return dbMan.ExecuteReader(query);
+        }
+
         public DataTable Getnotis(string type) 
         {
             string query="Select notif_message From Gets_Notified g,Notifications n where membershiptype='"+type+"' AND notifid=notificationid ";

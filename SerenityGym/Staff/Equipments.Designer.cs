@@ -1,6 +1,6 @@
 ﻿namespace SerenityGym
 {
-    partial class Transactions_table
+    partial class Equipments
     {
         /// <summary>
         ///  Required designer variable.
@@ -30,10 +30,10 @@
         {
             panel1 = new Panel();
             pictureBox1 = new PictureBox();
-            panel2 = new Panel();
-            dataGridView1 = new DataGridView();
             label1 = new Label();
+            panel2 = new Panel();
             button1 = new Button();
+            dataGridView1 = new DataGridView();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel2.SuspendLayout();
@@ -48,7 +48,7 @@
             panel1.Location = new Point(0, 0);
             panel1.Margin = new Padding(2);
             panel1.Name = "panel1";
-            panel1.Size = new Size(91, 424);
+            panel1.Size = new Size(112, 424);
             panel1.TabIndex = 0;
             // 
             // pictureBox1
@@ -57,10 +57,21 @@
             pictureBox1.Location = new Point(11, 168);
             pictureBox1.Margin = new Padding(2);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(71, 72);
+            pictureBox1.Size = new Size(94, 81);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Century Gothic", 16F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label1.Location = new Point(120, 9);
+            label1.Margin = new Padding(2, 0, 2, 0);
+            label1.Name = "label1";
+            label1.Size = new Size(244, 33);
+            label1.TabIndex = 1;
+            label1.Text = "Equipments table";
             // 
             // panel2
             // 
@@ -68,32 +79,11 @@
             panel2.Controls.Add(label1);
             panel2.Controls.Add(button1);
             panel2.Dock = DockStyle.Fill;
-            panel2.Location = new Point(91, 0);
+            panel2.Location = new Point(112, 0);
             panel2.Margin = new Padding(2);
             panel2.Name = "panel2";
-            panel2.Size = new Size(509, 424);
+            panel2.Size = new Size(488, 424);
             panel2.TabIndex = 1;
-            // 
-            // dataGridView1
-            // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(26, 68);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(462, 344);
-            dataGridView1.TabIndex = 2;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Century Gothic", 16F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label1.Location = new Point(159, 2);
-            label1.Margin = new Padding(2, 0, 2, 0);
-            label1.Name = "label1";
-            label1.Size = new Size(173, 33);
-            label1.TabIndex = 1;
-            label1.Text = "Transactions";
-            label1.Click += label1_Click;
             // 
             // button1
             // 
@@ -101,7 +91,7 @@
             button1.FlatStyle = FlatStyle.Flat;
             button1.Font = new Font("Verdana", 16F, FontStyle.Bold, GraphicsUnit.Point, 0);
             button1.ForeColor = Color.FromArgb(41, 128, 185);
-            button1.Location = new Point(475, 2);
+            button1.Location = new Point(456, 0);
             button1.Margin = new Padding(2);
             button1.Name = "button1";
             button1.Size = new Size(32, 32);
@@ -110,7 +100,16 @@
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click;
             // 
-            // Transactions_table
+            // dataGridView1
+            // 
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.Location = new Point(15, 54);
+            dataGridView1.Name = "dataGridView1";
+            dataGridView1.RowHeadersWidth = 51;
+            dataGridView1.Size = new Size(461, 358);
+            dataGridView1.TabIndex = 2;
+            // 
+            // Equipments
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -120,7 +119,7 @@
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
             Margin = new Padding(2);
-            Name = "Transactions_table";
+            Name = "Equipments";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Form1";
             panel1.ResumeLayout(false);
@@ -136,8 +135,8 @@
         private Panel panel1;
         private Panel panel2;
         private PictureBox pictureBox1;
-        private Button button1;
         private Label label1;
+        private Button button1;
         private DataGridView dataGridView1;
     }
 }

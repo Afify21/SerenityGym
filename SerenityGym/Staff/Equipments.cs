@@ -3,14 +3,14 @@ using System.Data;
 
 namespace SerenityGym
 {
-    public partial class Transactions_table : Form
+    public partial class Equipments : Form
     {
         Controller controllerObj;
-        public Transactions_table()
+        public Equipments()
         {
             InitializeComponent();
             controllerObj = new Controller();
-            DataTable dt = controllerObj.Transactionstable();
+            DataTable dt = controllerObj.Equipmenttable();
             dataGridView1.DataSource = dt;
             dataGridView1.Refresh();
         }
@@ -18,11 +18,6 @@ namespace SerenityGym
         private void button1_Click(object sender, EventArgs e)
         {
             Application.Exit();
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
 
         }
     }
