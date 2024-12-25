@@ -276,6 +276,21 @@ namespace DBapplication
             string query = "DELETE FROM Staff WHERE staffid = " + id+ "";
             return dbMan.ExecuteNonQuery(query);
         }
+        public int ShowProfit()
+        {
+            string query = "SELECT SUM(amount) FROM Payments";
+            try
+            {
+                object result = dbMan.ExecuteScalar(query);
+                return result != null ? Convert.ToInt32(result) : 0; // Convert and return, default to 0 if null
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error in ShowProfit: {ex.Message}");
+                return -1; // Return -1 if an error occurs
+            }
+        }
+
 
 
     }

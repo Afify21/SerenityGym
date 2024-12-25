@@ -42,7 +42,8 @@ namespace SerenityGym
 
         private void Userr_Click(object sender, EventArgs e)
         {
-
+            Statistics_table Form = new Statistics_table();
+            Form.Show();
         }
 
         private void button3_Click(object sender, EventArgs e)
