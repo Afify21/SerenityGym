@@ -34,6 +34,11 @@ namespace SerenityGym
 
         private void B_Notifications_Click(object sender, EventArgs e)
         {
+
+        }
+
+        private void B_Notifications_Click(object sender, EventArgs e)
+        {
             GetMYNotis getMYNotis = new GetMYNotis(UID);
             getMYNotis.Show();
         }
