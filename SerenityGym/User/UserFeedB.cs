@@ -21,7 +21,23 @@ namespace SerenityGym
 
         private void B_Feedback_Click(object sender, EventArgs e)
         {
-            int result = controllerObj.SubmitFeedback(TB_Feed.Text,UID);
+            string revmood;
+
+            if (radioButton1.Checked == true)
+            {
+                revmood = radioButton1.Text;
+            }
+            else if (radioButton2.Checked == true)
+            {
+                revmood = radioButton2.Text;
+            }
+            else
+            {
+                MessageBox.Show("Please choose review type");
+                return;
+            }
+
+            int result = controllerObj.SubmitFeedback(TB_Feed.Text,UID,revmood);
             if (result == 0)
                 MessageBox.Show("Error in Submission");
             else

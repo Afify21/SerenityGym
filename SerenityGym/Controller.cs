@@ -64,9 +64,9 @@ namespace DBapplication
             return dbMan.ExecuteNonQuery(query);
         }
 
-        public int SubmitFeedback(string msg,int id)
+        public int SubmitFeedback(string msg,int id, string mood)
         {
-            string query = "INSERT into Feedback Values(" + id + ",'" + msg + "','" + DateTime.Now + "')";
+            string query = "INSERT into Feedback Values(" + id + ",'"+mood+"','" + msg + "','" + DateTime.Now + "')";
             return dbMan.ExecuteNonQuery(query);
         }
         public int UpdatePlan(string type, int Tid, int Uid)
@@ -277,6 +277,9 @@ namespace DBapplication
             return dbMan.ExecuteNonQuery(query);
         }
 
-
+/*        public DataTable(int id) 
+        {
+            string query="Select *"
+        }*/
     }
 }
