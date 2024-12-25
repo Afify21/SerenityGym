@@ -32,10 +32,7 @@ namespace SerenityGym
             userFeedB.Show();
         }
 
-        private void B_Notifications_Click(object sender, EventArgs e)
-        {
-
-        }
+       
 
         private void B_Notifications_Click(object sender, EventArgs e)
         {
