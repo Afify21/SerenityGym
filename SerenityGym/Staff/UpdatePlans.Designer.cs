@@ -40,7 +40,7 @@
             Userid = new TextBox();
             DietCheckBox = new CheckBox();
             TrainCheckBox = new CheckBox();
-            Stafff = new Button();
+            update = new Button();
             submit = new Button();
             label2 = new Label();
             button1 = new Button();
@@ -82,7 +82,7 @@
             panel2.Controls.Add(Userid);
             panel2.Controls.Add(DietCheckBox);
             panel2.Controls.Add(TrainCheckBox);
-            panel2.Controls.Add(Stafff);
+            panel2.Controls.Add(update);
             panel2.Controls.Add(submit);
             panel2.Controls.Add(label2);
             panel2.Controls.Add(button1);
@@ -124,7 +124,7 @@
             // TrainSplit
             // 
             TrainSplit.FormattingEnabled = true;
-            TrainSplit.Items.AddRange(new object[] { "Arnold", "General", "Upper-Lower", "Push-Pull Leg" });
+            TrainSplit.Items.AddRange(new object[] { "Arnold", "General", "Upper-Lower", "Push-Pull-Leg" });
             TrainSplit.Location = new Point(234, 293);
             TrainSplit.Name = "TrainSplit";
             TrainSplit.Size = new Size(118, 33);
@@ -189,19 +189,20 @@
             TrainCheckBox.UseVisualStyleBackColor = false;
             TrainCheckBox.CheckedChanged += checkBox1_CheckedChanged;
             // 
-            // Stafff
+            // update
             // 
-            Stafff.BackColor = Color.FromArgb(41, 128, 185);
-            Stafff.FlatStyle = FlatStyle.Flat;
-            Stafff.Font = new Font("Century Gothic", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            Stafff.ForeColor = Color.White;
-            Stafff.Location = new Point(462, 495);
-            Stafff.Margin = new Padding(2);
-            Stafff.Name = "Stafff";
-            Stafff.Size = new Size(148, 35);
-            Stafff.TabIndex = 8;
-            Stafff.Text = "STAFF";
-            Stafff.UseVisualStyleBackColor = false;
+            update.BackColor = Color.FromArgb(41, 128, 185);
+            update.FlatStyle = FlatStyle.Flat;
+            update.Font = new Font("Century Gothic", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            update.ForeColor = Color.White;
+            update.Location = new Point(398, 353);
+            update.Margin = new Padding(2);
+            update.Name = "update";
+            update.Size = new Size(148, 35);
+            update.TabIndex = 8;
+            update.Text = "Update";
+            update.UseVisualStyleBackColor = false;
+            update.Click += update_Click;
             // 
             // submit
             // 
@@ -272,7 +273,7 @@
         private PictureBox pictureBox1;
         private Button button1;
         private Label label2;
-        private Button Stafff;
+        private Button update;
         private Button submit;
         private CheckBox TrainCheckBox;
         private CheckBox DietCheckBox;

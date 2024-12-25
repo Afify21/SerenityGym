@@ -90,5 +90,65 @@ namespace DBapplication
                 return "User not found";
             }
         }
+        public string TrainingPlan(int UID)
+        {
+            string query = "SELECT plan_type, Split,userid FROM Plans WHERE userid=" + UID + " AND plan_type='Training'";
+            DataTable result = dbMan.ExecuteReader(query); // Assuming dbMan.ExecuteReader returns a DataTable
+
+            if (result.Rows.Count > 0)
+            {
+                string split = result.Rows[0]["Split"].ToString();
+                return (split); // Concatenate first name and last name
+            }
+            else
+            {
+                return "User not found";
+            }
+        }
+        public string DietPlan(int UID,int TID)
+        {
+            string query = "SELECT plan_type, Split,userid,staffid FROM Plans WHERE userid=" + UID + " AND plan_type='Food' AND staffid=" + TID;
+            DataTable result = dbMan.ExecuteReader(query); // Assuming dbMan.ExecuteReader returns a DataTable
+
+            if (result.Rows.Count > 0)
+            {
+                string split = result.Rows[0]["Split"].ToString();
+                return (split); // Concatenate first name and last name
+            }
+            else
+            {
+                return "User not found";
+            }
+        }
+        public bool IsTrainedByTrainer(int UID, int TID)
+        {
+            string query = "SELECT staffid FROM Plans WHERE userid=" + UID;
+
+            DataTable result = dbMan.ExecuteReader(query);
+
+            if (result.Rows.Count > 0)
+            {
+                int staffid = Convert.ToInt32(result.Rows[0]["staffid"]);
+
+                if (staffid == TID)
+                {
+                    return true;
+                }
+            }
+
+            return false;  
+        }
+        public int UpdateTSplit(string split, int UID)
+        {
+            string query = "UPDATE Plans SET Split='" + split + "' WHERE userid=" + UID + " AND plan_type='Training'";
+            return dbMan.ExecuteNonQuery(query);
+        }
+        public int UpdateFSplit(string split, int UID)
+        {
+            string query = "UPDATE Plans SET Split='" + split + "' WHERE userid=" + UID + " AND plan_type='Food'";
+            return dbMan.ExecuteNonQuery(query);
+        }
+
+
     }
 }

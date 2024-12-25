@@ -38,17 +38,41 @@ namespace SerenityGym
                 TrainSplit.Visible = true;
 
 
-                //int result = controllerObj.UpdatePlan("Training", TID, UID);
-                //if (result == 0)
-                //    MessageBox.Show("Update Failed!");
-                //else
-                //    MessageBox.Show("Updated Successfully!");
+                string result = controllerObj.TrainingPlan(UID);
+                trainplan.Text = result;
             }
             else
             {
                 trainplan.Visible = false;
                 TrainSplit.Visible = false;
             }
+        }
+
+
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void submit_Click(object sender, EventArgs e)
+        {
+            UID = Convert.ToInt32(Userid.Text);
+
+            if (Userid.Text == "")
+            {
+                MessageBox.Show("Please Enter A User ID");
+                return;
+            }
+            if (!controllerObj.IsTrainedByTrainer(UID, TID))
+            {
+                MessageBox.Show("Please Enter A User You Train");
+                return;
+
+            }
+            TrainCheckBox.Visible = true;
+            DietCheckBox.Visible = true;
+            name.Text = controllerObj.ShowName(UID);
         }
 
         private void DietCheckBox_CheckedChanged(object sender, EventArgs e)
@@ -58,6 +82,8 @@ namespace SerenityGym
 
                 dietplan.Visible = true;
                 FoodSplit.Visible = true;
+                string result = controllerObj.DietPlan(UID, TID);
+                dietplan.Text = result;
             }
             else
             {
@@ -66,26 +92,21 @@ namespace SerenityGym
             }
         }
 
-        private void panel2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void submit_Click(object sender, EventArgs e)
-        {
-            if (Userid.Text == "")
-            {
-                MessageBox.Show("Please Enter A User ID");
-            }
-            TrainCheckBox.Visible = true;
-            DietCheckBox.Visible = true;
-            UID = Convert.ToInt32(Userid.Text);
-            name.Text = controllerObj.ShowName(UID);
-        }
-
         private void name_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void update_Click(object sender, EventArgs e)
+        {
+            int result = controllerObj.UpdateTSplit(TrainSplit.Text, UID);
+            int result2 = controllerObj.UpdateFSplit(FoodSplit.Text, UID);
+
+            if (result == 0 && result2==0)
+                MessageBox.Show("Update Failed!");
+            else
+                MessageBox.Show("Updated Successfully!");
+            
         }
     }
 }
