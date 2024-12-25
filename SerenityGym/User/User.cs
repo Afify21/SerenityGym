@@ -32,7 +32,7 @@ namespace SerenityGym
             userFeedB.Show();
         }
 
-       
+
 
         private void B_Notifications_Click(object sender, EventArgs e)
         {
@@ -44,6 +44,12 @@ namespace SerenityGym
         {
             OnlineReg onlineReg = new OnlineReg(UID);
             onlineReg.Show();
+        }
+
+        private void pictureBox4_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+
         }
     }
 }

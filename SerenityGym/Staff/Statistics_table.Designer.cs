@@ -28,19 +28,22 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Statistics_table));
             panel1 = new Panel();
             pictureBox1 = new PictureBox();
             label1 = new Label();
             panel2 = new Panel();
+            pictureBox4 = new PictureBox();
             dataGridView1 = new DataGridView();
+            button2 = new Button();
             label2 = new Label();
-            label3 = new Label();
             Stafff = new Button();
             Userr = new Button();
             button1 = new Button();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
@@ -79,9 +82,10 @@
             // 
             // panel2
             // 
+            panel2.Controls.Add(pictureBox4);
             panel2.Controls.Add(dataGridView1);
+            panel2.Controls.Add(button2);
             panel2.Controls.Add(label2);
-            panel2.Controls.Add(label3);
             panel2.Controls.Add(label1);
             panel2.Controls.Add(Stafff);
             panel2.Controls.Add(Userr);
@@ -92,21 +96,48 @@
             panel2.Name = "panel2";
             panel2.Size = new Size(928, 540);
             panel2.TabIndex = 1;
+            panel2.Paint += panel2_Paint;
+            // 
+            // pictureBox4
+            // 
+            pictureBox4.Image = (Image)resources.GetObject("pictureBox4.Image");
+            pictureBox4.Location = new Point(0, 2);
+            pictureBox4.Margin = new Padding(2, 2, 2, 2);
+            pictureBox4.Name = "pictureBox4";
+            pictureBox4.Size = new Size(22, 30);
+            pictureBox4.TabIndex = 8;
+            pictureBox4.TabStop = false;
+            pictureBox4.Click += pictureBox4_Click;
             // 
             // dataGridView1
             // 
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(15, 69);
+            dataGridView1.Location = new Point(12, 65);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(889, 188);
+            dataGridView1.Size = new Size(539, 95);
             dataGridView1.TabIndex = 13;
+            // 
+            // button2
+            // 
+            button2.BackColor = Color.FromArgb(41, 128, 185);
+            button2.FlatStyle = FlatStyle.Flat;
+            button2.Font = new Font("Century Gothic", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            button2.ForeColor = Color.White;
+            button2.Location = new Point(251, 276);
+            button2.Margin = new Padding(2);
+            button2.Name = "button2";
+            button2.Size = new Size(165, 37);
+            button2.TabIndex = 13;
+            button2.Text = "show feedbacks";
+            button2.UseVisualStyleBackColor = false;
+            button2.Click += button2_Click;
             // 
             // label2
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Century Gothic", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label2.Location = new Point(169, 505);
+            label2.Location = new Point(133, 390);
             label2.Margin = new Padding(2, 0, 2, 0);
             label2.Name = "label2";
             label2.Size = new Size(129, 21);
@@ -114,30 +145,20 @@
             label2.Text = "Serenity Gym";
             label2.Click += label2_Click;
             // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Century Gothic", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label3.Location = new Point(621, 505);
-            label3.Margin = new Padding(2, 0, 2, 0);
-            label3.Name = "label3";
-            label3.Size = new Size(129, 21);
-            label3.TabIndex = 11;
-            label3.Text = "Serenity Gym";
-            // 
             // Stafff
             // 
             Stafff.BackColor = Color.FromArgb(41, 128, 185);
             Stafff.FlatStyle = FlatStyle.Flat;
             Stafff.Font = new Font("Century Gothic", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
             Stafff.ForeColor = Color.White;
-            Stafff.Location = new Point(799, 501);
+            Stafff.Location = new Point(568, 248);
             Stafff.Margin = new Padding(2);
             Stafff.Name = "Stafff";
             Stafff.Size = new Size(118, 28);
             Stafff.TabIndex = 8;
-            Stafff.Text = "STAFF";
+            Stafff.Text = "view reviews";
             Stafff.UseVisualStyleBackColor = false;
+            Stafff.Click += Stafff_Click;
             // 
             // Userr
             // 
@@ -145,10 +166,10 @@
             Userr.FlatStyle = FlatStyle.Flat;
             Userr.Font = new Font("Century Gothic", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
             Userr.ForeColor = Color.White;
-            Userr.Location = new Point(27, 501);
+            Userr.Location = new Point(31, 276);
             Userr.Margin = new Padding(2);
             Userr.Name = "Userr";
-            Userr.Size = new Size(118, 28);
+            Userr.Size = new Size(135, 37);
             Userr.TabIndex = 7;
             Userr.Text = "PROFIT";
             Userr.UseVisualStyleBackColor = false;
@@ -186,6 +207,7 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
         }
@@ -202,5 +224,7 @@
         private Label label2;
         private Label label3;
         private DataGridView dataGridView1;
+        private PictureBox pictureBox4;
+        private Button button2;
     }
 }

@@ -291,10 +291,10 @@ namespace DBapplication
             }
         }
 
-
-/*        public DataTable(int id) 
+        public DataTable Reviewstable()
         {
-            string query="Select *"
-        }*/
+            string query = "SELECT r.registrationid, p.paymentid, p.method, p.amount, p.paymentdate FROM Payments p, registration r  ; ";
+            return dbMan.ExecuteReader(query);
+        }
     }
 }

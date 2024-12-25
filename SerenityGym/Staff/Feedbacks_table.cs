@@ -8,7 +8,7 @@ namespace SerenityGym
         Controller controllerObj;
         public Feedbacks_table()
         {
-            
+
             InitializeComponent();
             controllerObj = new Controller();
             DataTable dt = controllerObj.Feedbacktable();
@@ -19,6 +19,12 @@ namespace SerenityGym
         private void button1_Click(object sender, EventArgs e)
         {
             Application.Exit();
+
+        }
+
+        private void pictureBox4_Click(object sender, EventArgs e)
+        {
+            this.Hide();
 
         }
     }

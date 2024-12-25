@@ -43,5 +43,16 @@ namespace SerenityGym
             //dataGridView1.DataSource = dt;
             //dataGridView1.Refresh();
         }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox4_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+
+        }
     }
 }

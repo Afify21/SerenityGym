@@ -10,7 +10,7 @@ namespace SerenityGym
         {
             UID = x;
             InitializeComponent();
-            controllerObj=new Controller();
+            controllerObj = new Controller();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -37,7 +37,7 @@ namespace SerenityGym
                 return;
             }
 
-            int result = controllerObj.SubmitFeedback(TB_Feed.Text,UID,revmood);
+            int result = controllerObj.SubmitFeedback(TB_Feed.Text, UID, revmood);
             if (result == 0)
                 MessageBox.Show("Error in Submission");
             else
@@ -46,6 +46,12 @@ namespace SerenityGym
 
         private void panel2_Paint(object sender, PaintEventArgs e)
         {
+
+        }
+
+        private void pictureBox4_Click(object sender, EventArgs e)
+        {
+            this.Hide();
 
         }
     }

@@ -17,7 +17,7 @@ namespace SerenityGym
             InitializeComponent();
             controllerObj = new Controller();
             membership = controllerObj.getmembership(UID);
-            TB_NOTIS.Text = controllerObj.Getnotis(membership,ref i, ref rc,ref datee);
+            TB_NOTIS.Text = controllerObj.Getnotis(membership, ref i, ref rc, ref datee);
             L_Date.Text = datee;
             B_prev.Visible = false;
         }
@@ -38,7 +38,7 @@ namespace SerenityGym
             if (i == 0)
                 B_Nextt.Visible = true;
             i++;
-            TB_NOTIS.Text = controllerObj.Getnotis(membership, ref i, ref rc,ref datee);
+            TB_NOTIS.Text = controllerObj.Getnotis(membership, ref i, ref rc, ref datee);
             L_Date.Text = datee;
             if (rc - 1 == i)
                 B_prev.Visible = false;
@@ -50,7 +50,7 @@ namespace SerenityGym
             if (rc - 1 == i)
                 B_prev.Visible = true;
             i--;
-            TB_NOTIS.Text = controllerObj.Getnotis(membership,ref i, ref rc,ref datee);
+            TB_NOTIS.Text = controllerObj.Getnotis(membership, ref i, ref rc, ref datee);
             L_Date.Text = datee;
             if (i == 0)
                 B_Nextt.Visible = false;
@@ -58,6 +58,12 @@ namespace SerenityGym
 
         private void L_Date_Click(object sender, EventArgs e)
         {
+
+        }
+
+        private void pictureBox4_Click(object sender, EventArgs e)
+        {
+            this.Hide();
 
         }
     }
