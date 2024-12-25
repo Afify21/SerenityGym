@@ -37,5 +37,11 @@ namespace SerenityGym
             GetMYNotis getMYNotis = new GetMYNotis(UID);
             getMYNotis.Show();
         }
+
+        private void B_Registeration_Click(object sender, EventArgs e)
+        {
+            OnlineReg onlineReg = new OnlineReg(UID);
+            onlineReg.Show();
+        }
     }
 }
