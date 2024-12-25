@@ -21,6 +21,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="OnlineReg.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Staff\Updatestaff.cs">
       <SubType>Form</SubType>
     </Compile>

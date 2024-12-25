@@ -166,6 +166,7 @@
             B_Registeration.TabIndex = 9;
             B_Registeration.Text = "Registeration";
             B_Registeration.UseVisualStyleBackColor = false;
+            B_Registeration.Click += B_Registeration_Click;
             // 
             // B_Feedback
             // 
