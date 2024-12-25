@@ -28,9 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ViewMemberProgress));
             panel1 = new Panel();
             pictureBox1 = new PictureBox();
             panel2 = new Panel();
+            pictureBox4 = new PictureBox();
             label3 = new Label();
             Userid = new TextBox();
             submit = new Button();
@@ -42,6 +44,7 @@
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
@@ -69,6 +72,7 @@
             // 
             // panel2
             // 
+            panel2.Controls.Add(pictureBox4);
             panel2.Controls.Add(label3);
             panel2.Controls.Add(Userid);
             panel2.Controls.Add(submit);
@@ -83,6 +87,16 @@
             panel2.Name = "panel2";
             panel2.Size = new Size(610, 530);
             panel2.TabIndex = 1;
+            // 
+            // pictureBox4
+            // 
+            pictureBox4.Image = (Image)resources.GetObject("pictureBox4.Image");
+            pictureBox4.Location = new Point(3, 1);
+            pictureBox4.Name = "pictureBox4";
+            pictureBox4.Size = new Size(28, 37);
+            pictureBox4.TabIndex = 16;
+            pictureBox4.TabStop = false;
+            pictureBox4.Click += pictureBox4_Click;
             // 
             // label3
             // 
@@ -162,12 +176,13 @@
             label2.AutoSize = true;
             label2.Font = new Font("Century Gothic", 16F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label2.ForeColor = Color.FromArgb(41, 128, 185);
-            label2.Location = new Point(0, 1);
+            label2.Location = new Point(114, 1);
             label2.Margin = new Padding(2, 0, 2, 0);
             label2.Name = "label2";
             label2.Size = new Size(374, 39);
             label2.TabIndex = 2;
             label2.Text = "View Member Progress";
+            label2.Click += label2_Click;
             // 
             // button1
             // 
@@ -201,6 +216,7 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
         }
@@ -218,5 +234,6 @@
         private Label label3;
         private TextBox Userid;
         private Button submit;
+        private PictureBox pictureBox4;
     }
 }

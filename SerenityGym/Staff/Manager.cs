@@ -57,5 +57,11 @@ namespace SerenityGym
             Updatestaff Form = new Updatestaff();
             Form.Show();
         }
+
+        private void pictureBox4_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+
+        }
     }
 }

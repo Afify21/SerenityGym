@@ -28,18 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PastSessions));
             panel1 = new Panel();
             pictureBox1 = new PictureBox();
             panel2 = new Panel();
+            pictureBox4 = new PictureBox();
+            submit = new Button();
             dataGridView1 = new DataGridView();
             Stafff = new Button();
             Userr = new Button();
             label2 = new Label();
             button1 = new Button();
-            submit = new Button();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
@@ -67,6 +70,7 @@
             // 
             // panel2
             // 
+            panel2.Controls.Add(pictureBox4);
             panel2.Controls.Add(submit);
             panel2.Controls.Add(dataGridView1);
             panel2.Controls.Add(Stafff);
@@ -79,6 +83,31 @@
             panel2.Name = "panel2";
             panel2.Size = new Size(610, 530);
             panel2.TabIndex = 1;
+            // 
+            // pictureBox4
+            // 
+            pictureBox4.Image = (Image)resources.GetObject("pictureBox4.Image");
+            pictureBox4.Location = new Point(0, 2);
+            pictureBox4.Name = "pictureBox4";
+            pictureBox4.Size = new Size(28, 37);
+            pictureBox4.TabIndex = 14;
+            pictureBox4.TabStop = false;
+            pictureBox4.Click += pictureBox4_Click;
+            // 
+            // submit
+            // 
+            submit.BackColor = Color.FromArgb(41, 128, 185);
+            submit.FlatStyle = FlatStyle.Flat;
+            submit.Font = new Font("Century Gothic", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            submit.ForeColor = Color.White;
+            submit.Location = new Point(338, 53);
+            submit.Margin = new Padding(2);
+            submit.Name = "submit";
+            submit.Size = new Size(112, 35);
+            submit.TabIndex = 13;
+            submit.Text = "View";
+            submit.UseVisualStyleBackColor = false;
+            submit.Click += submit_Click;
             // 
             // dataGridView1
             // 
@@ -122,7 +151,7 @@
             label2.AutoSize = true;
             label2.Font = new Font("Century Gothic", 16F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label2.ForeColor = Color.FromArgb(41, 128, 185);
-            label2.Location = new Point(0, 0);
+            label2.Location = new Point(152, 0);
             label2.Margin = new Padding(2, 0, 2, 0);
             label2.Name = "label2";
             label2.Size = new Size(298, 39);
@@ -144,21 +173,6 @@
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click;
             // 
-            // submit
-            // 
-            submit.BackColor = Color.FromArgb(41, 128, 185);
-            submit.FlatStyle = FlatStyle.Flat;
-            submit.Font = new Font("Century Gothic", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            submit.ForeColor = Color.White;
-            submit.Location = new Point(338, 53);
-            submit.Margin = new Padding(2);
-            submit.Name = "submit";
-            submit.Size = new Size(112, 35);
-            submit.TabIndex = 13;
-            submit.Text = "View";
-            submit.UseVisualStyleBackColor = false;
-            submit.Click += submit_Click;
-            // 
             // PastSessions
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
@@ -176,6 +190,7 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
         }
@@ -191,5 +206,6 @@
         private Button Userr;
         private DataGridView dataGridView1;
         private Button submit;
+        private PictureBox pictureBox4;
     }
 }

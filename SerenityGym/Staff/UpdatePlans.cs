@@ -21,7 +21,7 @@ namespace SerenityGym
             DietCheckBox.Visible = false;
 
         }
-        public UpdatePlans(int tid,int uid)
+        public UpdatePlans(int tid, int uid)
         {
             TID = tid;
             UID = uid;
@@ -131,6 +131,12 @@ namespace SerenityGym
 
         private void dietplan_Click(object sender, EventArgs e)
         {
+
+        }
+
+        private void pictureBox4_Click(object sender, EventArgs e)
+        {
+            this.Hide();
 
         }
     }

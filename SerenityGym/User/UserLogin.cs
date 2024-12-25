@@ -47,7 +47,7 @@ namespace SerenityGym
                 MessageBox.Show("Please Enter A Proper Combination");
                 return;
             }
-                int result = controllerObj.MatchingUser(Convert.ToInt16(Userr.Text), Pass.Text);
+            int result = controllerObj.MatchingUser(Convert.ToInt16(Userr.Text), Pass.Text);
             if (result == 1)
             {
                 User user = new User(Convert.ToInt16(Userr.Text));
@@ -57,7 +57,13 @@ namespace SerenityGym
                 MessageBox.Show("Please Enter A Proper Combination");
 
 
-            
+
+        }
+
+        private void pictureBox4_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+
         }
     }
 }

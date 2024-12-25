@@ -77,13 +77,13 @@ namespace SerenityGym
 
 
 
-      
 
-       
+
+
 
         private void update_Click(object sender, EventArgs e)
         {
-            if (TrainCheckBox.Checked&& DietCheckBox.Checked)
+            if (TrainCheckBox.Checked && DietCheckBox.Checked)
             {
                 int result = controllerObj.AddTrainingPlan(UID, TID, "Training", TrainSplit.Text);
                 int result2 = controllerObj.AddTrainingPlan(UID, TID, "Food", FoodSplit.Text);
@@ -93,7 +93,7 @@ namespace SerenityGym
                 else
                     MessageBox.Show("Inserted Successfully!");
             }
-            
+
         }
 
         private void TrainCheckBox_CheckedChanged(object sender, EventArgs e)
@@ -136,6 +136,12 @@ namespace SerenityGym
                 dietplan.Visible = false;
                 FoodSplit.Visible = false;
             }
+        }
+
+        private void pictureBox4_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+
         }
     }
 }

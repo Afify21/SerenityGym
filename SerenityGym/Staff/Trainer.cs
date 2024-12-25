@@ -48,5 +48,11 @@ namespace SerenityGym
             ViewMemberProgress progress = new ViewMemberProgress(TID);
             progress.Show();
         }
+
+        private void pictureBox4_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+
+        }
     }
 }
