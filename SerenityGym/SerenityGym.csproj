@@ -17,13 +17,13 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="ComingSessions.cs">
+    <Compile Update="Staff\ComingSessions.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="ViewMemberProgress.cs">
+    <Compile Update="Staff\ViewMemberProgress.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="PastSessions.cs">
+    <Compile Update="Staff\PastSessions.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Staff\InsertPlans.cs">
