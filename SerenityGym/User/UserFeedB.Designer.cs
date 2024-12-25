@@ -31,10 +31,12 @@
             panel1 = new Panel();
             pictureBox1 = new PictureBox();
             panel2 = new Panel();
+            TB_Feed = new TextBox();
             B_Feedback = new Button();
             label2 = new Label();
             button1 = new Button();
-            TB_Feed = new TextBox();
+            radioButton1 = new RadioButton();
+            radioButton2 = new RadioButton();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel2.SuspendLayout();
@@ -64,6 +66,8 @@
             // 
             // panel2
             // 
+            panel2.Controls.Add(radioButton2);
+            panel2.Controls.Add(radioButton1);
             panel2.Controls.Add(TB_Feed);
             panel2.Controls.Add(B_Feedback);
             panel2.Controls.Add(label2);
@@ -75,6 +79,17 @@
             panel2.Size = new Size(488, 424);
             panel2.TabIndex = 1;
             panel2.Paint += panel2_Paint;
+            // 
+            // TB_Feed
+            // 
+            TB_Feed.Font = new Font("Century Gothic", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            TB_Feed.ForeColor = Color.FromArgb(41, 128, 185);
+            TB_Feed.Location = new Point(33, 79);
+            TB_Feed.Margin = new Padding(2);
+            TB_Feed.Multiline = true;
+            TB_Feed.Name = "TB_Feed";
+            TB_Feed.Size = new Size(414, 259);
+            TB_Feed.TabIndex = 9;
             // 
             // B_Feedback
             // 
@@ -118,16 +133,27 @@
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click;
             // 
-            // TB_Feed
+            // radioButton1
             // 
-            TB_Feed.Font = new Font("Century Gothic", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            TB_Feed.ForeColor = Color.FromArgb(41, 128, 185);
-            TB_Feed.Location = new Point(33, 79);
-            TB_Feed.Margin = new Padding(2);
-            TB_Feed.Multiline = true;
-            TB_Feed.Name = "TB_Feed";
-            TB_Feed.Size = new Size(414, 259);
-            TB_Feed.TabIndex = 9;
+            radioButton1.AutoSize = true;
+            radioButton1.Location = new Point(310, 375);
+            radioButton1.Name = "radioButton1";
+            radioButton1.Size = new Size(90, 24);
+            radioButton1.TabIndex = 10;
+            radioButton1.TabStop = true;
+            radioButton1.Text = "Negative";
+            radioButton1.UseVisualStyleBackColor = true;
+            // 
+            // radioButton2
+            // 
+            radioButton2.AutoSize = true;
+            radioButton2.Location = new Point(310, 345);
+            radioButton2.Name = "radioButton2";
+            radioButton2.Size = new Size(80, 24);
+            radioButton2.TabIndex = 11;
+            radioButton2.TabStop = true;
+            radioButton2.Text = "Positive";
+            radioButton2.UseVisualStyleBackColor = true;
             // 
             // UserFeedB
             // 
@@ -159,5 +185,7 @@
         private Button Stafff;
         private Button B_Feedback;
         private TextBox TB_Feed;
+        private RadioButton radioButton2;
+        private RadioButton radioButton1;
     }
 }
