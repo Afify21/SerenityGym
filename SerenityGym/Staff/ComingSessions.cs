@@ -22,7 +22,7 @@ namespace SerenityGym
 
         }
 
-        
+
 
         private void submit_Click_1(object sender, EventArgs e)
         {
@@ -36,6 +36,11 @@ namespace SerenityGym
         {
             Application.Exit();
 
+        }
+
+        private void pictureBox4_Click(object sender, EventArgs e)
+        {
+            this.Hide();
         }
     }
 }

@@ -49,5 +49,11 @@ namespace SerenityGym
             Feedbacks_table Form = new Feedbacks_table();
             Form.Show();
         }
+
+        private void pictureBox4_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+
+        }
     }
 }

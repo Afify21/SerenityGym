@@ -33,7 +33,6 @@
             label1 = new Label();
             pictureBox1 = new PictureBox();
             panel2 = new Panel();
-            pictureBox4 = new PictureBox();
             button3 = new Button();
             Login = new Button();
             panel4 = new Panel();
@@ -44,16 +43,15 @@
             pictureBox2 = new PictureBox();
             label2 = new Label();
             button1 = new Button();
-            pictureBox5 = new PictureBox();
+            pictureBox4 = new PictureBox();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
             panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
             SuspendLayout();
             // 
             // panel1
@@ -92,7 +90,6 @@
             // 
             // panel2
             // 
-            panel2.Controls.Add(pictureBox5);
             panel2.Controls.Add(button3);
             panel2.Controls.Add(Login);
             panel2.Controls.Add(panel4);
@@ -107,16 +104,6 @@
             panel2.Size = new Size(450, 530);
             panel2.TabIndex = 1;
             panel2.Paint += panel2_Paint;
-            // 
-            // pictureBox4
-            // 
-            pictureBox4.Image = (Image)resources.GetObject("pictureBox4.Image");
-            pictureBox4.Location = new Point(5, 10);
-            pictureBox4.Name = "pictureBox4";
-            pictureBox4.Size = new Size(28, 37);
-            pictureBox4.TabIndex = 7;
-            pictureBox4.TabStop = false;
-            pictureBox4.Click += pictureBox4_Click;
             // 
             // button3
             // 
@@ -239,15 +226,15 @@
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click;
             // 
-            // pictureBox5
+            // pictureBox4
             // 
-            pictureBox5.Image = (Image)resources.GetObject("pictureBox5.Image");
-            pictureBox5.Location = new Point(35, 10);
-            pictureBox5.Name = "pictureBox5";
-            pictureBox5.Size = new Size(28, 37);
-            pictureBox5.TabIndex = 8;
-            pictureBox5.TabStop = false;
-            pictureBox5.Click += pictureBox5_Click;
+            pictureBox4.Image = (Image)resources.GetObject("pictureBox4.Image");
+            pictureBox4.Location = new Point(5, 10);
+            pictureBox4.Name = "pictureBox4";
+            pictureBox4.Size = new Size(28, 37);
+            pictureBox4.TabIndex = 7;
+            pictureBox4.TabStop = false;
+            pictureBox4.Click += pictureBox4_Click;
             // 
             // StaffLogin
             // 
@@ -267,14 +254,13 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
             panel4.ResumeLayout(false);
             panel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             panel3.ResumeLayout(false);
             panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
             ResumeLayout(false);
         }
 
@@ -295,6 +281,5 @@
         private Button Login;
         private Button button3;
         private PictureBox pictureBox4;
-        private PictureBox pictureBox5;
     }
 }

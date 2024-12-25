@@ -139,5 +139,11 @@ namespace SerenityGym
                 MessageBox.Show("An error occurred: " + ex.Message);
             }
         }
+
+        private void pictureBox4_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+
+        }
     }
 }
