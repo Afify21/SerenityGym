@@ -21,6 +21,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="Staff\Statistics_table.cs" />
     <Compile Update="Staff\Updatestaff.cs">
       <SubType>Form</SubType>
     </Compile>
