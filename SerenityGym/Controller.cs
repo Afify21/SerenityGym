@@ -80,5 +80,10 @@ namespace DBapplication
             string query = "SELECT * FROM Feedback";
             return dbMan.ExecuteReader(query);
         }
+        public DataTable Transactionstable()
+        {
+            string query = "SELECT r.registrationid, p.paymentid, p.method, p.amount, p.paymentdate FROM Payments p, registration r  ; ";
+            return dbMan.ExecuteReader(query);
+        }
     }
 }
