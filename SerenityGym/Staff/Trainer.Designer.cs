@@ -31,6 +31,7 @@
             panel1 = new Panel();
             pictureBox1 = new PictureBox();
             panel2 = new Panel();
+            button6 = new Button();
             button5 = new Button();
             button4 = new Button();
             button3 = new Button();
@@ -65,6 +66,7 @@
             // 
             // panel2
             // 
+            panel2.Controls.Add(button6);
             panel2.Controls.Add(button5);
             panel2.Controls.Add(button4);
             panel2.Controls.Add(button3);
@@ -77,6 +79,21 @@
             panel2.Name = "panel2";
             panel2.Size = new Size(575, 530);
             panel2.TabIndex = 1;
+            // 
+            // button6
+            // 
+            button6.BackColor = Color.FromArgb(41, 128, 185);
+            button6.FlatStyle = FlatStyle.Flat;
+            button6.Font = new Font("Century Gothic", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            button6.ForeColor = Color.White;
+            button6.Location = new Point(98, 250);
+            button6.Margin = new Padding(2);
+            button6.Name = "button6";
+            button6.Size = new Size(368, 41);
+            button6.TabIndex = 16;
+            button6.Text = "Add Training Plans";
+            button6.UseVisualStyleBackColor = false;
+            button6.Click += button6_Click;
             // 
             // button5
             // 
@@ -105,6 +122,7 @@
             button4.TabIndex = 14;
             button4.Text = "Monitor Member Progress";
             button4.UseVisualStyleBackColor = false;
+            button4.Click += button4_Click;
             // 
             // button3
             // 
@@ -112,7 +130,7 @@
             button3.FlatStyle = FlatStyle.Flat;
             button3.Font = new Font("Century Gothic", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
             button3.ForeColor = Color.White;
-            button3.Location = new Point(98, 303);
+            button3.Location = new Point(98, 322);
             button3.Margin = new Padding(2);
             button3.Name = "button3";
             button3.Size = new Size(368, 41);
@@ -127,13 +145,14 @@
             button2.FlatStyle = FlatStyle.Flat;
             button2.Font = new Font("Century Gothic", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
             button2.ForeColor = Color.White;
-            button2.Location = new Point(98, 213);
+            button2.Location = new Point(98, 180);
             button2.Margin = new Padding(2);
             button2.Name = "button2";
             button2.Size = new Size(368, 41);
             button2.TabIndex = 12;
             button2.Text = "View Past Sessions";
             button2.UseVisualStyleBackColor = false;
+            button2.Click += button2_Click;
             // 
             // B_transaction
             // 
@@ -141,13 +160,14 @@
             B_transaction.FlatStyle = FlatStyle.Flat;
             B_transaction.Font = new Font("Century Gothic", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
             B_transaction.ForeColor = Color.White;
-            B_transaction.Location = new Point(98, 126);
+            B_transaction.Location = new Point(98, 104);
             B_transaction.Margin = new Padding(2);
             B_transaction.Name = "B_transaction";
             B_transaction.Size = new Size(368, 41);
             B_transaction.TabIndex = 11;
             B_transaction.Text = "View Upcoming Sessions";
             B_transaction.UseVisualStyleBackColor = false;
+            B_transaction.Click += B_transaction_Click;
             // 
             // label2
             // 
@@ -205,5 +225,6 @@
         private Button button3;
         private Button button2;
         private Button B_transaction;
+        private Button button6;
     }
 }

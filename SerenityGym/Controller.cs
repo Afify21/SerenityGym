@@ -125,6 +125,10 @@ namespace DBapplication
             string query = "SELECT staffid FROM Plans WHERE userid=" + UID;
 
             DataTable result = dbMan.ExecuteReader(query);
+            if (result == null)
+            {
+                return false;
+            }
 
             if (result.Rows.Count > 0)
             {
@@ -138,6 +142,27 @@ namespace DBapplication
 
             return false;  
         }
+        public bool hasPlan(int UID)
+        {
+            string query = "SELECT userid FROM Plans WHERE userid=" + UID;
+
+            DataTable result = dbMan.ExecuteReader(query);
+            if (result == null)
+            {
+                return false;
+            }
+            if (result.Rows.Count > 0)
+            {
+                int userid = Convert.ToInt32(result.Rows[0]["userid"]);
+
+                if (userid == UID)
+                {
+                    return true;
+                }
+            }
+
+            return false;
+        }
         public int UpdateTSplit(string split, int UID)
         {
             string query = "UPDATE Plans SET Split='" + split + "' WHERE userid=" + UID + " AND plan_type='Training'";
@@ -148,6 +173,37 @@ namespace DBapplication
             string query = "UPDATE Plans SET Split='" + split + "' WHERE userid=" + UID + " AND plan_type='Food'";
             return dbMan.ExecuteNonQuery(query);
         }
+        public int AddTrainingPlan(int uid, int tid, string type, string split)
+        {
+            string query = "INSERT INTO Plans (userid, staffid,plan_type,Split) VALUES (" + uid + ", " + tid + ", '" + type + "', '" + split + "')";
+            return dbMan.ExecuteNonQuery(query);
+        }
+        public int AddDietPlan(int uid, int tid, string type, string split)
+        {
+            string query = "INSERT INTO Plans (userid, staffid,plan_type,Split) VALUES (" + uid + ", " + tid + ", '" + type + "', '" + split + "')";
+
+            return dbMan.ExecuteNonQuery(query);
+        }
+        public DataTable ViewPastSessions(int TID)
+        {
+            string query = "SELECT * FROM Registration WHERE TrainerID=" + TID +
+                          " AND regtype='Private' AND regdate < '" + DateTime.Now.ToString("MM-dd-yyyy") + "'";
+            return dbMan.ExecuteReader(query);
+        }
+
+        public DataTable ViewComingSessions(int TID)
+        {
+            string query = "SELECT * FROM Registration WHERE TrainerID=" + TID +
+                          " AND regtype='Private' AND regdate >= '" + DateTime.Now.ToString("MM-dd-yyyy") + "'";
+            return dbMan.ExecuteReader(query);
+        }
+        //public DataTable ViewMemberProgress(int TID,int UID)
+        //{
+        //    string query = "SELECT * FROM Tracker WHERE TrainerID=" + TID +
+        //                  " AND regtype='Private' AND regdate >= '" + DateTime.Now.ToString("MM-dd-yyyy") + "'";
+        //    return dbMan.ExecuteReader(query);
+        //}
+
 
 
     }
