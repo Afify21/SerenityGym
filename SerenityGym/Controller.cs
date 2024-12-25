@@ -86,16 +86,31 @@ namespace DBapplication
             return dbMan.ExecuteReader(query);
         }
 
-        public DataTable Getnotis(string type) 
+        public string Getnotis(string type,ref int i,ref int rowcount,ref string s)
         {
-            string query="Select notif_message From Gets_Notified g,Notifications n where membershiptype='"+type+"' AND notifid=notificationid ";
-            return dbMan.ExecuteReader(query);
-
+            string query = "Select notif_message,FORMAT(notif_date, 'yyyy-MM-dd') AS notif_date From Gets_Notified ,Notifications  where membership_type='" + type + "' AND notifid=notificationid ";
+            DataTable dt = dbMan.ExecuteReader(query);
+            rowcount=dt.Rows.Count;
+            if (i == -1)
+                i = rowcount-1;
+            if (dt.Rows.Count > 0)
+            {
+                string noti = dt.Rows[i]["notif_message"].ToString();
+                s = dt.Rows[i]["notif_date"].ToString();
+                return noti;
+            }
+            else
+            { MessageBox.Show("No notifications");
+                return null;
+            };
         }
-        public DataTable getmembership(int id)
+        
+        public string getmembership(int id)
         {
             string query = "select membership_type from users where userid="+id+"";
-            return dbMan.ExecuteReader(query);
+            DataTable typeee=dbMan.ExecuteReader(query);
+            string s = typeee.Rows[0]["membership_type"].ToString();
+            return s;
         }
     }
 }

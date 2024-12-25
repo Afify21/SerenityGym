@@ -31,10 +31,10 @@
             panel1 = new Panel();
             pictureBox1 = new PictureBox();
             panel2 = new Panel();
+            L_Date = new Label();
             TB_NOTIS = new TextBox();
-            B_Next = new Button();
-            L_Text = new Label();
-            B_Prev = new Button();
+            B_prev = new Button();
+            B_Nextt = new Button();
             label2 = new Label();
             button1 = new Button();
             panel1.SuspendLayout();
@@ -66,10 +66,10 @@
             // 
             // panel2
             // 
+            panel2.Controls.Add(L_Date);
             panel2.Controls.Add(TB_NOTIS);
-            panel2.Controls.Add(B_Next);
-            panel2.Controls.Add(L_Text);
-            panel2.Controls.Add(B_Prev);
+            panel2.Controls.Add(B_prev);
+            panel2.Controls.Add(B_Nextt);
             panel2.Controls.Add(label2);
             panel2.Controls.Add(button1);
             panel2.Dock = DockStyle.Fill;
@@ -79,12 +79,24 @@
             panel2.Size = new Size(488, 424);
             panel2.TabIndex = 1;
             // 
+            // L_Date
+            // 
+            L_Date.AutoSize = true;
+            L_Date.BackColor = Color.Transparent;
+            L_Date.Font = new Font("Century Gothic", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            L_Date.Location = new Point(193, 300);
+            L_Date.Margin = new Padding(2, 0, 2, 0);
+            L_Date.Name = "L_Date";
+            L_Date.Size = new Size(96, 21);
+            L_Date.TabIndex = 13;
+            L_Date.Text = "Category";
+            // 
             // TB_NOTIS
             // 
             TB_NOTIS.Enabled = false;
             TB_NOTIS.Font = new Font("Century Gothic", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
             TB_NOTIS.ForeColor = Color.FromArgb(41, 128, 185);
-            TB_NOTIS.Location = new Point(50, 106);
+            TB_NOTIS.Location = new Point(50, 102);
             TB_NOTIS.Margin = new Padding(2);
             TB_NOTIS.Multiline = true;
             TB_NOTIS.Name = "TB_NOTIS";
@@ -92,44 +104,35 @@
             TB_NOTIS.TabIndex = 12;
             TB_NOTIS.TextChanged += Userid_TextChanged;
             // 
-            // B_Next
+            // B_prev
             // 
-            B_Next.BackColor = Color.FromArgb(41, 128, 185);
-            B_Next.FlatStyle = FlatStyle.Flat;
-            B_Next.Font = new Font("Century Gothic", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            B_Next.ForeColor = Color.White;
-            B_Next.Location = new Point(320, 362);
-            B_Next.Margin = new Padding(2);
-            B_Next.Name = "B_Next";
-            B_Next.Size = new Size(118, 28);
-            B_Next.TabIndex = 11;
-            B_Next.Text = "Next";
-            B_Next.UseVisualStyleBackColor = false;
+            B_prev.BackColor = Color.FromArgb(41, 128, 185);
+            B_prev.FlatStyle = FlatStyle.Flat;
+            B_prev.Font = new Font("Century Gothic", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            B_prev.ForeColor = Color.White;
+            B_prev.Location = new Point(320, 362);
+            B_prev.Margin = new Padding(2);
+            B_prev.Name = "B_prev";
+            B_prev.Size = new Size(118, 28);
+            B_prev.TabIndex = 11;
+            B_prev.Text = "Previous";
+            B_prev.UseVisualStyleBackColor = false;
+            B_prev.Click += B_Next_Click;
             // 
-            // L_Text
+            // B_Nextt
             // 
-            L_Text.AutoSize = true;
-            L_Text.Font = new Font("Century Gothic", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            L_Text.Location = new Point(248, 58);
-            L_Text.Margin = new Padding(2, 0, 2, 0);
-            L_Text.Name = "L_Text";
-            L_Text.Size = new Size(96, 21);
-            L_Text.TabIndex = 10;
-            L_Text.Text = "Category";
-            // 
-            // B_Prev
-            // 
-            B_Prev.BackColor = Color.FromArgb(41, 128, 185);
-            B_Prev.FlatStyle = FlatStyle.Flat;
-            B_Prev.Font = new Font("Century Gothic", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            B_Prev.ForeColor = Color.White;
-            B_Prev.Location = new Point(50, 362);
-            B_Prev.Margin = new Padding(2);
-            B_Prev.Name = "B_Prev";
-            B_Prev.Size = new Size(118, 28);
-            B_Prev.TabIndex = 7;
-            B_Prev.Text = "Prevoius";
-            B_Prev.UseVisualStyleBackColor = false;
+            B_Nextt.BackColor = Color.FromArgb(41, 128, 185);
+            B_Nextt.FlatStyle = FlatStyle.Flat;
+            B_Nextt.Font = new Font("Century Gothic", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            B_Nextt.ForeColor = Color.White;
+            B_Nextt.Location = new Point(50, 362);
+            B_Nextt.Margin = new Padding(2);
+            B_Nextt.Name = "B_Nextt";
+            B_Nextt.Size = new Size(118, 28);
+            B_Nextt.TabIndex = 7;
+            B_Nextt.Text = "Next";
+            B_Nextt.UseVisualStyleBackColor = false;
+            B_Nextt.Click += B_Prev_Click;
             // 
             // label2
             // 
@@ -185,9 +188,9 @@
         private PictureBox pictureBox1;
         private Button button1;
         private Label label2;
-        private Button B_Prev;
-        private Button B_Next;
-        private Label L_Text;
+        private Button B_Nextt;
+        private Button B_prev;
         private TextBox TB_NOTIS;
+        private Label L_Date;
     }
 }
