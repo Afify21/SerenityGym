@@ -60,14 +60,14 @@ namespace SerenityGym
         private void button3_Click(object sender, EventArgs e)
         {
 
-            if (controllerObj.IsClockedInCheck(RID)==1)
+            if (controllerObj.IsClockedInCheck(RID) == 1)
             {
                 controllerObj.ClockingOut(RID);
                 MessageBox.Show("Clocked out successfully");
                 this.Close();
                 return;
             }
-            else if(controllerObj.IsClockedInCheck(RID) == 2)
+            else if (controllerObj.IsClockedInCheck(RID) == 2)
             {
                 MessageBox.Show("You have already clocked out");
                 this.Close();
@@ -87,6 +87,12 @@ namespace SerenityGym
             StaffLogin.ActiveForm.Close();
             StaffLogin stafflogin = new StaffLogin();
             stafflogin.Show();
+        }
+
+        private void pictureBox4_Click_1(object sender, EventArgs e)
+        {
+            this.Hide();
+
         }
     }
 }
