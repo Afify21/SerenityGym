@@ -186,14 +186,14 @@ namespace DBapplication
         }
         public DataTable ViewPastSessions(int TID)
         {
-            string query = "SELECT * FROM Registration WHERE TrainerID=" + TID +
+            string query = "SELECT registrationid,fname,lname,starthour,endhour,regdate FROM Registration,Users WHERE TrainerID=" + TID +
                           " AND regtype='Private' AND regdate < '" + DateTime.Now.ToString("MM-dd-yyyy") + "'";
             return dbMan.ExecuteReader(query);
         }
 
         public DataTable ViewComingSessions(int TID)
         {
-            string query = "SELECT * FROM Registration WHERE TrainerID=" + TID +
+            string query = "SELECT registrationid,fname,lname,starthour,endhour,regdate FROM Registration,Users WHERE TrainerID=" + TID +
                           " AND regtype='Private' AND regdate >= '" + DateTime.Now.ToString("MM-dd-yyyy") + "'";
             return dbMan.ExecuteReader(query);
         }
