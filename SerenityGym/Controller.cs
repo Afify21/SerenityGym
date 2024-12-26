@@ -7,6 +7,10 @@ using System.Windows.Forms;
 using System.Security.Cryptography;
 using System.Data.SqlClient;
 using System.DirectoryServices.ActiveDirectory;
+using static System.ComponentModel.Design.ObjectSelectorEditor;
+using System.Xml.Linq;
+using Microsoft.ReportingServices.Interfaces;
+using SerenityGym;
 
 namespace DBapplication
 {
@@ -76,6 +80,7 @@ namespace DBapplication
             string query = "Update Users SET phone_num=" + Tid + " WHERE userid=" + Uid + "";
             return dbMan.ExecuteNonQuery(query);
         }
+       
         public string ShowName(int UID)
         {
             string query = "SELECT fname, lname FROM Users WHERE userid=" + UID;
@@ -163,6 +168,29 @@ namespace DBapplication
                 }
             }
 
+
+            return false;
+        }
+        public bool isUser(int UID)
+        {
+            string query = "SELECT userid FROM Users WHERE userid=" + UID;
+
+            DataTable result = dbMan.ExecuteReader(query);
+            if (result == null)
+            {
+                return false;
+            }
+            if (result.Rows.Count > 0)
+            {
+                int userid = Convert.ToInt32(result.Rows[0]["userid"]);
+
+                if (userid == UID)
+                {
+                    return true;
+                }
+            }
+
+
             return false;
         }
         public int UpdateTSplit(string split, int UID)
@@ -177,7 +205,7 @@ namespace DBapplication
         }
         public int AddTrainingPlan(int uid, int tid, string type, string split)
         {
-            string query = "INSERT INTO Plans (userid, staffid,plan_type,Split) VALUES (" + uid + ", " + tid + ", '" + type + "', '" + split + "')";
+            string query = "INSERT INTO Plans (userid,staffid,plan_type,Split) VALUES (" + uid + ", " + tid + ", '" + type + "', '" + split + "')";
             return dbMan.ExecuteNonQuery(query);
         }
         public int AddDietPlan(int uid, int tid, string type, string split)
@@ -188,15 +216,15 @@ namespace DBapplication
         }
         public DataTable ViewPastSessions(int TID)
         {
-            string query = "SELECT registrationid,fname,lname,starthour,endhour,regdate FROM Registration,Users WHERE TrainerID=" + TID +
-                          " AND regtype='Private' AND regdate < '" + DateTime.Now.ToString("MM-dd-yyyy") + "'";
+            string query = "SELECT Distinct u.userid,r.registrationid,u.fname,u.lname,r.starthour,r.endhour,r.regdate FROM Registration as r,Users as u WHERE u.userid=r.userid And TrainerID=" + TID +
+                          " AND r.regtype='Private' AND r.regdate < '" + DateTime.Now.ToString("MM-dd-yyyy") + "'";
             return dbMan.ExecuteReader(query);
         }
 
         public DataTable ViewComingSessions(int TID)
         {
-            string query = "SELECT registrationid,fname,lname,starthour,endhour,regdate FROM Registration,Users WHERE TrainerID=" + TID +
-                          " AND regtype='Private' AND regdate >= '" + DateTime.Now.ToString("MM-dd-yyyy") + "'";
+            string query = "SELECT Distinct u.userid,r.registrationid,u.fname,u.lname,r.starthour,r.endhour,r.regdate FROM Registration as r,Users as u WHERE u.userid=r.userid And TrainerID=" + TID +
+                          " AND r.regtype='Private' AND r.regdate >= '" + DateTime.Now.ToString("MM-dd-yyyy") + "'";
             return dbMan.ExecuteReader(query);
         }
         public DataTable ViewMemberProgress(int TID, int UID)
@@ -427,5 +455,70 @@ namespace DBapplication
             // Return the result as an integer, handling DBNull.Value if necessary
             return result != DBNull.Value ? Convert.ToInt32(result) : 0;
         }
+        public int Insertadmin(string Managerid, string fname, string lname, int num, string address, string pass)
+        {
+            string manager1 = ("Manager");
+            Convert.ToInt32(Managerid);
+            string query = "INSERT INTO Staff(staffid, staff_address, fname, lname, phone_num, staff_type, spassword) " +
+                  "VALUES (" + Managerid + ",'" + address + "','" + fname + "','" + lname + "','" + num + "', '" + manager1 + "', '" + pass + "');";
+            return dbMan.ExecuteNonQuery(query);
+        }
+    
+    
+
+        public DataTable GetDatesFORREG(int id)
+        {
+            DateTime today = DateTime.Today;
+            string date = today.ToString("yyyy-MM-dd");
+            string query = "select starthour,endhour from Registration where TrainerID=" + id + "AND regdate='" + today + "'";
+            return dbMan.ExecuteReader(query);
+        }
+
+        public int getTrainerID(string fn, string ln)
+        {
+            string query = "Select staffid from staff where fname='" + fn + "'AND lname='" + ln + "'";
+            return (int)dbMan.ExecuteScalar(query);
+        }
+
+        public DataTable getTrainers()
+        {
+            string query = "SELECT CONCAT(fname, ' ', lname) AS FullName from staff where staffid >= 20000 AND staffid<= 29999";
+            return dbMan.ExecuteReader(query);
+        }
+
+        public int getTrainerIDByFull(string FULL)
+        {
+            string query = "SELECT staffid FROM staff WHERE CONCAT(fname, ' ', lname) = '" + FULL + "'";
+            return (int)dbMan.ExecuteScalar(query);
+        }
+
+        public string[] getTrainersARR() {
+            string query = "SELECT CONCAT(fname, ' ', lname) AS FullName from staff where staffid >= 20000 AND staffid<= 29999"; DataTable dataTable = dbMan.ExecuteReader(query);
+            List<string> fullNames = new List<string>();
+            foreach (DataRow row in dataTable.Rows)
+            {
+                fullNames.Add(row["FullName"].ToString());
+            }
+            return fullNames.ToArray(); }
+
+        public int insertREGPRIVATE(int START, string type, int uid, string FullName, int Staffchecker)
+        {
+            int trainerid = getTrainerIDByFull(FullName);
+            if (Staffchecker == -1)
+            {
+                string query = "insert into Registeration values('" + (START.ToString() + ":00") + "','" + ((START + 1).ToString() + ":00") + "','" + DateTime.Now + "','" + uid + "',null,"+trainerid+",null)";
+                return (int)dbMan.ExecuteScalar(query);
+            }
+            if (Staffchecker > 0) 
+            {
+                string query = "insert into Registeration values('" + (START.ToString() + ":00") + "','" + ((START + 1).ToString() + ":00") + "','" + DateTime.Now + "'," + uid + ",null," + trainerid + ","+Staffchecker+")";
+                return (int)dbMan.ExecuteScalar(query);
+            }
+            return 0;
+        }
     }
-    }
+}
+    
+
+
+

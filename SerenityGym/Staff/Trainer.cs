@@ -1,4 +1,5 @@
 using DBapplication;
+using System.Security.Cryptography;
 
 namespace SerenityGym
 {
@@ -61,6 +62,23 @@ namespace SerenityGym
             StaffLogin.ActiveForm.Close();
             StaffLogin stafflogin = new StaffLogin();
             stafflogin.Show();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            if (controllerObj.IsClockedInCheck(TID) == 1)
+            {
+                controllerObj.ClockingOut(TID);
+                MessageBox.Show("Clocked out successfully");
+
+                return;
+            }
+            else if (controllerObj.IsClockedInCheck(TID) == 2)
+            {
+                MessageBox.Show("You have already clocked out");
+
+                return;
+            }
         }
     }
 }

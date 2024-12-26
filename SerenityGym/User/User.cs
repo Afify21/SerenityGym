@@ -42,7 +42,7 @@ namespace SerenityGym
 
         private void B_Registeration_Click(object sender, EventArgs e)
         {
-            OnlineReg onlineReg = new OnlineReg(UID);
+            OnlineReg onlineReg = new OnlineReg(UID,-1);
             onlineReg.Show();
         }
 

@@ -71,5 +71,11 @@ namespace SerenityGym
             StaffLogin stafflogin = new StaffLogin();
             stafflogin.Show();
         }
+
+        private void button3_Click_1(object sender, EventArgs e)
+        {
+            Addadmin Form = new Addadmin();
+            Form.Show();
+        }
     }
 }

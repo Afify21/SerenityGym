@@ -37,8 +37,12 @@ namespace SerenityGym
                 return;
             }
             UID = Convert.ToInt32(Userid.Text);
+            if (!controllerObj.isUser(UID))
+            {
+                MessageBox.Show("Enter a Vald User");
+                return;
+            }
 
-           
             if (!controllerObj.IsTrainedByTrainer(UID, TID))
             {
                 MessageBox.Show("Please Enter A User You Train");
