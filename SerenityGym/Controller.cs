@@ -145,6 +145,23 @@ namespace DBapplication
 
             return false;
         }
+        public string IsTrainedByWho(int UID)
+        {
+            string query = "SELECT s.fname,s.lname FROM Staff as s,Plans as p WHERE s.staffid=p.staffid And p.userid=" + UID;
+
+            DataTable result = dbMan.ExecuteReader(query);
+            
+            if (result.Rows.Count > 0)
+            {
+                string fname = result.Rows[0]["fname"].ToString();
+                string lname = result.Rows[0]["lname"].ToString();
+                return (fname + " " + lname); 
+            }
+            else
+            {
+                return "User not found";
+            }
+        }
         public bool hasPlan(int UID)
         {
             string query = "SELECT userid FROM Plans WHERE userid=" + UID;
@@ -228,13 +245,27 @@ namespace DBapplication
             string query = "SELECT * FROM Tracker WHERE TRAINER_ID=" + TID + " AND USER_ID=" + UID;
             return dbMan.ExecuteReader(query);
         }
+        public DataTable ViewMemberProgress( int UID)
+        {
+            string query = "SELECT * FROM Tracker WHERE USER_ID=" + UID;
+            return dbMan.ExecuteReader(query);
+        }
         public DataTable ViewAllMemberProgress(int TID)
         {
             string query = "SELECT * FROM Tracker WHERE TRAINER_ID=" + TID;
             return dbMan.ExecuteReader(query);
         }
 
-
+        public DataTable ViewTrainingPlan(int UID)
+        {
+            string query = "SELECT * FROM Plans WHERE userid=" + UID + " AND plan_type='Training'"; ;
+            return dbMan.ExecuteReader(query);
+        }
+        public DataTable ViewDietPlan(int UID)
+        {
+            string query = "SELECT * FROM Plans WHERE userid=" + UID + " AND plan_type='Food'"; ;
+            return dbMan.ExecuteReader(query);
+        }
 
 
 
