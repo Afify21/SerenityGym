@@ -330,7 +330,7 @@ namespace DBapplication
         }
         public int InsertUser(string fname, string lname, int num, string address, string pass)
         {
-            string query = "INSERT INTO Users(membership_type, fname, lname, phone_num, user_address, expiry_date, upassword) VALUES (NULL,'"+fname+"','"+lname+"',"+num+",'"+address+"',NULL,'" + pass + "');";
+            string query = "INSERT INTO Users(membership_type, fname, lname, phone_num, user_address, expiry_d, upassword) VALUES (NULL,'"+fname+"','"+lname+"',"+num+",'"+address+"',NULL,'" + pass + "');";
             return dbMan.ExecuteNonQuery(query);
         }
         public DataTable GetMemberships()

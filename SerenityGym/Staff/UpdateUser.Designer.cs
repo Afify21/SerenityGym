@@ -249,6 +249,7 @@
             // 
             pass.Location = new Point(321, 238);
             pass.Name = "pass";
+            pass.PasswordChar = '*';
             pass.Size = new Size(125, 27);
             pass.TabIndex = 26;
             // 
