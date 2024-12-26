@@ -21,6 +21,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="Tracker.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Staff\Addadmin.cs">
       <SubType>Form</SubType>
     </Compile>

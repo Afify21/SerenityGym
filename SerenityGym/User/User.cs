@@ -59,5 +59,11 @@ namespace SerenityGym
             UserLogin userlogin = new UserLogin();
             userlogin.Show();
         }
+
+        private void B_Tracker_Click(object sender, EventArgs e)
+        {
+            Tracker tracker = new Tracker(UID);
+            tracker.Show();
+        }
     }
 }
