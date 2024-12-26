@@ -427,5 +427,13 @@ namespace DBapplication
             // Return the result as an integer, handling DBNull.Value if necessary
             return result != DBNull.Value ? Convert.ToInt32(result) : 0;
         }
+        public int Insertadmin(string Managerid, string fname, string lname, int num, string address, string pass)
+        {
+            string manager1 = ("Manager");
+            Convert.ToInt32(Managerid);
+            string query = "INSERT INTO Staff(staffid, staff_address, fname, lname, phone_num, staff_type, spassword) " +
+                  "VALUES (" + Managerid + ",'" + address + "','" + fname + "','" + lname + "','" + num + "', '" + manager1 + "', '" + pass + "');";
+            return dbMan.ExecuteNonQuery(query);
+        }
     }
     }
