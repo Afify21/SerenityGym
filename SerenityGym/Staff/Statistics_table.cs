@@ -19,6 +19,13 @@ namespace SerenityGym
             star5.Visible = false;
             label2.Visible = false;
             label3.Visible = false;
+            label6.Visible = false;
+            DataTable staffTable = controllerObj.PopulateComboBox();
+            CB_Updator.Items.Clear();
+            foreach (DataRow row in staffTable.Rows)
+            {
+                CB_Updator.Items.Add(row["staffid"].ToString());
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -105,6 +112,22 @@ namespace SerenityGym
         private void pictureBox4_Click(object sender, EventArgs e)
         {
             this.Hide();
+
+        }
+
+        private void CB_Updator_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            // Get the selected staff id
+            string selectedStaffId = CB_Updator.SelectedItem.ToString();
+
+            // Fetch the count of user ids trained by the selected staff
+            int userCount = controllerObj.Gettraineebyid(selectedStaffId);
+            label6.Text = userCount.ToString(); 
+            label6.Visible  = true;
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
 
         }
     }

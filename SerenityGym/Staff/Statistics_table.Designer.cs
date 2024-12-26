@@ -33,6 +33,11 @@
             pictureBox1 = new PictureBox();
             label1 = new Label();
             panel2 = new Panel();
+            label6 = new Label();
+            label5 = new Label();
+            CB_Updator = new ComboBox();
+            label4 = new Label();
+            label3 = new Label();
             star2 = new PictureBox();
             star3 = new PictureBox();
             star5 = new PictureBox();
@@ -45,7 +50,6 @@
             Stafff = new Button();
             Userr = new Button();
             button1 = new Button();
-            label3 = new Label();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel2.SuspendLayout();
@@ -93,6 +97,10 @@
             // 
             // panel2
             // 
+            panel2.Controls.Add(label6);
+            panel2.Controls.Add(label5);
+            panel2.Controls.Add(CB_Updator);
+            panel2.Controls.Add(label4);
             panel2.Controls.Add(label3);
             panel2.Controls.Add(star2);
             panel2.Controls.Add(star3);
@@ -114,6 +122,63 @@
             panel2.Size = new Size(921, 540);
             panel2.TabIndex = 1;
             panel2.Paint += panel2_Paint;
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Font = new Font("Century Gothic", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label6.Location = new Point(754, 409);
+            label6.Margin = new Padding(2, 0, 2, 0);
+            label6.Name = "label6";
+            label6.Size = new Size(85, 21);
+            label6.TabIndex = 23;
+            label6.Text = "Number ";
+            label6.Click += label6_Click;
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Font = new Font("Century Gothic", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label5.Location = new Point(637, 409);
+            label5.Margin = new Padding(2, 0, 2, 0);
+            label5.Name = "label5";
+            label5.Size = new Size(113, 21);
+            label5.TabIndex = 22;
+            label5.Text = "#.of trainee";
+            // 
+            // CB_Updator
+            // 
+            CB_Updator.FlatStyle = FlatStyle.Flat;
+            CB_Updator.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            CB_Updator.ForeColor = Color.FromArgb(41, 128, 185);
+            CB_Updator.FormattingEnabled = true;
+            CB_Updator.Location = new Point(742, 351);
+            CB_Updator.Name = "CB_Updator";
+            CB_Updator.Size = new Size(144, 28);
+            CB_Updator.TabIndex = 21;
+            CB_Updator.SelectedIndexChanged += CB_Updator_SelectedIndexChanged;
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Font = new Font("Century Gothic", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label4.Location = new Point(637, 358);
+            label4.Margin = new Padding(2, 0, 2, 0);
+            label4.Name = "label4";
+            label4.Size = new Size(84, 21);
+            label4.TabIndex = 20;
+            label4.Text = "TrainerID";
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("Century Gothic", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label3.Location = new Point(394, 433);
+            label3.Margin = new Padding(2, 0, 2, 0);
+            label3.Name = "label3";
+            label3.Size = new Size(129, 21);
+            label3.TabIndex = 19;
+            label3.Text = "Serenity Gym";
             // 
             // star2
             // 
@@ -204,7 +269,7 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Century Gothic", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label2.Location = new Point(165, 366);
+            label2.Location = new Point(164, 358);
             label2.Margin = new Padding(2, 0, 2, 0);
             label2.Name = "label2";
             label2.Size = new Size(129, 21);
@@ -257,17 +322,6 @@
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click;
             // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Century Gothic", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label3.Location = new Point(394, 433);
-            label3.Margin = new Padding(2, 0, 2, 0);
-            label3.Name = "label3";
-            label3.Size = new Size(129, 21);
-            label3.TabIndex = 19;
-            label3.Text = "Serenity Gym";
-            // 
             // Statistics_table
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -314,5 +368,9 @@
         private PictureBox star5;
         private PictureBox star4;
         private PictureBox star1;
+        private Label label6;
+        private Label label5;
+        private ComboBox CB_Updator;
+        private Label label4;
     }
 }
