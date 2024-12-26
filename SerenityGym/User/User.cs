@@ -51,5 +51,13 @@ namespace SerenityGym
             this.Hide();
 
         }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            UserLogin.ActiveForm.Close();
+            UserLogin userlogin = new UserLogin();
+            userlogin.Show();
+        }
     }
 }

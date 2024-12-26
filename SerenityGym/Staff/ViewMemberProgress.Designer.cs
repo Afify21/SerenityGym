@@ -170,6 +170,7 @@
             Userr.TabIndex = 7;
             Userr.Text = "View All Users";
             Userr.UseVisualStyleBackColor = false;
+            Userr.Click += Userr_Click;
             // 
             // label2
             // 

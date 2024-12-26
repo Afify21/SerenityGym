@@ -197,12 +197,17 @@ namespace DBapplication
                           " AND regtype='Private' AND regdate >= '" + DateTime.Now.ToString("MM-dd-yyyy") + "'";
             return dbMan.ExecuteReader(query);
         }
-        //public DataTable ViewMemberProgress(int TID,int UID)
-        //{
-        //    string query = "SELECT * FROM Tracker WHERE TrainerID=" + TID +
-        //                  " AND regtype='Private' AND regdate >= '" + DateTime.Now.ToString("MM-dd-yyyy") + "'";
-        //    return dbMan.ExecuteReader(query);
-        //}
+        public DataTable ViewMemberProgress(int TID, int UID)
+        {
+            string query = "SELECT * FROM Tracker WHERE TRAINER_ID=" + TID + " AND USER_ID=" + UID;
+            return dbMan.ExecuteReader(query);
+        }
+        public DataTable ViewAllMemberProgress(int TID)
+        {
+            string query = "SELECT * FROM Tracker WHERE TRAINER_ID=" + TID ;
+            return dbMan.ExecuteReader(query);
+        }
+
 
 
 
