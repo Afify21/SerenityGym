@@ -7,6 +7,10 @@ using System.Windows.Forms;
 using System.Security.Cryptography;
 using System.Data.SqlClient;
 using System.DirectoryServices.ActiveDirectory;
+using static System.ComponentModel.Design.ObjectSelectorEditor;
+using System.Xml.Linq;
+using Microsoft.ReportingServices.Interfaces;
+using SerenityGym;
 
 namespace DBapplication
 {
@@ -385,7 +389,7 @@ namespace DBapplication
         }
         public int InsertUser(string fname, string lname, int num, string address, string pass)
         {
-            string query = "INSERT INTO Users(membership_type, fname, lname, phone_num, user_address, expiry_date, upassword) VALUES (NULL,'"+fname+"','"+lname+"',"+num+",'"+address+"',NULL,'" + pass + "');";
+            string query = "INSERT INTO Users(membership_type, fname, lname, phone_num, user_address, expiry_d, upassword) VALUES (NULL,'"+fname+"','"+lname+"',"+num+",'"+address+"',NULL,'" + pass + "');";
             return dbMan.ExecuteNonQuery(query);
         }
         public DataTable GetMemberships()
@@ -490,5 +494,62 @@ namespace DBapplication
                   "VALUES (" + Managerid + ",'" + address + "','" + fname + "','" + lname + "','" + num + "', '" + manager1 + "', '" + pass + "');";
             return dbMan.ExecuteNonQuery(query);
         }
+    
+    
+
+        public DataTable GetDatesFORREG(int id)
+        {
+            DateTime today = DateTime.Today;
+            string date = today.ToString("yyyy-MM-dd");
+            string query = "select starthour,endhour from Registration where TrainerID=" + id + "AND regdate='" + today + "'";
+            return dbMan.ExecuteReader(query);
+        }
+
+        public int getTrainerID(string fn, string ln)
+        {
+            string query = "Select staffid from staff where fname='" + fn + "'AND lname='" + ln + "'";
+            return (int)dbMan.ExecuteScalar(query);
+        }
+
+        public DataTable getTrainers()
+        {
+            string query = "SELECT CONCAT(fname, ' ', lname) AS FullName from staff where staffid >= 20000 AND staffid<= 29999";
+            return dbMan.ExecuteReader(query);
+        }
+
+        public int getTrainerIDByFull(string FULL)
+        {
+            string query = "SELECT staffid FROM staff WHERE CONCAT(fname, ' ', lname) = '" + FULL + "'";
+            return (int)dbMan.ExecuteScalar(query);
+        }
+
+        public string[] getTrainersARR() {
+            string query = "SELECT CONCAT(fname, ' ', lname) AS FullName from staff where staffid >= 20000 AND staffid<= 29999"; DataTable dataTable = dbMan.ExecuteReader(query);
+            List<string> fullNames = new List<string>();
+            foreach (DataRow row in dataTable.Rows)
+            {
+                fullNames.Add(row["FullName"].ToString());
+            }
+            return fullNames.ToArray(); }
+
+        public int insertREGPRIVATE(int START, string type, int uid, string FullName, int Staffchecker)
+        {
+            int trainerid = getTrainerIDByFull(FullName);
+            if (Staffchecker == -1)
+            {
+                string query = "insert into Registeration values('" + (START.ToString() + ":00") + "','" + ((START + 1).ToString() + ":00") + "','" + DateTime.Now + "','" + uid + "',null,"+trainerid+",null)";
+                return (int)dbMan.ExecuteScalar(query);
+            }
+            if (Staffchecker > 0) 
+            {
+                string query = "insert into Registeration values('" + (START.ToString() + ":00") + "','" + ((START + 1).ToString() + ":00") + "','" + DateTime.Now + "'," + uid + ",null," + trainerid + ","+Staffchecker+")";
+                return (int)dbMan.ExecuteScalar(query);
+            }
+            return 0;
+        }
     }
-    }
+}
+    
+
+
+

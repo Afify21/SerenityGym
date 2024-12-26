@@ -48,6 +48,14 @@ namespace SerenityGym
                 MessageBox.Show("Please enter a valid Phone Number");
                 return;
             }
+            if (pass.Text != "")
+            {
+                if (pass.Text.Length < 6)
+                {
+                    MessageBox.Show("Please enter a password of appropriate length (minimum 6 characters).");
+                    return;
+                }
+            }
             if (confirm.Text == controllerObj.GetStaffPassword(ID))
             {
                 if (add.Text != "")

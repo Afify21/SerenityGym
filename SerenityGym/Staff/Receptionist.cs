@@ -94,5 +94,11 @@ namespace SerenityGym
             this.Hide();
 
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Register R = new Register();
+            R.Show();
+        }
     }
 }
