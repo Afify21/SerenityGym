@@ -32,6 +32,8 @@ namespace SerenityGym
 
         private void submit_Click(object sender, EventArgs e)
         {
+
+           
             if (string.IsNullOrWhiteSpace(Userid.Text))
             {
                 MessageBox.Show("Please Enter A User ID");
@@ -44,6 +46,12 @@ namespace SerenityGym
                 return;
             }
             UID = Convert.ToInt32(Userid.Text);
+
+            if (!controllerObj.isUser(UID))
+            {
+                MessageBox.Show("Enter a Vald User");
+                return;
+            }
             if (!controllerObj.hasPlan(UID))
             {
                 TrainCheckBox.Visible = true;
@@ -69,14 +77,15 @@ namespace SerenityGym
                 }
             }
             
-                
-            
 
 
 
 
-            
-            
+
+
+
+
+
 
 
 
@@ -93,16 +102,15 @@ namespace SerenityGym
 
         private void update_Click(object sender, EventArgs e)
         {
+            
             if (TrainCheckBox.Checked && DietCheckBox.Checked)
             {
                 int result = controllerObj.AddTrainingPlan(UID, TID, "Training", TrainSplit.Text);
-                int result2 = controllerObj.AddTrainingPlan(UID, TID, "Food", FoodSplit.Text);
-
-                if (result == 0)
-                    MessageBox.Show("Insert Failed!");
-                else
+                int result2 = controllerObj.AddDietPlan(UID, TID, "Food", FoodSplit.Text);
                     MessageBox.Show("Inserted Successfully!");
+                return;
             }
+            MessageBox.Show("Insert Failed!");
 
         }
 

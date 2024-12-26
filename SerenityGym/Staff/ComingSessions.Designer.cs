@@ -35,8 +35,6 @@
             pictureBox4 = new PictureBox();
             submit = new Button();
             dataGridView1 = new DataGridView();
-            Stafff = new Button();
-            Userr = new Button();
             label2 = new Label();
             button1 = new Button();
             panel1.SuspendLayout();
@@ -73,8 +71,6 @@
             panel2.Controls.Add(pictureBox4);
             panel2.Controls.Add(submit);
             panel2.Controls.Add(dataGridView1);
-            panel2.Controls.Add(Stafff);
-            panel2.Controls.Add(Userr);
             panel2.Controls.Add(label2);
             panel2.Controls.Add(button1);
             panel2.Dock = DockStyle.Fill;
@@ -117,34 +113,6 @@
             dataGridView1.RowHeadersWidth = 62;
             dataGridView1.Size = new Size(608, 319);
             dataGridView1.TabIndex = 9;
-            // 
-            // Stafff
-            // 
-            Stafff.BackColor = Color.FromArgb(41, 128, 185);
-            Stafff.FlatStyle = FlatStyle.Flat;
-            Stafff.Font = new Font("Century Gothic", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            Stafff.ForeColor = Color.White;
-            Stafff.Location = new Point(460, 495);
-            Stafff.Margin = new Padding(2);
-            Stafff.Name = "Stafff";
-            Stafff.Size = new Size(148, 35);
-            Stafff.TabIndex = 8;
-            Stafff.Text = "STAFF";
-            Stafff.UseVisualStyleBackColor = false;
-            // 
-            // Userr
-            // 
-            Userr.BackColor = Color.FromArgb(41, 128, 185);
-            Userr.FlatStyle = FlatStyle.Flat;
-            Userr.Font = new Font("Century Gothic", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            Userr.ForeColor = Color.White;
-            Userr.Location = new Point(4, 484);
-            Userr.Margin = new Padding(2);
-            Userr.Name = "Userr";
-            Userr.Size = new Size(148, 35);
-            Userr.TabIndex = 7;
-            Userr.Text = "USER";
-            Userr.UseVisualStyleBackColor = false;
             // 
             // label2
             // 
@@ -202,8 +170,6 @@
         private PictureBox pictureBox1;
         private Button button1;
         private Label label2;
-        private Button Stafff;
-        private Button Userr;
         private DataGridView dataGridView1;
         private Button submit;
         private PictureBox pictureBox4;
