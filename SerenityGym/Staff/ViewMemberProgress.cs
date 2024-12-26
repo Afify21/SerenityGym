@@ -25,13 +25,24 @@ namespace SerenityGym
 
         private void submit_Click(object sender, EventArgs e)
         {
-            UID = Convert.ToInt32(Userid.Text);
-
-            if (Userid.Text == "")
+            if (string.IsNullOrWhiteSpace(Userid.Text))
             {
                 MessageBox.Show("Please Enter A User ID");
                 return;
             }
+
+            if (!int.TryParse(Userid.Text, out int UID))
+            {
+                MessageBox.Show("User ID must be a numeric value");
+                return;
+            }
+            UID = Convert.ToInt32(Userid.Text);
+            if (!controllerObj.isUser(UID))
+            {
+                MessageBox.Show("Enter a Vald User");
+                return;
+            }
+
             if (!controllerObj.IsTrainedByTrainer(UID, TID))
             {
                 MessageBox.Show("Please Enter A User You Train");
@@ -39,9 +50,9 @@ namespace SerenityGym
 
             }
             dataGridView1.Visible = true;
-            //DataTable dt = controllerObj.ViewMemberProgress(TID, UID);
-            //dataGridView1.DataSource = dt;
-            //dataGridView1.Refresh();
+            DataTable dt = controllerObj.ViewMemberProgress(TID, UID);
+            dataGridView1.DataSource = dt;
+            dataGridView1.Refresh();
         }
 
         private void label2_Click(object sender, EventArgs e)
@@ -53,6 +64,15 @@ namespace SerenityGym
         {
             this.Hide();
 
+        }
+
+        private void Userr_Click(object sender, EventArgs e)
+        {
+            
+            dataGridView1.Visible = true;
+            DataTable dt = controllerObj.ViewAllMemberProgress(TID);
+            dataGridView1.DataSource = dt;
+            dataGridView1.Refresh();
         }
     }
 }

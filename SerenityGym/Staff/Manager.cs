@@ -63,5 +63,19 @@ namespace SerenityGym
             this.Hide();
 
         }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            StaffLogin.ActiveForm.Close();
+            StaffLogin stafflogin = new StaffLogin();
+            stafflogin.Show();
+        }
+
+        private void button3_Click_1(object sender, EventArgs e)
+        {
+            Addadmin Form = new Addadmin();
+            Form.Show();
+        }
     }
 }

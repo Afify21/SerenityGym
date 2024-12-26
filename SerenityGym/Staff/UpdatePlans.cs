@@ -17,6 +17,7 @@ namespace SerenityGym
             TrainSplit.Visible = false;
             dietplan.Visible = false;
             FoodSplit.Visible = false;
+            name.Visible = false;
             TrainCheckBox.Visible = false;
             DietCheckBox.Visible = false;
 
@@ -72,11 +73,22 @@ namespace SerenityGym
 
         private void submit_Click(object sender, EventArgs e)
         {
-            UID = Convert.ToInt32(Userid.Text);
-
-            if (Userid.Text == "")
+            if (string.IsNullOrWhiteSpace(Userid.Text))
             {
                 MessageBox.Show("Please Enter A User ID");
+                return;
+            }
+
+            if (!int.TryParse(Userid.Text, out int UID))
+            {
+                MessageBox.Show("User ID must be a numeric value");
+                return;
+            }
+            UID = Convert.ToInt32(Userid.Text);
+
+            if (!controllerObj.isUser(UID))
+            {
+                MessageBox.Show("Enter a Vald User");
                 return;
             }
             if (!controllerObj.IsTrainedByTrainer(UID, TID))
@@ -87,6 +99,7 @@ namespace SerenityGym
             }
             TrainCheckBox.Visible = true;
             DietCheckBox.Visible = true;
+            name.Visible = true;
             name.Text = controllerObj.ShowName(UID);
         }
 

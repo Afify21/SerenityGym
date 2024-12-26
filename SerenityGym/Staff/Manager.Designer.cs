@@ -32,6 +32,7 @@
             panel1 = new Panel();
             pictureBox1 = new PictureBox();
             panel2 = new Panel();
+            button7 = new Button();
             pictureBox4 = new PictureBox();
             updatestaffbutton = new Button();
             button2 = new Button();
@@ -39,6 +40,7 @@
             Userr = new Button();
             label2 = new Label();
             button1 = new Button();
+            button3 = new Button();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel2.SuspendLayout();
@@ -69,6 +71,8 @@
             // 
             // panel2
             // 
+            panel2.Controls.Add(button3);
+            panel2.Controls.Add(button7);
             panel2.Controls.Add(pictureBox4);
             panel2.Controls.Add(updatestaffbutton);
             panel2.Controls.Add(button2);
@@ -84,11 +88,26 @@
             panel2.TabIndex = 1;
             panel2.Paint += panel2_Paint;
             // 
+            // button7
+            // 
+            button7.BackColor = Color.FromArgb(41, 128, 185);
+            button7.FlatStyle = FlatStyle.Flat;
+            button7.Font = new Font("Century Gothic", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            button7.ForeColor = Color.White;
+            button7.Location = new Point(0, 390);
+            button7.Margin = new Padding(2);
+            button7.Name = "button7";
+            button7.Size = new Size(101, 33);
+            button7.TabIndex = 19;
+            button7.Text = "Log Out";
+            button7.UseVisualStyleBackColor = false;
+            button7.Click += button7_Click;
+            // 
             // pictureBox4
             // 
             pictureBox4.Image = (Image)resources.GetObject("pictureBox4.Image");
-            pictureBox4.Location = new Point(4, 2);
-            pictureBox4.Margin = new Padding(2, 2, 2, 2);
+            pictureBox4.Location = new Point(0, 0);
+            pictureBox4.Margin = new Padding(2);
             pictureBox4.Name = "pictureBox4";
             pictureBox4.Size = new Size(22, 30);
             pictureBox4.TabIndex = 8;
@@ -101,10 +120,10 @@
             updatestaffbutton.FlatStyle = FlatStyle.Flat;
             updatestaffbutton.Font = new Font("Century Gothic", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
             updatestaffbutton.ForeColor = Color.White;
-            updatestaffbutton.Location = new Point(153, 293);
+            updatestaffbutton.Location = new Point(290, 91);
             updatestaffbutton.Margin = new Padding(2);
             updatestaffbutton.Name = "updatestaffbutton";
-            updatestaffbutton.Size = new Size(155, 32);
+            updatestaffbutton.Size = new Size(155, 37);
             updatestaffbutton.TabIndex = 11;
             updatestaffbutton.Text = "Update staff";
             updatestaffbutton.UseVisualStyleBackColor = false;
@@ -116,10 +135,10 @@
             button2.FlatStyle = FlatStyle.Flat;
             button2.Font = new Font("Century Gothic", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
             button2.ForeColor = Color.White;
-            button2.Location = new Point(153, 158);
+            button2.Location = new Point(70, 149);
             button2.Margin = new Padding(2);
             button2.Name = "button2";
-            button2.Size = new Size(155, 33);
+            button2.Size = new Size(155, 37);
             button2.TabIndex = 9;
             button2.Text = "Equipments";
             button2.UseVisualStyleBackColor = false;
@@ -131,7 +150,7 @@
             Stafff.FlatStyle = FlatStyle.Flat;
             Stafff.Font = new Font("Century Gothic", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
             Stafff.ForeColor = Color.White;
-            Stafff.Location = new Point(153, 94);
+            Stafff.Location = new Point(70, 91);
             Stafff.Margin = new Padding(2);
             Stafff.Name = "Stafff";
             Stafff.Size = new Size(155, 37);
@@ -146,10 +165,10 @@
             Userr.FlatStyle = FlatStyle.Flat;
             Userr.Font = new Font("Century Gothic", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
             Userr.ForeColor = Color.White;
-            Userr.Location = new Point(153, 229);
+            Userr.Location = new Point(290, 149);
             Userr.Margin = new Padding(2);
             Userr.Name = "Userr";
-            Userr.Size = new Size(155, 32);
+            Userr.Size = new Size(155, 37);
             Userr.TabIndex = 7;
             Userr.Text = "Statistics ";
             Userr.UseVisualStyleBackColor = false;
@@ -160,7 +179,7 @@
             label2.AutoSize = true;
             label2.Font = new Font("Century Gothic", 16F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label2.ForeColor = Color.FromArgb(41, 128, 185);
-            label2.Location = new Point(20, 39);
+            label2.Location = new Point(4, 32);
             label2.Margin = new Padding(2, 0, 2, 0);
             label2.Name = "label2";
             label2.Size = new Size(136, 33);
@@ -181,6 +200,21 @@
             button1.Text = "X";
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click;
+            // 
+            // button3
+            // 
+            button3.BackColor = Color.FromArgb(41, 128, 185);
+            button3.FlatStyle = FlatStyle.Flat;
+            button3.Font = new Font("Century Gothic", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            button3.ForeColor = Color.White;
+            button3.Location = new Point(365, 390);
+            button3.Margin = new Padding(2);
+            button3.Name = "button3";
+            button3.Size = new Size(120, 32);
+            button3.TabIndex = 20;
+            button3.Text = "Add admin";
+            button3.UseVisualStyleBackColor = false;
+            button3.Click += button3_Click_1;
             // 
             // Manager
             // 
@@ -215,5 +249,7 @@
         private Button button2;
         private Button updatestaffbutton;
         private PictureBox pictureBox4;
+        private Button button7;
+        private Button button3;
     }
 }

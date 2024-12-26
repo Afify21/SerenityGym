@@ -37,7 +37,6 @@
             Userid = new TextBox();
             submit = new Button();
             dataGridView1 = new DataGridView();
-            Stafff = new Button();
             Userr = new Button();
             label2 = new Label();
             button1 = new Button();
@@ -77,7 +76,6 @@
             panel2.Controls.Add(Userid);
             panel2.Controls.Add(submit);
             panel2.Controls.Add(dataGridView1);
-            panel2.Controls.Add(Stafff);
             panel2.Controls.Add(Userr);
             panel2.Controls.Add(label2);
             panel2.Controls.Add(button1);
@@ -143,20 +141,6 @@
             dataGridView1.Size = new Size(608, 319);
             dataGridView1.TabIndex = 10;
             // 
-            // Stafff
-            // 
-            Stafff.BackColor = Color.FromArgb(41, 128, 185);
-            Stafff.FlatStyle = FlatStyle.Flat;
-            Stafff.Font = new Font("Century Gothic", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            Stafff.ForeColor = Color.White;
-            Stafff.Location = new Point(451, 495);
-            Stafff.Margin = new Padding(2);
-            Stafff.Name = "Stafff";
-            Stafff.Size = new Size(148, 35);
-            Stafff.TabIndex = 8;
-            Stafff.Text = "STAFF";
-            Stafff.UseVisualStyleBackColor = false;
-            // 
             // Userr
             // 
             Userr.BackColor = Color.FromArgb(41, 128, 185);
@@ -170,6 +154,7 @@
             Userr.TabIndex = 7;
             Userr.Text = "View All Users";
             Userr.UseVisualStyleBackColor = false;
+            Userr.Click += Userr_Click;
             // 
             // label2
             // 
@@ -228,7 +213,6 @@
         private PictureBox pictureBox1;
         private Button button1;
         private Label label2;
-        private Button Stafff;
         private Button Userr;
         private DataGridView dataGridView1;
         private Label label3;

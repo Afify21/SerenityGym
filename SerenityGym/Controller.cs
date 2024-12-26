@@ -5,6 +5,8 @@ using System.Text;
 using System.Data;
 using System.Windows.Forms;
 using System.Security.Cryptography;
+using System.Data.SqlClient;
+using System.DirectoryServices.ActiveDirectory;
 using static System.ComponentModel.Design.ObjectSelectorEditor;
 using System.Xml.Linq;
 using Microsoft.ReportingServices.Interfaces;
@@ -78,6 +80,7 @@ namespace DBapplication
             string query = "Update Users SET phone_num=" + Tid + " WHERE userid=" + Uid + "";
             return dbMan.ExecuteNonQuery(query);
         }
+       
         public string ShowName(int UID)
         {
             string query = "SELECT fname, lname FROM Users WHERE userid=" + UID;
@@ -165,6 +168,29 @@ namespace DBapplication
                 }
             }
 
+
+            return false;
+        }
+        public bool isUser(int UID)
+        {
+            string query = "SELECT userid FROM Users WHERE userid=" + UID;
+
+            DataTable result = dbMan.ExecuteReader(query);
+            if (result == null)
+            {
+                return false;
+            }
+            if (result.Rows.Count > 0)
+            {
+                int userid = Convert.ToInt32(result.Rows[0]["userid"]);
+
+                if (userid == UID)
+                {
+                    return true;
+                }
+            }
+
+
             return false;
         }
         public int UpdateTSplit(string split, int UID)
@@ -179,7 +205,7 @@ namespace DBapplication
         }
         public int AddTrainingPlan(int uid, int tid, string type, string split)
         {
-            string query = "INSERT INTO Plans (userid, staffid,plan_type,Split) VALUES (" + uid + ", " + tid + ", '" + type + "', '" + split + "')";
+            string query = "INSERT INTO Plans (userid,staffid,plan_type,Split) VALUES (" + uid + ", " + tid + ", '" + type + "', '" + split + "')";
             return dbMan.ExecuteNonQuery(query);
         }
         public int AddDietPlan(int uid, int tid, string type, string split)
@@ -190,23 +216,28 @@ namespace DBapplication
         }
         public DataTable ViewPastSessions(int TID)
         {
-            string query = "SELECT * FROM Registration WHERE TrainerID=" + TID +
-                          " AND regtype='Private' AND regdate < '" + DateTime.Now.ToString("MM-dd-yyyy") + "'";
+            string query = "SELECT Distinct u.userid,r.registrationid,u.fname,u.lname,r.starthour,r.endhour,r.regdate FROM Registration as r,Users as u WHERE u.userid=r.userid And TrainerID=" + TID +
+                          " AND r.regtype='Private' AND r.regdate < '" + DateTime.Now.ToString("MM-dd-yyyy") + "'";
             return dbMan.ExecuteReader(query);
         }
 
         public DataTable ViewComingSessions(int TID)
         {
-            string query = "SELECT * FROM Registration WHERE TrainerID=" + TID +
-                          " AND regtype='Private' AND regdate >= '" + DateTime.Now.ToString("MM-dd-yyyy") + "'";
+            string query = "SELECT Distinct u.userid,r.registrationid,u.fname,u.lname,r.starthour,r.endhour,r.regdate FROM Registration as r,Users as u WHERE u.userid=r.userid And TrainerID=" + TID +
+                          " AND r.regtype='Private' AND r.regdate >= '" + DateTime.Now.ToString("MM-dd-yyyy") + "'";
             return dbMan.ExecuteReader(query);
         }
-        //public DataTable ViewMemberProgress(int TID,int UID)
-        //{
-        //    string query = "SELECT * FROM Tracker WHERE TrainerID=" + TID +
-        //                  " AND regtype='Private' AND regdate >= '" + DateTime.Now.ToString("MM-dd-yyyy") + "'";
-        //    return dbMan.ExecuteReader(query);
-        //}
+        public DataTable ViewMemberProgress(int TID, int UID)
+        {
+            string query = "SELECT * FROM Tracker WHERE TRAINER_ID=" + TID + " AND USER_ID=" + UID;
+            return dbMan.ExecuteReader(query);
+        }
+        public DataTable ViewAllMemberProgress(int TID)
+        {
+            string query = "SELECT * FROM Tracker WHERE TRAINER_ID=" + TID;
+            return dbMan.ExecuteReader(query);
+        }
+
 
 
 
@@ -242,7 +273,8 @@ namespace DBapplication
                 return noti;
             }
             else
-            { MessageBox.Show("No notifications");
+            {
+                MessageBox.Show("No notifications");
                 return null;
             };
         }
@@ -269,6 +301,7 @@ namespace DBapplication
             string query = "Update Staff SET staff_address='" + s + "' WHERE staffid=" + id + "";
             return dbMan.ExecuteNonQuery(query);
         }
+       
         public int UpdateStaffPhone(int no, int id)
         {
             string query = "Update Staff SET phone_num=" + no + " WHERE staffid=" + id + "";
@@ -277,6 +310,81 @@ namespace DBapplication
 
         public int DeleteStaff(int id)
         {
+            string query = "DELETE FROM Staff WHERE staffid = " + id + "";
+            return dbMan.ExecuteNonQuery(query);
+        }
+
+        public int ClockIn(int id)
+        {
+            string query = "INSERT INTO Attendance (att_status, att_date, staffid) VALUES ('Clocked In','" + DateTime.Now + "'," + id + ");";
+            return dbMan.ExecuteNonQuery(query);
+        }
+
+        public int IsClockedInCheck(int id)
+        {
+            string query = "SELECT COUNT(*) FROM Attendance WHERE att_date ='" + DateTime.Now + "' AND staffid =" + id;
+            return (int)dbMan.ExecuteScalar(query);
+        }
+     
+        public int UpdateStaffFName(string name, int id)
+        {
+            string query = "UPDATE Staff SET fname='" + name + "' WHERE staffid =" + id;
+            return dbMan.ExecuteNonQuery(query);
+        }
+        public int UpdateStaffLName(string name, int id)
+        {
+            string query = "UPDATE Staff SET lname='" + name + "' WHERE staffid =" + id;
+            return dbMan.ExecuteNonQuery(query);
+        }
+        public int UpdateStaffPhoneNum(int num, int id)
+        {
+            string query = "UPDATE Staff SET phone_num='" + num + "' WHERE staffid =" + id;
+            return dbMan.ExecuteNonQuery(query);
+        }
+        public int UpdateStaffPassword(string pass, int id)
+        {
+            string query = "UPDATE Staff SET spassword='" + pass + "' WHERE staffid =" + id;
+            return dbMan.ExecuteNonQuery(query);
+        }
+        public string GetStaffPassword(int id)
+        {
+            string query = "SELECT spassword FROM Staff WHERE staffid=" + id;
+            return (string)dbMan.ExecuteScalar(query);
+        }
+        public int CheckUserID(int id)
+        {
+            string query = "SELECT COUNT(*) FROM Users WHERE userid=" + id;
+            return (int)dbMan.ExecuteScalar(query); 
+        }
+        public int InsertUser(string fname, string lname, int num, string address, string pass)
+        {
+            string query = "INSERT INTO Users(membership_type, fname, lname, phone_num, user_address, expiry_date, upassword) VALUES (NULL,'"+fname+"','"+lname+"',"+num+",'"+address+"',NULL,'" + pass + "');";
+            return dbMan.ExecuteNonQuery(query);
+        }
+        public DataTable GetMemberships()
+        {
+            string query = "SELECT membership_type FROM Membership";
+            return dbMan.ExecuteReader(query);
+        }
+        public int SendNotification(string mes)
+        {
+            string query = "INSERT INTO Notifications(notif_message,notif_date) VALUES ('" + mes + "','" + DateTime.Now + "');";
+           
+            return dbMan.ExecuteNonQuery(query);
+        }
+        public int GetNotifID()
+        {
+            string query = "SELECT MAX(notificationid) FROM Notifications";
+            return (int)dbMan.ExecuteScalar(query);
+        }
+        public int GetsNotified(int id,string membership)
+        {
+            string query = "INSERT INTO Gets_Notified(notifid,membership_type) VALUES (" + id + ",'" + membership + "');";
+            return dbMan.ExecuteNonQuery(query);
+        }
+        public int ClockingOut(int id)
+        {
+            string query = "INSERT INTO Attendance (att_status, att_date, staffid) VALUES ('Clocked Out','" + DateTime.Now + "'," + id + ");";
             string query = "DELETE FROM Staff WHERE staffid = " + id + "";
             return dbMan.ExecuteNonQuery(query);
         }
@@ -300,6 +408,64 @@ namespace DBapplication
             string query = "SELECT r.registrationid, p.paymentid, p.method, p.amount, p.paymentdate FROM Payments p, registration r  ; ";
             return dbMan.ExecuteReader(query);
         }
+
+        public int GetTotalMoodsCount()
+        {
+            string query = "SELECT COUNT(*) FROM Feedback";
+            try
+            {
+                object result = dbMan.ExecuteScalar(query);
+                return result != null ? Convert.ToInt32(result) : 0; // Convert and return, default to 0 if null
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error in GetTotalMoodsCount: {ex.Message}");
+                return -1; // Return -1 if an error occurs
+            }
+        }
+
+        public int GetPositiveMoodsCount()
+        {
+            string query = "SELECT COUNT(*) FROM Feedback WHERE Mood = 'Positive'";
+            try
+            {
+                object result = dbMan.ExecuteScalar(query);
+                return result != null ? Convert.ToInt32(result) : 0; // Convert and return, default to 0 if null
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error in GetPositiveMoodsCount: {ex.Message}");
+                return -1; // Return -1 if an error occurs
+            }
+        }
+        public DataTable PopulateComboBox()
+        {
+           string query = "SELECT staffid FROM Staff WHERE staffid BETWEEN 20000 AND 29999";
+            return dbMan.ExecuteReader(query);
+        }
+        public int Gettraineebyid(string staffId)
+        {
+            int staffIdInt = Convert.ToInt32(staffId);
+
+            // Construct the query with the staffId
+            string query = "SELECT COUNT(userid) FROM Plans WHERE staffid = " + staffIdInt;
+
+            // Execute the query and get the result
+            var result = dbMan.ExecuteScalar(query); // Use ExecuteScalar to get the count
+
+            // Return the result as an integer, handling DBNull.Value if necessary
+            return result != DBNull.Value ? Convert.ToInt32(result) : 0;
+        }
+        public int Insertadmin(string Managerid, string fname, string lname, int num, string address, string pass)
+        {
+            string manager1 = ("Manager");
+            Convert.ToInt32(Managerid);
+            string query = "INSERT INTO Staff(staffid, staff_address, fname, lname, phone_num, staff_type, spassword) " +
+                  "VALUES (" + Managerid + ",'" + address + "','" + fname + "','" + lname + "','" + num + "', '" + manager1 + "', '" + pass + "');";
+            return dbMan.ExecuteNonQuery(query);
+        }
+    }
+    }
 
         public DataTable GetDatesFORREG(int id)
         {

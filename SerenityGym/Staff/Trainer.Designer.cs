@@ -32,6 +32,7 @@
             panel1 = new Panel();
             pictureBox1 = new PictureBox();
             panel2 = new Panel();
+            button7 = new Button();
             pictureBox4 = new PictureBox();
             button6 = new Button();
             button5 = new Button();
@@ -69,6 +70,7 @@
             // 
             // panel2
             // 
+            panel2.Controls.Add(button7);
             panel2.Controls.Add(pictureBox4);
             panel2.Controls.Add(button6);
             panel2.Controls.Add(button5);
@@ -83,6 +85,21 @@
             panel2.Name = "panel2";
             panel2.Size = new Size(575, 530);
             panel2.TabIndex = 1;
+            // 
+            // button7
+            // 
+            button7.BackColor = Color.FromArgb(41, 128, 185);
+            button7.FlatStyle = FlatStyle.Flat;
+            button7.Font = new Font("Century Gothic", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            button7.ForeColor = Color.White;
+            button7.Location = new Point(0, 489);
+            button7.Margin = new Padding(2);
+            button7.Name = "button7";
+            button7.Size = new Size(126, 41);
+            button7.TabIndex = 18;
+            button7.Text = "Log Out";
+            button7.UseVisualStyleBackColor = false;
+            button7.Click += button7_Click;
             // 
             // pictureBox4
             // 
@@ -122,6 +139,7 @@
             button5.TabIndex = 15;
             button5.Text = "Clock Out";
             button5.UseVisualStyleBackColor = false;
+            button5.Click += button5_Click;
             // 
             // button4
             // 
@@ -242,5 +260,6 @@
         private Button B_transaction;
         private Button button6;
         private PictureBox pictureBox4;
+        private Button button7;
     }
 }

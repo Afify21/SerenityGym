@@ -32,16 +32,27 @@ namespace SerenityGym
 
         private void submit_Click(object sender, EventArgs e)
         {
-            UID = Convert.ToInt32(Userid.Text);
-            if (controllerObj.hasPlan(UID))
+
+           
+            if (string.IsNullOrWhiteSpace(Userid.Text))
             {
-                if (MessageBox.Show("User already has a plan! Do you want to update?", " ", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-                {
-                    UpdatePlans update = new UpdatePlans(TID, UID);
-                    update.Show();
-                }
+                MessageBox.Show("Please Enter A User ID");
+                return;
             }
-            else
+
+            if (!int.TryParse(Userid.Text, out int UID))
+            {
+                MessageBox.Show("User ID must be a numeric value");
+                return;
+            }
+            UID = Convert.ToInt32(Userid.Text);
+
+            if (!controllerObj.isUser(UID))
+            {
+                MessageBox.Show("Enter a Vald User");
+                return;
+            }
+            if (!controllerObj.hasPlan(UID))
             {
                 TrainCheckBox.Visible = true;
                 DietCheckBox.Visible = true;
@@ -50,25 +61,33 @@ namespace SerenityGym
                 return;
             }
 
-
-
-
-            if (Userid.Text == "")
-            {
-                MessageBox.Show("Please Enter A User ID");
-                return;
-            }
-            if (!controllerObj.IsTrainedByTrainer(UID, TID))
+                if (!controllerObj.IsTrainedByTrainer(UID, TID))
             {
                 MessageBox.Show("Please Enter A User You Train");
                 return;
 
             }
+            if (controllerObj.hasPlan(UID))
+            {
+                if (MessageBox.Show("User already has a plan! Do you want to update?", " ", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    UpdatePlans update = new UpdatePlans(TID, UID);
+                    update.Show();
+                    return;
+                }
+            }
+            
 
 
-            TrainCheckBox.Visible = true;
-            DietCheckBox.Visible = true;
-            name.Text = controllerObj.ShowName(UID);
+
+
+
+
+
+
+
+
+
 
 
         }
@@ -83,16 +102,15 @@ namespace SerenityGym
 
         private void update_Click(object sender, EventArgs e)
         {
+            
             if (TrainCheckBox.Checked && DietCheckBox.Checked)
             {
                 int result = controllerObj.AddTrainingPlan(UID, TID, "Training", TrainSplit.Text);
-                int result2 = controllerObj.AddTrainingPlan(UID, TID, "Food", FoodSplit.Text);
-
-                if (result == 0)
-                    MessageBox.Show("Insert Failed!");
-                else
+                int result2 = controllerObj.AddDietPlan(UID, TID, "Food", FoodSplit.Text);
                     MessageBox.Show("Inserted Successfully!");
+                return;
             }
+            MessageBox.Show("Insert Failed!");
 
         }
 
