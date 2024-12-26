@@ -5,6 +5,10 @@ using System.Text;
 using System.Data;
 using System.Windows.Forms;
 using System.Security.Cryptography;
+using static System.ComponentModel.Design.ObjectSelectorEditor;
+using System.Xml.Linq;
+using Microsoft.ReportingServices.Interfaces;
+using SerenityGym;
 
 namespace DBapplication
 {
@@ -16,13 +20,13 @@ namespace DBapplication
             dbMan = new DBManager();
         }
 
-      
+
         public void TerminateConnection()
         {
             dbMan.CloseConnection();
         }
-       
-        public int MatchingUser(int ID,string pass)
+
+        public int MatchingUser(int ID, string pass)
         {
             string query = "SELECT  Count(*) From Users WHERE userid=" + ID + " AND upassword='" + pass + "';";
             return (int)dbMan.ExecuteScalar(query);
@@ -33,9 +37,9 @@ namespace DBapplication
             return (int)dbMan.ExecuteScalar(query);
         }
 
-        public int UpdateUserPass(string s,int id)
+        public int UpdateUserPass(string s, int id)
         {
-            string query = "Update Users SET upassword='"+s+"' WHERE userid="+id+"";
+            string query = "Update Users SET upassword='" + s + "' WHERE userid=" + id + "";
             return dbMan.ExecuteNonQuery(query);
         }
         public int UpdateStaffPass(string s, int id)
@@ -64,9 +68,9 @@ namespace DBapplication
             return dbMan.ExecuteNonQuery(query);
         }
 
-        public int SubmitFeedback(string msg,int id, string mood)
+        public int SubmitFeedback(string msg, int id, string mood)
         {
-            string query = "INSERT into Feedback Values(" + id + ",'"+mood+"','" + msg + "','" + DateTime.Now + "')";
+            string query = "INSERT into Feedback Values(" + id + ",'" + mood + "','" + msg + "','" + DateTime.Now + "')";
             return dbMan.ExecuteNonQuery(query);
         }
         public int UpdatePlan(string type, int Tid, int Uid)
@@ -105,7 +109,7 @@ namespace DBapplication
                 return "User not found";
             }
         }
-        public string DietPlan(int UID,int TID)
+        public string DietPlan(int UID, int TID)
         {
             string query = "SELECT plan_type, Split,userid,staffid FROM Plans WHERE userid=" + UID + " AND plan_type='Food' AND staffid=" + TID;
             DataTable result = dbMan.ExecuteReader(query); // Assuming dbMan.ExecuteReader returns a DataTable
@@ -140,7 +144,7 @@ namespace DBapplication
                 }
             }
 
-            return false;  
+            return false;
         }
         public bool hasPlan(int UID)
         {
@@ -212,7 +216,7 @@ namespace DBapplication
             string query = "SELECT * FROM Equipment";
             return dbMan.ExecuteReader(query);
         }
-        
+
         public DataTable Feedbacktable()
         {
             string query = "SELECT * FROM Feedback";
@@ -224,13 +228,13 @@ namespace DBapplication
             return dbMan.ExecuteReader(query);
         }
 
-        public string Getnotis(string type,ref int i,ref int rowcount,ref string s)
+        public string Getnotis(string type, ref int i, ref int rowcount, ref string s)
         {
             string query = "Select notif_message,FORMAT(notif_date, 'yyyy-MM-dd') AS notif_date From Gets_Notified ,Notifications  where membership_type='" + type + "' AND notifid=notificationid ";
             DataTable dt = dbMan.ExecuteReader(query);
-            rowcount=dt.Rows.Count;
+            rowcount = dt.Rows.Count;
             if (i == -1)
-                i = rowcount-1;
+                i = rowcount - 1;
             if (dt.Rows.Count > 0)
             {
                 string noti = dt.Rows[i]["notif_message"].ToString();
@@ -242,11 +246,11 @@ namespace DBapplication
                 return null;
             };
         }
-        
+
         public string getmembership(int id)
         {
-            string query = "select membership_type from users where userid="+id+"";
-            DataTable typeee=dbMan.ExecuteReader(query);
+            string query = "select membership_type from users where userid=" + id + "";
+            DataTable typeee = dbMan.ExecuteReader(query);
             string s = typeee.Rows[0]["membership_type"].ToString();
             return s;
         }
@@ -273,7 +277,7 @@ namespace DBapplication
 
         public int DeleteStaff(int id)
         {
-            string query = "DELETE FROM Staff WHERE staffid = " + id+ "";
+            string query = "DELETE FROM Staff WHERE staffid = " + id + "";
             return dbMan.ExecuteNonQuery(query);
         }
         public int ShowProfit()
@@ -296,5 +300,60 @@ namespace DBapplication
             string query = "SELECT r.registrationid, p.paymentid, p.method, p.amount, p.paymentdate FROM Payments p, registration r  ; ";
             return dbMan.ExecuteReader(query);
         }
+
+        public DataTable GetDatesFORREG(int id)
+        {
+            DateTime today = DateTime.Today;
+            string date = today.ToString("yyyy-MM-dd");
+            string query = "select starthour,endhour from Registration where TrainerID=" + id + "AND regdate='" + today + "'";
+            return dbMan.ExecuteReader(query);
+        }
+
+        public int getTrainerID(string fn, string ln)
+        {
+            string query = "Select staffid from staff where fname='" + fn + "'AND lname='" + ln + "'";
+            return (int)dbMan.ExecuteScalar(query);
+        }
+
+        public DataTable getTrainers()
+        {
+            string query = "SELECT CONCAT(fname, ' ', lname) AS FullName from staff where staffid >= 20000 AND staffid<= 29999";
+            return dbMan.ExecuteReader(query);
+        }
+
+        public int getTrainerIDByFull(string FULL)
+        {
+            string query = "SELECT staffid FROM staff WHERE CONCAT(fname, ' ', lname) = '" + FULL + "'";
+            return (int)dbMan.ExecuteScalar(query);
+        }
+
+        public string[] getTrainersARR() {
+            string query = "SELECT CONCAT(fname, ' ', lname) AS FullName from staff where staffid >= 20000 AND staffid<= 29999"; DataTable dataTable = dbMan.ExecuteReader(query);
+            List<string> fullNames = new List<string>();
+            foreach (DataRow row in dataTable.Rows)
+            {
+                fullNames.Add(row["FullName"].ToString());
+            }
+            return fullNames.ToArray(); }
+
+        public int insertREGPRIVATE(int START, string type, int uid, string FullName, int Staffchecker)
+        {
+            int trainerid = getTrainerIDByFull(FullName);
+            if (Staffchecker == -1)
+            {
+                string query = "insert into Registeration values('" + (START.ToString() + ":00") + "','" + ((START + 1).ToString() + ":00") + "','" + DateTime.Now + "','" + uid + "',null,"+trainerid+",null)";
+                return (int)dbMan.ExecuteScalar(query);
+            }
+            if (Staffchecker > 0) 
+            {
+                string query = "insert into Registeration values('" + (START.ToString() + ":00") + "','" + ((START + 1).ToString() + ":00") + "','" + DateTime.Now + "'," + uid + ",null," + trainerid + ","+Staffchecker+")";
+                return (int)dbMan.ExecuteScalar(query);
+            }
+            return 0;
+        }
     }
 }
+    
+
+
+
