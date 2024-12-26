@@ -212,15 +212,15 @@ namespace DBapplication
         }
         public DataTable ViewPastSessions(int TID)
         {
-            string query = "SELECT registrationid,fname,lname,starthour,endhour,regdate FROM Registration,Users WHERE TrainerID=" + TID +
-                          " AND regtype='Private' AND regdate < '" + DateTime.Now.ToString("MM-dd-yyyy") + "'";
+            string query = "SELECT Distinct u.userid,r.registrationid,u.fname,u.lname,r.starthour,r.endhour,r.regdate FROM Registration as r,Users as u WHERE u.userid=r.userid And TrainerID=" + TID +
+                          " AND r.regtype='Private' AND r.regdate < '" + DateTime.Now.ToString("MM-dd-yyyy") + "'";
             return dbMan.ExecuteReader(query);
         }
 
         public DataTable ViewComingSessions(int TID)
         {
-            string query = "SELECT registrationid,fname,lname,starthour,endhour,regdate FROM Registration,Users WHERE TrainerID=" + TID +
-                          " AND regtype='Private' AND regdate >= '" + DateTime.Now.ToString("MM-dd-yyyy") + "'";
+            string query = "SELECT Distinct u.userid,r.registrationid,u.fname,u.lname,r.starthour,r.endhour,r.regdate FROM Registration as r,Users as u WHERE u.userid=r.userid And TrainerID=" + TID +
+                          " AND r.regtype='Private' AND r.regdate >= '" + DateTime.Now.ToString("MM-dd-yyyy") + "'";
             return dbMan.ExecuteReader(query);
         }
         public DataTable ViewMemberProgress(int TID, int UID)
