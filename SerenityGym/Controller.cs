@@ -296,5 +296,36 @@ namespace DBapplication
             string query = "SELECT r.registrationid, p.paymentid, p.method, p.amount, p.paymentdate FROM Payments p, registration r  ; ";
             return dbMan.ExecuteReader(query);
         }
+
+        public int GetTotalMoodsCount()
+        {
+            string query = "SELECT COUNT(*) FROM Feedback";
+            try
+            {
+                object result = dbMan.ExecuteScalar(query);
+                return result != null ? Convert.ToInt32(result) : 0; // Convert and return, default to 0 if null
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error in GetTotalMoodsCount: {ex.Message}");
+                return -1; // Return -1 if an error occurs
+            }
+        }
+
+        public int GetPositiveMoodsCount()
+        {
+            string query = "SELECT COUNT(*) FROM Feedback WHERE Mood = 'Positive'";
+            try
+            {
+                object result = dbMan.ExecuteScalar(query);
+                return result != null ? Convert.ToInt32(result) : 0; // Convert and return, default to 0 if null
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error in GetPositiveMoodsCount: {ex.Message}");
+                return -1; // Return -1 if an error occurs
+            }
+        }
+
     }
 }
