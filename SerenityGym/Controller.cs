@@ -506,15 +506,31 @@ namespace DBapplication
             int trainerid = getTrainerIDByFull(FullName);
             if (Staffchecker == -1)
             {
-                string query = "insert into Registeration values('" + (START.ToString() + ":00") + "','" + ((START + 1).ToString() + ":00") + "','" + DateTime.Now + "','" + uid + "',null,"+trainerid+",null)";
-                return (int)dbMan.ExecuteScalar(query);
+                string query = "insert into Registration(starthour,endhour,regdate,regtype,userid,membership_type,TrainerID,S_ID) values('" + (START.ToString() + ":00:00") + "','" + ((START + 1).ToString() + ":00:00") + "','" + DateTime.Now + "','"+type+"'," + uid + ",null,"+trainerid+",null);";
+                return dbMan.ExecuteNonQuery(query);
             }
             if (Staffchecker > 0) 
             {
-                string query = "insert into Registeration values('" + (START.ToString() + ":00") + "','" + ((START + 1).ToString() + ":00") + "','" + DateTime.Now + "'," + uid + ",null," + trainerid + ","+Staffchecker+")";
-                return (int)dbMan.ExecuteScalar(query);
+                string query = "insert into Registration(starthour,endhour,regdate,regtype,userid,membership_type,TrainerID,S_ID) values('" + (START.ToString() + ":00:00") + "','" + ((START + 1).ToString() + ":00:00") + "','" + DateTime.Now + "','"+type+"'," + uid + ",null," + trainerid + ","+Staffchecker+");";
+                return dbMan.ExecuteNonQuery(query);
             }
             return 0;
+        }
+        public int InsertMembershipReg(int ID, string type1, string type2,int RID)
+        {
+            string query = "INSERT INTO Registration(starthour,endhour,regdate,regtype,userid,membership_type,TrainerID,S_ID) VALUES (NULL,NULL,'" + DateTime.Now + "','" + type1 + "'," + ID + ",'" + type2 + "',NULL," + RID + ");";
+            return dbMan.ExecuteNonQuery(query);
+
+        }
+        public int GetCost(string type)
+        {
+            string query = "SELECT MAX(cost) FROM Membership WHERE membership_type='"+type+"';";
+            return (int)dbMan.ExecuteScalar(query);
+        }
+        public int InsertPayment(int amount, string method, int RID)
+        {
+            string query = "INSERT INTO Payments(amount,paymentdate,method,staffid) VALUES (" + amount + ",'" + DateTime.Now + "','" + method + "'," + RID + ");";
+            return dbMan.ExecuteNonQuery(query);
         }
     }
 }

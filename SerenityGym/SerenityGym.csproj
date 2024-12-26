@@ -24,6 +24,9 @@
     <Compile Update="Staff\Addadmin.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Staff\RecReg.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Staff\Register.cs">
       <SubType>Form</SubType>
     </Compile>

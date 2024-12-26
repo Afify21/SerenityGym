@@ -97,7 +97,7 @@ namespace SerenityGym
 
         private void button4_Click(object sender, EventArgs e)
         {
-            Register R = new Register();
+            RecReg R = new RecReg(-1,RID);
             R.Show();
         }
     }
