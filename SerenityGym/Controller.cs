@@ -76,6 +76,7 @@ namespace DBapplication
             string query = "Update Users SET phone_num=" + Tid + " WHERE userid=" + Uid + "";
             return dbMan.ExecuteNonQuery(query);
         }
+       
         public string ShowName(int UID)
         {
             string query = "SELECT fname, lname FROM Users WHERE userid=" + UID;
@@ -163,6 +164,29 @@ namespace DBapplication
                 }
             }
 
+
+            return false;
+        }
+        public bool isUser(int UID)
+        {
+            string query = "SELECT userid FROM Users WHERE userid=" + UID;
+
+            DataTable result = dbMan.ExecuteReader(query);
+            if (result == null)
+            {
+                return false;
+            }
+            if (result.Rows.Count > 0)
+            {
+                int userid = Convert.ToInt32(result.Rows[0]["userid"]);
+
+                if (userid == UID)
+                {
+                    return true;
+                }
+            }
+
+
             return false;
         }
         public int UpdateTSplit(string split, int UID)
@@ -177,7 +201,7 @@ namespace DBapplication
         }
         public int AddTrainingPlan(int uid, int tid, string type, string split)
         {
-            string query = "INSERT INTO Plans (userid, staffid,plan_type,Split) VALUES (" + uid + ", " + tid + ", '" + type + "', '" + split + "')";
+            string query = "INSERT INTO Plans (userid,staffid,plan_type,Split) VALUES (" + uid + ", " + tid + ", '" + type + "', '" + split + "')";
             return dbMan.ExecuteNonQuery(query);
         }
         public int AddDietPlan(int uid, int tid, string type, string split)
