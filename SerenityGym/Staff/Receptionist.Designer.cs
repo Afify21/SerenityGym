@@ -40,6 +40,7 @@
             pictureBox2 = new PictureBox();
             label2 = new Label();
             button1 = new Button();
+            button7 = new Button();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel2.SuspendLayout();
@@ -84,6 +85,7 @@
             // 
             // panel2
             // 
+            panel2.Controls.Add(button7);
             panel2.Controls.Add(pictureBox4);
             panel2.Controls.Add(Stafff);
             panel2.Controls.Add(Userr);
@@ -186,6 +188,21 @@
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click;
             // 
+            // button7
+            // 
+            button7.BackColor = Color.FromArgb(41, 128, 185);
+            button7.FlatStyle = FlatStyle.Flat;
+            button7.Font = new Font("Century Gothic", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            button7.ForeColor = Color.White;
+            button7.Location = new Point(0, 489);
+            button7.Margin = new Padding(2);
+            button7.Name = "button7";
+            button7.Size = new Size(126, 41);
+            button7.TabIndex = 19;
+            button7.Text = "Log Out";
+            button7.UseVisualStyleBackColor = false;
+            button7.Click += button7_Click;
+            // 
             // Receptionist
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
@@ -223,5 +240,6 @@
         private Button Stafff;
         private Button Userr;
         private PictureBox pictureBox4;
+        private Button button7;
     }
 }

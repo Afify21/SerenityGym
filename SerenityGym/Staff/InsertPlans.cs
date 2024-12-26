@@ -32,16 +32,19 @@ namespace SerenityGym
 
         private void submit_Click(object sender, EventArgs e)
         {
-            UID = Convert.ToInt32(Userid.Text);
-            if (controllerObj.hasPlan(UID))
+            if (string.IsNullOrWhiteSpace(Userid.Text))
             {
-                if (MessageBox.Show("User already has a plan! Do you want to update?", " ", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-                {
-                    UpdatePlans update = new UpdatePlans(TID, UID);
-                    update.Show();
-                }
+                MessageBox.Show("Please Enter A User ID");
+                return;
             }
-            else
+
+            if (!int.TryParse(Userid.Text, out int UID))
+            {
+                MessageBox.Show("User ID must be a numeric value");
+                return;
+            }
+            UID = Convert.ToInt32(Userid.Text);
+            if (!controllerObj.hasPlan(UID))
             {
                 TrainCheckBox.Visible = true;
                 DietCheckBox.Visible = true;
@@ -50,25 +53,32 @@ namespace SerenityGym
                 return;
             }
 
-
-
-
-            if (Userid.Text == "")
-            {
-                MessageBox.Show("Please Enter A User ID");
-                return;
-            }
-            if (!controllerObj.IsTrainedByTrainer(UID, TID))
+                if (!controllerObj.IsTrainedByTrainer(UID, TID))
             {
                 MessageBox.Show("Please Enter A User You Train");
                 return;
 
             }
+            if (controllerObj.hasPlan(UID))
+            {
+                if (MessageBox.Show("User already has a plan! Do you want to update?", " ", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    UpdatePlans update = new UpdatePlans(TID, UID);
+                    update.Show();
+                    return;
+                }
+            }
+            
+                
+            
 
 
-            TrainCheckBox.Visible = true;
-            DietCheckBox.Visible = true;
-            name.Text = controllerObj.ShowName(UID);
+
+
+            
+            
+
+
 
 
         }
