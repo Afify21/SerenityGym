@@ -72,13 +72,20 @@ namespace SerenityGym
 
         private void submit_Click(object sender, EventArgs e)
         {
-            UID = Convert.ToInt32(Userid.Text);
-
-            if (Userid.Text == "")
+            if (string.IsNullOrWhiteSpace(Userid.Text))
             {
                 MessageBox.Show("Please Enter A User ID");
                 return;
             }
+
+            if (!int.TryParse(Userid.Text, out int UID))
+            {
+                MessageBox.Show("User ID must be a numeric value");
+                return;
+            }
+            UID = Convert.ToInt32(Userid.Text);
+
+           
             if (!controllerObj.IsTrainedByTrainer(UID, TID))
             {
                 MessageBox.Show("Please Enter A User You Train");
