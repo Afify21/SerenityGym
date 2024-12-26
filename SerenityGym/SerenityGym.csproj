@@ -17,6 +17,18 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="Staff\SendNotif.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Staff\UpdateSelf.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Staff\SignUp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Staff\UpdateUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="User\UserFeedB.cs">
       <SubType>Form</SubType>
     </Compile>
