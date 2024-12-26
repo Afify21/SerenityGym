@@ -65,14 +65,27 @@ namespace SerenityGym
 
         private void B_Update_Click(object sender, EventArgs e)
         {
-
+            if (staffidbox.Text == "")
+            {
+                MessageBox.Show("Please enter ID!");
+                return;
+            }
+            else if (!int.TryParse(staffidbox.Text, out _))
+            {
+                MessageBox.Show("Staff ID should contain only numeric values");
+                return;
+            }
+            else if (int.Parse(staffidbox.Text) < 10000 || int.Parse(staffidbox.Text) > 30000)
+            {
+                MessageBox.Show("Staff ID should be between 10000 and 30000");
+            }
             int UID = Convert.ToInt32(staffidbox.Text);
             if (CB_Updator.Text == "Password")
             {
 
                 int result = controllerObj.UpdateStaffPass(TB_Update.Text, UID);
                 if (result == 0)
-                    MessageBox.Show("Update Failed!");
+                    MessageBox.Show("Update Failed! ID may not exist");
                 else
                     MessageBox.Show("Updated Successfully!");
 
