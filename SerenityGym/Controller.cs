@@ -273,6 +273,7 @@ namespace DBapplication
             string query = "Update Staff SET staff_address='" + s + "' WHERE staffid=" + id + "";
             return dbMan.ExecuteNonQuery(query);
         }
+       
         public int UpdateStaffPhone(int no, int id)
         {
             string query = "Update Staff SET phone_num=" + no + " WHERE staffid=" + id + "";
@@ -296,11 +297,7 @@ namespace DBapplication
             string query = "SELECT COUNT(*) FROM Attendance WHERE att_date ='" + DateTime.Now + "' AND staffid =" + id;
             return (int)dbMan.ExecuteScalar(query);
         }
-        public int UpdateStaffAddress(string add,int id)
-        {
-            string query = "UPDATE Staff SET staff_address='" + add + "' WHERE staffid =" + id;
-            return dbMan.ExecuteNonQuery(query);
-        }
+     
         public int UpdateStaffFName(string name, int id)
         {
             string query = "UPDATE Staff SET fname='" + name + "' WHERE staffid =" + id;

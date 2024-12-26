@@ -38,8 +38,8 @@
             pictureBox4 = new PictureBox();
             Stafff = new Button();
             Userr = new Button();
-            pictureBox3 = new PictureBox();
-            pictureBox2 = new PictureBox();
+          /*  pictureBox3 = new PictureBox();
+            pictureBox2 = new PictureBox();*/
             label2 = new Label();
             button1 = new Button();
             button7 = new Button();
@@ -48,8 +48,8 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
+/*            ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();*/
             SuspendLayout();
             // 
             // panel1
@@ -70,14 +70,14 @@
             // 
             // upd
             // 
-            label1.AutoSize = true;
+         /*   label1.AutoSize = true;
             label1.Font = new Font("Century Gothic", 16F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label1.Location = new Point(36, 235);
             label1.Margin = new Padding(2, 0, 2, 0);
             label1.Name = "label1";
             label1.Size = new Size(223, 39);
             label1.TabIndex = 1;
-            label1.Text = "Serenity Gym";
+            label1.Text = "Serenity Gym";*/
             upd.FormattingEnabled = true;
             upd.Items.AddRange(new object[] { "User", "Self" });
             upd.Location = new Point(31, 109);
@@ -150,8 +150,8 @@
             panel2.Controls.Add(pictureBox4);
             panel2.Controls.Add(Stafff);
             panel2.Controls.Add(Userr);
-            panel2.Controls.Add(pictureBox3);
-            panel2.Controls.Add(pictureBox2);
+       /*     panel2.Controls.Add(pictureBox3);
+            panel2.Controls.Add(pictureBox2);*/
             panel2.Controls.Add(pictureBox1);
             panel2.Controls.Add(label2);
             panel2.Controls.Add(button1);
@@ -168,7 +168,7 @@
             // 
             // pictureBox4
             // 
-            pictureBox4.Image = (Image)resources.GetObject("pictureBox4.Image");
+/*            pictureBox4.Image = (Image)resources.GetObject("pictureBox4.Image");*/
             pictureBox4.Location = new Point(3, 3);
             pictureBox4.Name = "pictureBox4";
             pictureBox4.Size = new Size(28, 37);
@@ -206,25 +206,25 @@
             // 
             // pictureBox3
             // 
-            pictureBox3.Image = (Image)resources.GetObject("pictureBox3.Image");
+         /*   pictureBox3.Image = (Image)resources.GetObject("pictureBox3.Image");
             pictureBox3.Location = new Point(265, 212);
             pictureBox3.Margin = new Padding(2);
             pictureBox3.Name = "pictureBox3";
             pictureBox3.Size = new Size(86, 99);
             pictureBox3.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox3.TabIndex = 5;
-            pictureBox3.TabStop = false;
+            pictureBox3.TabStop = false;*/
             // 
             // pictureBox2
             // 
-            pictureBox2.Image = Properties.Resources.User;
+        /*    pictureBox2.Image = Properties.Resources.User;
             pictureBox2.Location = new Point(109, 235);
             pictureBox2.Margin = new Padding(2);
             pictureBox2.Name = "pictureBox2";
             pictureBox2.Size = new Size(62, 52);
             pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox2.TabIndex = 3;
-            pictureBox2.TabStop = false;
+            pictureBox2.TabStop = false;*/
             // 
             // label2
             // 
@@ -305,8 +305,8 @@
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
+      /*      ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();*/
             ResumeLayout(false);
         }
 
