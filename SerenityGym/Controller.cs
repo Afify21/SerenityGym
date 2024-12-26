@@ -385,7 +385,6 @@ namespace DBapplication
         public int ClockingOut(int id)
         {
             string query = "INSERT INTO Attendance (att_status, att_date, staffid) VALUES ('Clocked Out','" + DateTime.Now + "'," + id + ");";
-            string query = "DELETE FROM Staff WHERE staffid = " + id + "";
             return dbMan.ExecuteNonQuery(query);
         }
         public int ShowProfit()
@@ -464,8 +463,8 @@ namespace DBapplication
                   "VALUES (" + Managerid + ",'" + address + "','" + fname + "','" + lname + "','" + num + "', '" + manager1 + "', '" + pass + "');";
             return dbMan.ExecuteNonQuery(query);
         }
-    }
-    }
+    
+    
 
         public DataTable GetDatesFORREG(int id)
         {
