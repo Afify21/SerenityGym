@@ -32,21 +32,21 @@
             pictureBox1 = new PictureBox();
             label1 = new Label();
             panel2 = new Panel();
+            label6 = new Label();
+            label5 = new Label();
+            label4 = new Label();
+            label3 = new Label();
+            label2 = new Label();
+            confirm = new TextBox();
+            num = new TextBox();
+            pass = new TextBox();
+            add = new TextBox();
+            fname = new TextBox();
             Address = new Label();
             lname = new TextBox();
             button1 = new Button();
             Stafff = new Button();
             Userr = new Button();
-            fname = new TextBox();
-            add = new TextBox();
-            pass = new TextBox();
-            num = new TextBox();
-            confirm = new TextBox();
-            label2 = new Label();
-            label3 = new Label();
-            label4 = new Label();
-            label5 = new Label();
-            label6 = new Label();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel2.SuspendLayout();
@@ -112,6 +112,88 @@
             panel2.TabIndex = 1;
             panel2.Paint += panel2_Paint;
             // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Location = new Point(144, 259);
+            label6.Name = "label6";
+            label6.Size = new Size(222, 20);
+            label6.TabIndex = 19;
+            label6.Text = "Confirm your previous password";
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Location = new Point(343, 205);
+            label5.Name = "label5";
+            label5.Size = new Size(70, 20);
+            label5.TabIndex = 18;
+            label5.Text = "Password";
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Location = new Point(64, 205);
+            label4.Name = "label4";
+            label4.Size = new Size(108, 20);
+            label4.TabIndex = 17;
+            label4.Text = "Phone Number";
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new Point(351, 125);
+            label3.Name = "label3";
+            label3.Size = new Size(79, 20);
+            label3.TabIndex = 16;
+            label3.Text = "Last Name";
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new Point(78, 125);
+            label2.Name = "label2";
+            label2.Size = new Size(80, 20);
+            label2.TabIndex = 15;
+            label2.Text = "First Name";
+            // 
+            // confirm
+            // 
+            confirm.Location = new Point(188, 282);
+            confirm.Name = "confirm";
+            confirm.PasswordChar = '*';
+            confirm.Size = new Size(125, 27);
+            confirm.TabIndex = 14;
+            // 
+            // num
+            // 
+            num.Location = new Point(57, 228);
+            num.Name = "num";
+            num.Size = new Size(125, 27);
+            num.TabIndex = 13;
+            // 
+            // pass
+            // 
+            pass.Location = new Point(326, 228);
+            pass.Name = "pass";
+            pass.PasswordChar = '*';
+            pass.Size = new Size(125, 27);
+            pass.TabIndex = 12;
+            // 
+            // add
+            // 
+            add.Location = new Point(188, 107);
+            add.Name = "add";
+            add.Size = new Size(125, 27);
+            add.TabIndex = 11;
+            // 
+            // fname
+            // 
+            fname.Location = new Point(57, 148);
+            fname.Name = "fname";
+            fname.Size = new Size(125, 27);
+            fname.TabIndex = 10;
+            // 
             // Address
             // 
             Address.AutoSize = true;
@@ -172,86 +254,6 @@
             Userr.Text = "BACK";
             Userr.UseVisualStyleBackColor = false;
             Userr.Click += Userr_Click;
-            // 
-            // fname
-            // 
-            fname.Location = new Point(57, 148);
-            fname.Name = "fname";
-            fname.Size = new Size(125, 27);
-            fname.TabIndex = 10;
-            // 
-            // add
-            // 
-            add.Location = new Point(188, 107);
-            add.Name = "add";
-            add.Size = new Size(125, 27);
-            add.TabIndex = 11;
-            // 
-            // pass
-            // 
-            pass.Location = new Point(326, 228);
-            pass.Name = "pass";
-            pass.Size = new Size(125, 27);
-            pass.TabIndex = 12;
-            // 
-            // num
-            // 
-            num.Location = new Point(57, 228);
-            num.Name = "num";
-            num.Size = new Size(125, 27);
-            num.TabIndex = 13;
-            // 
-            // confirm
-            // 
-            confirm.Location = new Point(188, 282);
-            confirm.Name = "confirm";
-            confirm.Size = new Size(125, 27);
-            confirm.TabIndex = 14;
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Location = new Point(78, 125);
-            label2.Name = "label2";
-            label2.Size = new Size(80, 20);
-            label2.TabIndex = 15;
-            label2.Text = "First Name";
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Location = new Point(351, 125);
-            label3.Name = "label3";
-            label3.Size = new Size(79, 20);
-            label3.TabIndex = 16;
-            label3.Text = "Last Name";
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Location = new Point(64, 205);
-            label4.Name = "label4";
-            label4.Size = new Size(108, 20);
-            label4.TabIndex = 17;
-            label4.Text = "Phone Number";
-            // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.Location = new Point(343, 205);
-            label5.Name = "label5";
-            label5.Size = new Size(70, 20);
-            label5.TabIndex = 18;
-            label5.Text = "Password";
-            // 
-            // label6
-            // 
-            label6.AutoSize = true;
-            label6.Location = new Point(144, 259);
-            label6.Name = "label6";
-            label6.Size = new Size(222, 20);
-            label6.TabIndex = 19;
-            label6.Text = "Confirm your previous password";
             // 
             // UpdateSelf
             // 

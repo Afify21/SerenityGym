@@ -42,7 +42,7 @@ namespace SerenityGym
 
         private void B_Registeration_Click(object sender, EventArgs e)
         {
-            OnlineReg onlineReg = new OnlineReg(UID);
+            OnlineReg onlineReg = new OnlineReg(UID,-1);
             onlineReg.Show();
         }
 
@@ -58,6 +58,12 @@ namespace SerenityGym
             UserLogin.ActiveForm.Close();
             UserLogin userlogin = new UserLogin();
             userlogin.Show();
+        }
+
+        private void B_Tracker_Click(object sender, EventArgs e)
+        {
+            Tracker tracker = new Tracker(UID);
+            tracker.Show();
         }
     }
 }
