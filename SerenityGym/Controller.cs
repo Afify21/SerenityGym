@@ -99,7 +99,7 @@ namespace DBapplication
         }
         public string TrainingPlan(int UID)
         {
-            string query = "SELECT plan_type, Split,userid FROM Plans WHERE userid=" + UID + " AND plan_type='Training'";
+            string query = "SELECT plan_type,Split,userid FROM Plans WHERE userid=" + UID + " AND plan_type='Training'";
             DataTable result = dbMan.ExecuteReader(query); // Assuming dbMan.ExecuteReader returns a DataTable
 
             if (result.Rows.Count > 0)
@@ -233,14 +233,14 @@ namespace DBapplication
         }
         public DataTable ViewPastSessions(int TID)
         {
-            string query = "SELECT Distinct u.userid,r.registrationid,u.fname,u.lname,r.starthour,r.endhour,r.regdate FROM Registration as r,Users as u WHERE u.userid=r.userid And TrainerID=" + TID +
+            string query = "SELECT Distinct u.fname,u.lname,r.starthour,r.endhour,r.regdate FROM Registration as r,Users as u WHERE u.userid=r.userid And TrainerID=" + TID +
                           " AND r.regtype='Private' AND r.regdate < '" + DateTime.Now.ToString("MM-dd-yyyy") + "'";
             return dbMan.ExecuteReader(query);
         }
 
         public DataTable ViewComingSessions(int TID)
         {
-            string query = "SELECT Distinct u.userid,r.registrationid,u.fname,u.lname,r.starthour,r.endhour,r.regdate FROM Registration as r,Users as u WHERE u.userid=r.userid And TrainerID=" + TID +
+            string query = "SELECT Distinct u.fname,u.lname,r.starthour,r.endhour,r.regdate FROM Registration as r,Users as u WHERE u.userid=r.userid And TrainerID=" + TID +
                           " AND r.regtype='Private' AND r.regdate >= '" + DateTime.Now.ToString("MM-dd-yyyy") + "'";
             return dbMan.ExecuteReader(query);
         }

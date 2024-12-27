@@ -54,8 +54,7 @@ namespace SerenityGym
                 TrainSplit.Visible = true;
 
 
-                string result = controllerObj.TrainingPlan(UID);
-                trainplan.Text = result;
+                
             }
             else
             {
@@ -110,8 +109,7 @@ namespace SerenityGym
 
                 dietplan.Visible = true;
                 FoodSplit.Visible = true;
-                string result = controllerObj.DietPlan(UID, TID);
-                dietplan.Text = result;
+                
             }
             else
             {
@@ -127,13 +125,15 @@ namespace SerenityGym
 
         private void update_Click(object sender, EventArgs e)
         {
-            int result = controllerObj.UpdateTSplit(TrainSplit.Text, UID);
-            int result2 = controllerObj.UpdateFSplit(FoodSplit.Text, UID);
-
-            if (result == 0 && result2 == 0)
-                MessageBox.Show("Update Failed!");
-            else
+            if (TrainCheckBox.Checked || DietCheckBox.Checked)
+            {
+                int result = controllerObj.UpdateTSplit(TrainSplit.Text, UID );
+                int result2 = controllerObj.UpdateFSplit(TrainSplit.Text, UID);
                 MessageBox.Show("Updated Successfully!");
+                return;
+            }
+            MessageBox.Show("Update Failed!");
+
 
         }
 
