@@ -34,16 +34,15 @@
             pictureBox2 = new PictureBox();
             label2 = new Label();
             panel2 = new Panel();
+            B_Cancel = new Button();
             button7 = new Button();
             pictureBox4 = new PictureBox();
             B_Tracker = new Button();
             B_Notifications = new Button();
-            B_transaction = new Button();
             B_Registeration = new Button();
             B_Feedback = new Button();
             Userr = new Button();
             button1 = new Button();
-            B_Cancel = new Button();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
@@ -105,7 +104,6 @@
             panel2.Controls.Add(pictureBox4);
             panel2.Controls.Add(B_Tracker);
             panel2.Controls.Add(B_Notifications);
-            panel2.Controls.Add(B_transaction);
             panel2.Controls.Add(B_Registeration);
             panel2.Controls.Add(B_Feedback);
             panel2.Controls.Add(Userr);
@@ -117,6 +115,21 @@
             panel2.Size = new Size(484, 424);
             panel2.TabIndex = 1;
             panel2.Paint += panel2_Paint;
+            // 
+            // B_Cancel
+            // 
+            B_Cancel.BackColor = Color.FromArgb(41, 128, 185);
+            B_Cancel.FlatStyle = FlatStyle.Flat;
+            B_Cancel.Font = new Font("Century Gothic", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            B_Cancel.ForeColor = Color.White;
+            B_Cancel.Location = new Point(67, 189);
+            B_Cancel.Margin = new Padding(2);
+            B_Cancel.Name = "B_Cancel";
+            B_Cancel.Size = new Size(351, 36);
+            B_Cancel.TabIndex = 21;
+            B_Cancel.Text = "Cancel Registeration";
+            B_Cancel.UseVisualStyleBackColor = false;
+            B_Cancel.Click += B_Cancel_Click;
             // 
             // button7
             // 
@@ -137,7 +150,7 @@
             // 
             pictureBox4.Image = (Image)resources.GetObject("pictureBox4.Image");
             pictureBox4.Location = new Point(2, 2);
-            pictureBox4.Margin = new Padding(2, 2, 2, 2);
+            pictureBox4.Margin = new Padding(2);
             pictureBox4.Name = "pictureBox4";
             pictureBox4.Size = new Size(22, 30);
             pictureBox4.TabIndex = 8;
@@ -150,7 +163,7 @@
             B_Tracker.FlatStyle = FlatStyle.Flat;
             B_Tracker.Font = new Font("Century Gothic", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
             B_Tracker.ForeColor = Color.White;
-            B_Tracker.Location = new Point(67, 109);
+            B_Tracker.Location = new Point(67, 69);
             B_Tracker.Margin = new Padding(2);
             B_Tracker.Name = "B_Tracker";
             B_Tracker.Size = new Size(351, 33);
@@ -174,31 +187,16 @@
             B_Notifications.UseVisualStyleBackColor = false;
             B_Notifications.Click += B_Notifications_Click;
             // 
-            // B_transaction
-            // 
-            B_transaction.BackColor = Color.FromArgb(41, 128, 185);
-            B_transaction.FlatStyle = FlatStyle.Flat;
-            B_transaction.Font = new Font("Century Gothic", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            B_transaction.ForeColor = Color.White;
-            B_transaction.Location = new Point(67, 44);
-            B_transaction.Margin = new Padding(2);
-            B_transaction.Name = "B_transaction";
-            B_transaction.Size = new Size(351, 33);
-            B_transaction.TabIndex = 10;
-            B_transaction.Text = "Transaction History";
-            B_transaction.UseVisualStyleBackColor = false;
-            B_transaction.Click += B_transaction_Click;
-            // 
             // B_Registeration
             // 
             B_Registeration.BackColor = Color.FromArgb(41, 128, 185);
             B_Registeration.FlatStyle = FlatStyle.Flat;
             B_Registeration.Font = new Font("Century Gothic", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
             B_Registeration.ForeColor = Color.White;
-            B_Registeration.Location = new Point(67, 165);
+            B_Registeration.Location = new Point(67, 127);
             B_Registeration.Margin = new Padding(2);
             B_Registeration.Name = "B_Registeration";
-            B_Registeration.Size = new Size(175, 60);
+            B_Registeration.Size = new Size(351, 36);
             B_Registeration.TabIndex = 9;
             B_Registeration.Text = "New Registeration";
             B_Registeration.UseVisualStyleBackColor = false;
@@ -213,7 +211,7 @@
             B_Feedback.Location = new Point(67, 293);
             B_Feedback.Margin = new Padding(2);
             B_Feedback.Name = "B_Feedback";
-            B_Feedback.Size = new Size(351, 28);
+            B_Feedback.Size = new Size(351, 34);
             B_Feedback.TabIndex = 8;
             B_Feedback.Text = "Submit Feedback";
             B_Feedback.UseVisualStyleBackColor = false;
@@ -249,21 +247,6 @@
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click;
             // 
-            // B_Cancel
-            // 
-            B_Cancel.BackColor = Color.FromArgb(41, 128, 185);
-            B_Cancel.FlatStyle = FlatStyle.Flat;
-            B_Cancel.Font = new Font("Century Gothic", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            B_Cancel.ForeColor = Color.White;
-            B_Cancel.Location = new Point(246, 165);
-            B_Cancel.Margin = new Padding(2);
-            B_Cancel.Name = "B_Cancel";
-            B_Cancel.Size = new Size(172, 60);
-            B_Cancel.TabIndex = 21;
-            B_Cancel.Text = "Cancel Registeration";
-            B_Cancel.UseVisualStyleBackColor = false;
-            B_Cancel.Click += B_Cancel_Click;
-            // 
             // User
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -298,7 +281,6 @@
         private Button B_Feedback;
         private Button Userr;
         private Button B_Notifications;
-        private Button B_transaction;
         private Button B_Registeration;
         private Button B_Tracker;
         private PictureBox pictureBox4;

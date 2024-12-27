@@ -101,9 +101,9 @@
             // comboBox1
             // 
             comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(171, 123);
+            comboBox1.Location = new Point(171, 100);
             comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(152, 33);
+            comboBox1.Size = new Size(152, 28);
             comboBox1.TabIndex = 18;
             comboBox1.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
             // 
@@ -111,7 +111,7 @@
             // 
             pictureBox4.Image = (Image)resources.GetObject("pictureBox4.Image");
             pictureBox4.Location = new Point(2, 2);
-            pictureBox4.Margin = new Padding(2, 2, 2, 2);
+            pictureBox4.Margin = new Padding(2);
             pictureBox4.Name = "pictureBox4";
             pictureBox4.Size = new Size(22, 30);
             pictureBox4.TabIndex = 8;
@@ -121,7 +121,7 @@
             // dietplan
             // 
             dietplan.AutoSize = true;
-            dietplan.Location = new Point(350, 189);
+            dietplan.Location = new Point(295, 244);
             dietplan.Margin = new Padding(2, 0, 2, 0);
             dietplan.Name = "dietplan";
             dietplan.Size = new Size(69, 20);
@@ -132,7 +132,7 @@
             // trainplan
             // 
             trainplan.AutoSize = true;
-            trainplan.Location = new Point(193, 189);
+            trainplan.Location = new Point(102, 244);
             trainplan.Margin = new Padding(2, 0, 2, 0);
             trainplan.Name = "trainplan";
             trainplan.Size = new Size(94, 20);
@@ -143,8 +143,8 @@
             // 
             FoodSplit.FormattingEnabled = true;
             FoodSplit.Items.AddRange(new object[] { "Low-Carb", "High-Carb", "Keto", "PSMF" });
-            FoodSplit.Location = new Point(342, 234);
-            FoodSplit.Margin = new Padding(2, 2, 2, 2);
+            FoodSplit.Location = new Point(283, 295);
+            FoodSplit.Margin = new Padding(2);
             FoodSplit.Name = "FoodSplit";
             FoodSplit.Size = new Size(95, 28);
             FoodSplit.TabIndex = 15;
@@ -153,8 +153,8 @@
             // 
             TrainSplit.FormattingEnabled = true;
             TrainSplit.Items.AddRange(new object[] { "Arnold", "General", "Upper-Lower", "Push-Pull-Leg" });
-            TrainSplit.Location = new Point(187, 234);
-            TrainSplit.Margin = new Padding(2, 2, 2, 2);
+            TrainSplit.Location = new Point(102, 295);
+            TrainSplit.Margin = new Padding(2);
             TrainSplit.Name = "TrainSplit";
             TrainSplit.Size = new Size(95, 28);
             TrainSplit.TabIndex = 14;
@@ -163,7 +163,7 @@
             // name
             // 
             name.AutoSize = true;
-            name.Location = new Point(74, 147);
+            name.Location = new Point(77, 180);
             name.Margin = new Padding(2, 0, 2, 0);
             name.Name = "name";
             name.Size = new Size(49, 20);
@@ -178,21 +178,10 @@
             label3.Location = new Point(24, 102);
             label3.Margin = new Padding(2, 0, 2, 0);
             label3.Name = "label3";
-            label3.Size = new Size(136, 25);
-            label3.Size = new Size(75, 21);
+            label3.Size = new Size(111, 21);
             label3.TabIndex = 12;
             label3.Text = "USER Name";
             label3.Click += label3_Click;
-            // 
-            // Userid
-            // 
-            Userid.Font = new Font("Century Gothic", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            Userid.ForeColor = Color.FromArgb(41, 128, 185);
-            Userid.Location = new Point(121, 97);
-            Userid.Margin = new Padding(2);
-            Userid.Name = "Userid";
-            Userid.Size = new Size(95, 28);
-            Userid.TabIndex = 11;
             // 
             // DietCheckBox
             // 
@@ -200,8 +189,8 @@
             DietCheckBox.BackColor = SystemColors.Control;
             DietCheckBox.FlatAppearance.BorderSize = 0;
             DietCheckBox.ForeColor = Color.FromArgb(41, 128, 185);
-            DietCheckBox.Location = new Point(350, 144);
-            DietCheckBox.Margin = new Padding(2, 2, 2, 2);
+            DietCheckBox.Location = new Point(342, 180);
+            DietCheckBox.Margin = new Padding(2);
             DietCheckBox.Name = "DietCheckBox";
             DietCheckBox.Size = new Size(91, 24);
             DietCheckBox.TabIndex = 10;
@@ -215,8 +204,8 @@
             TrainCheckBox.BackColor = SystemColors.Control;
             TrainCheckBox.FlatAppearance.BorderSize = 0;
             TrainCheckBox.ForeColor = Color.FromArgb(41, 128, 185);
-            TrainCheckBox.Location = new Point(193, 144);
-            TrainCheckBox.Margin = new Padding(2, 2, 2, 2);
+            TrainCheckBox.Location = new Point(185, 180);
+            TrainCheckBox.Margin = new Padding(2);
             TrainCheckBox.Name = "TrainCheckBox";
             TrainCheckBox.Size = new Size(116, 24);
             TrainCheckBox.TabIndex = 9;
@@ -230,7 +219,7 @@
             update.FlatStyle = FlatStyle.Flat;
             update.Font = new Font("Century Gothic", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
             update.ForeColor = Color.White;
-            update.Location = new Point(318, 282);
+            update.Location = new Point(319, 352);
             update.Margin = new Padding(2);
             update.Name = "update";
             update.Size = new Size(118, 28);
@@ -245,7 +234,7 @@
             submit.FlatStyle = FlatStyle.Flat;
             submit.Font = new Font("Century Gothic", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
             submit.ForeColor = Color.White;
-            submit.Location = new Point(272, 97);
+            submit.Location = new Point(342, 102);
             submit.Margin = new Padding(2);
             submit.Name = "submit";
             submit.Size = new Size(118, 28);

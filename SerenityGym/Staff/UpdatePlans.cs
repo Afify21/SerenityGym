@@ -177,8 +177,7 @@ namespace SerenityGym
                 int UID = controllerObj.GetUserID(firstName, lastName);
                 int result = controllerObj.UpdateTSplit(TrainSplit.Text, UID);
                 int result2 = controllerObj.UpdateFSplit(FoodSplit.Text, UID);
-                int result = controllerObj.UpdateTSplit(TrainSplit.Text, UID);
-                int result2 = controllerObj.UpdateFSplit(TrainSplit.Text, UID);
+
                 MessageBox.Show("Updated Successfully!");
                 return;
             }
@@ -218,9 +217,9 @@ namespace SerenityGym
 
         }
 
-        private void TrainSplit_SelectedIndexChanged(object sender, EventArgs e)
+/*        private void TrainSplit_SelectedIndexChanged(object sender, EventArgs e)
         {
 
-        }
+        }*/
     }
 }
