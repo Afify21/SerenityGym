@@ -32,6 +32,7 @@
             panel1 = new Panel();
             pictureBox1 = new PictureBox();
             panel2 = new Panel();
+            comboBox1 = new ComboBox();
             pictureBox4 = new PictureBox();
             dietplan = new Label();
             trainplan = new Label();
@@ -39,7 +40,6 @@
             TrainSplit = new ComboBox();
             name = new Label();
             label3 = new Label();
-            Userid = new TextBox();
             DietCheckBox = new CheckBox();
             TrainCheckBox = new CheckBox();
             update = new Button();
@@ -76,6 +76,7 @@
             // 
             // panel2
             // 
+            panel2.Controls.Add(comboBox1);
             panel2.Controls.Add(pictureBox4);
             panel2.Controls.Add(dietplan);
             panel2.Controls.Add(trainplan);
@@ -83,7 +84,6 @@
             panel2.Controls.Add(TrainSplit);
             panel2.Controls.Add(name);
             panel2.Controls.Add(label3);
-            panel2.Controls.Add(Userid);
             panel2.Controls.Add(DietCheckBox);
             panel2.Controls.Add(TrainCheckBox);
             panel2.Controls.Add(update);
@@ -97,6 +97,15 @@
             panel2.Size = new Size(488, 424);
             panel2.TabIndex = 1;
             panel2.Paint += panel2_Paint;
+            // 
+            // comboBox1
+            // 
+            comboBox1.FormattingEnabled = true;
+            comboBox1.Location = new Point(171, 123);
+            comboBox1.Name = "comboBox1";
+            comboBox1.Size = new Size(152, 33);
+            comboBox1.TabIndex = 18;
+            comboBox1.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
             // 
             // pictureBox4
             // 
@@ -169,9 +178,10 @@
             label3.Location = new Point(24, 102);
             label3.Margin = new Padding(2, 0, 2, 0);
             label3.Name = "label3";
+            label3.Size = new Size(136, 25);
             label3.Size = new Size(75, 21);
             label3.TabIndex = 12;
-            label3.Text = "USER ID";
+            label3.Text = "USER Name";
             label3.Click += label3_Click;
             // 
             // Userid
@@ -303,7 +313,6 @@
         private Button submit;
         private CheckBox TrainCheckBox;
         private CheckBox DietCheckBox;
-        private TextBox Userid;
         private Label label3;
         private Label name;
         private ComboBox FoodSplit;
@@ -311,5 +320,6 @@
         private Label dietplan;
         private Label trainplan;
         private PictureBox pictureBox4;
+        private ComboBox comboBox1;
     }
 }

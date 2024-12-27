@@ -40,6 +40,7 @@
             Userr = new Button();
             label2 = new Label();
             button1 = new Button();
+            comboBox1 = new ComboBox();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel2.SuspendLayout();
@@ -71,6 +72,7 @@
             // 
             // panel2
             // 
+            panel2.Controls.Add(comboBox1);
             panel2.Controls.Add(pictureBox4);
             panel2.Controls.Add(label3);
             panel2.Controls.Add(Userid);
@@ -111,7 +113,7 @@
             // 
             Userid.Font = new Font("Century Gothic", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
             Userid.ForeColor = Color.FromArgb(41, 128, 185);
-            Userid.Location = new Point(158, 55);
+            Userid.Location = new Point(158, 108);
             Userid.Margin = new Padding(2);
             Userid.Name = "Userid";
             Userid.Size = new Size(118, 32);
@@ -184,6 +186,14 @@
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click;
             // 
+            // comboBox1
+            // 
+            comboBox1.FormattingEnabled = true;
+            comboBox1.Location = new Point(142, 57);
+            comboBox1.Name = "comboBox1";
+            comboBox1.Size = new Size(182, 33);
+            comboBox1.TabIndex = 17;
+            // 
             // ViewMemberProgress
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
@@ -219,5 +229,6 @@
         private TextBox Userid;
         private Button submit;
         private PictureBox pictureBox4;
+        private ComboBox comboBox1;
     }
 }

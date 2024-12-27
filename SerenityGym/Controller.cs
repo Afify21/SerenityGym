@@ -233,30 +233,30 @@ namespace DBapplication
         }
         public DataTable ViewPastSessions(int TID)
         {
-            string query = "SELECT Distinct u.fname,u.lname,r.starthour,r.endhour,r.regdate FROM Registration as r,Users as u WHERE u.userid=r.userid And TrainerID=" + TID +
+            string query = "SELECT  u.fname as FirstName,u.lname as LastName,r.starthour,r.endhour,r.regdate FROM Registration as r,Users as u WHERE u.userid=r.userid And TrainerID=" + TID +
                           " AND r.regtype='Private' AND r.regdate < '" + DateTime.Now.ToString("MM-dd-yyyy") + "'";
             return dbMan.ExecuteReader(query);
         }
 
         public DataTable ViewComingSessions(int TID)
         {
-            string query = "SELECT Distinct u.fname,u.lname,r.starthour,r.endhour,r.regdate FROM Registration as r,Users as u WHERE u.userid=r.userid And TrainerID=" + TID +
+            string query = "SELECT  u.fname as FirstName,u.lname as LastName,r.starthour,r.endhour,r.regdate FROM Registration as r,Users as u WHERE u.userid=r.userid And TrainerID=" + TID +
                           " AND r.regtype='Private' AND r.regdate >= '" + DateTime.Now.ToString("MM-dd-yyyy") + "'";
             return dbMan.ExecuteReader(query);
         }
         public DataTable ViewMemberProgress(int TID, int UID)
         {
-            string query = "SELECT * FROM Tracker WHERE TRAINER_ID=" + TID + " AND USER_ID=" + UID;
+            string query = "SELECT u.fname as FirstName,u.lname as LastName,t.progress,t.goal FROM Tracker as t, Users as u,Staff as s WHERE u.userid=t.USER_ID and s.staffid=t.TRAINER_ID and TRAINER_ID=" + TID + " AND USER_ID=" + UID;
             return dbMan.ExecuteReader(query);
         }
         public DataTable ViewMemberProgress( int UID)
         {
-            string query = "SELECT * FROM Tracker WHERE USER_ID=" + UID;
+            string query = "SELECT t.progress,t.goal FROM Tracker as t, Users as u,Staff as s WHERE u.userid=t.USER_ID and s.staffid=t.TRAINER_ID and USER_ID=" + UID;
             return dbMan.ExecuteReader(query);
         }
         public DataTable ViewAllMemberProgress(int TID)
         {
-            string query = "SELECT * FROM Tracker WHERE TRAINER_ID=" + TID;
+            string query = "SELECT u.fname as FirstName,u.lname as LastName,t.progress,t.goal FROM Tracker as t, Users as u,Staff as s WHERE u.userid=t.USER_ID and s.staffid=t.TRAINER_ID and TRAINER_ID=" + TID;
             return dbMan.ExecuteReader(query);
         }
 
@@ -472,6 +472,41 @@ namespace DBapplication
         {
            string query = "SELECT staffid FROM Staff WHERE staffid BETWEEN 20000 AND 29999";
             return dbMan.ExecuteReader(query);
+        }
+        public DataTable PopulateUserComboBox(int TID)
+        {
+            string query = "SELECT Distinct u.fname, u.lname FROM Users AS u, Plans AS p WHERE u.userid = p.userid AND p.staffid = " + TID;
+            return dbMan.ExecuteReader(query);
+        }
+        public int GetUserID(string firstName, string lastName)
+        {
+            string query = $"SELECT userid FROM Users WHERE fname = '{firstName}' AND lname = '{lastName}'";
+            DataTable result = dbMan.ExecuteReader(query);
+
+            if (result.Rows.Count > 0)
+            {
+                return Convert.ToInt32(result.Rows[0]["userid"]);
+            }
+            else
+            {
+                throw new Exception("User not found.");
+            }
+        }
+        public string GetUserName(int UID)
+        {
+            string query = $"SELECT fname, lname FROM Users WHERE userid = " + UID;
+            DataTable result = dbMan.ExecuteReader(query);
+
+            if (result.Rows.Count > 0)
+            {
+                string firstName = result.Rows[0]["fname"].ToString();
+                string lastName = result.Rows[0]["lname"].ToString();
+                return $"{firstName} {lastName}";
+            }
+            else
+            {
+                throw new Exception("User not found.");
+            }
         }
 
         public DataTable Getprivregs(int x)
