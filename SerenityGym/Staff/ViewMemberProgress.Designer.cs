@@ -32,7 +32,6 @@
             panel1 = new Panel();
             pictureBox1 = new PictureBox();
             panel2 = new Panel();
-            comboBox1 = new ComboBox();
             pictureBox4 = new PictureBox();
             label3 = new Label();
             Userid = new TextBox();
@@ -41,6 +40,7 @@
             Userr = new Button();
             label2 = new Label();
             button1 = new Button();
+            comboBox1 = new ComboBox();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel2.SuspendLayout();
@@ -88,14 +88,6 @@
             panel2.Size = new Size(610, 530);
             panel2.TabIndex = 1;
             // 
-            // comboBox1
-            // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(142, 57);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(182, 33);
-            comboBox1.TabIndex = 17;
-            // 
             // pictureBox4
             // 
             pictureBox4.Image = (Image)resources.GetObject("pictureBox4.Image");
@@ -104,6 +96,7 @@
             pictureBox4.Size = new Size(28, 37);
             pictureBox4.TabIndex = 16;
             pictureBox4.TabStop = false;
+            pictureBox4.Click += pictureBox4_Click;
             // 
             // label3
             // 
@@ -163,7 +156,7 @@
             Userr.TabIndex = 7;
             Userr.Text = "View All Users";
             Userr.UseVisualStyleBackColor = false;
-            Userr.Click += Userr_Click_1;
+            Userr.Click += Userr_Click;
             // 
             // label2
             // 
@@ -176,6 +169,7 @@
             label2.Size = new Size(374, 39);
             label2.TabIndex = 2;
             label2.Text = "View Member Progress";
+            label2.Click += label2_Click;
             // 
             // button1
             // 
@@ -191,6 +185,14 @@
             button1.Text = "X";
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click;
+            // 
+            // comboBox1
+            // 
+            comboBox1.FormattingEnabled = true;
+            comboBox1.Location = new Point(142, 57);
+            comboBox1.Name = "comboBox1";
+            comboBox1.Size = new Size(182, 33);
+            comboBox1.TabIndex = 17;
             // 
             // ViewMemberProgress
             // 
