@@ -31,6 +31,8 @@
             panel1 = new Panel();
             pictureBox1 = new PictureBox();
             panel2 = new Panel();
+            label7 = new Label();
+            mgrid = new TextBox();
             label6 = new Label();
             pass = new TextBox();
             label5 = new Label();
@@ -45,8 +47,6 @@
             Userr = new Button();
             label2 = new Label();
             button1 = new Button();
-            label7 = new Label();
-            mgrid = new TextBox();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel2.SuspendLayout();
@@ -98,6 +98,23 @@
             panel2.Name = "panel2";
             panel2.Size = new Size(488, 424);
             panel2.TabIndex = 1;
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Location = new Point(229, 85);
+            label7.Name = "label7";
+            label7.Size = new Size(24, 20);
+            label7.TabIndex = 20;
+            label7.Text = "ID";
+            // 
+            // mgrid
+            // 
+            mgrid.Location = new Point(180, 108);
+            mgrid.Name = "mgrid";
+            mgrid.Size = new Size(125, 27);
+            mgrid.TabIndex = 19;
+            mgrid.TextChanged += mgrid_TextChanged;
             // 
             // label6
             // 
@@ -157,6 +174,7 @@
             num.Name = "num";
             num.Size = new Size(125, 27);
             num.TabIndex = 12;
+            num.TextChanged += num_TextChanged;
             // 
             // fname
             // 
@@ -235,22 +253,6 @@
             button1.Text = "X";
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click;
-            // 
-            // label7
-            // 
-            label7.AutoSize = true;
-            label7.Location = new Point(229, 85);
-            label7.Name = "label7";
-            label7.Size = new Size(24, 20);
-            label7.TabIndex = 20;
-            label7.Text = "ID";
-            // 
-            // mgrid
-            // 
-            mgrid.Location = new Point(180, 108);
-            mgrid.Name = "mgrid";
-            mgrid.Size = new Size(125, 27);
-            mgrid.TabIndex = 19;
             // 
             // Addadmin
             // 

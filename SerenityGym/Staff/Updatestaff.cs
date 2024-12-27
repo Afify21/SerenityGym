@@ -106,7 +106,7 @@ namespace SerenityGym
                     MessageBox.Show("First name cannot contain numbers!");
                 }
             }
-       
+
             else if (CB_Updator.Text == "Last name")
             {
                 if (!string.IsNullOrWhiteSpace(TB_Update.Text) && !int.TryParse(TB_Update.Text, out _))
@@ -184,6 +184,11 @@ namespace SerenityGym
         }
 
         private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
         {
 
         }

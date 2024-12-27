@@ -47,7 +47,7 @@ namespace SerenityGym
 
         private void B_Registeration_Click(object sender, EventArgs e)
         {
-            OnlineReg onlineReg = new OnlineReg(UID,-1);
+            OnlineReg onlineReg = new OnlineReg(UID, -1);
             onlineReg.Show();
         }
 
@@ -76,6 +76,17 @@ namespace SerenityGym
             {
                 MessageBox.Show("Your Plan is Still Under Progress");
             }
+        }
+
+        private void B_transaction_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void B_Cancel_Click(object sender, EventArgs e)
+        {
+            CancelOnline cancelOnline = new CancelOnline(UID);
+            cancelOnline.Show();
         }
     }
 }

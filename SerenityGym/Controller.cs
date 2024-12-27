@@ -519,6 +519,19 @@ namespace DBapplication
                 throw new Exception("User not found.");
             }
         }
+
+        public DataTable Getprivregs(int x)
+        {
+            string query = "select r.registrationid, r.userid,r.regtype As Type,r.starthour AS StartHour,r.endhour AS EndHour,r.method AS PaymentMethod,r.regdate AS RegDate ,t.Lname AS TrainerLastName FROM Registration as r, Staff as t\r\nwhere t.staffid=r.TrainerID and r.regtype='Private' and regdate='"+DateTime.Now+"'  and r.userid="+x+" and starthour>'"+ DateTime.Now.TimeOfDay+"'";
+            return dbMan.ExecuteReader(query);
+        }
+
+        public DataTable GetPadelReg(int x)
+        {    
+            string query = "select r.registrationid, r.userid, r.regtype As Type, r.starthour AS StartHour, r.endhour AS EndHour, r.method AS PaymentMethod, r.regdate AS RegDate FROM Registration as r where (r.regtype='Padel') and regdate='"+DateTime.Now+"'  and r.userid="+x+ " and starthour>'"+ DateTime.Now.TimeOfDay+"'";
+            return dbMan.ExecuteReader(query);
+        }
+
         public int Gettraineebyid(string staffId)
         {
             int staffIdInt = Convert.ToInt32(staffId);
@@ -592,12 +605,12 @@ namespace DBapplication
             int trainerid = getTrainerIDByFull(FullName);
             if (Staffchecker == -1)
             {
-                string query = "insert into Registration(starthour,endhour,regdate,regtype,userid,membership_type,TrainerID,S_ID) values('" + (START.ToString() + ":00:00") + "','" + ((START + 1).ToString() + ":00:00") + "','" + DateTime.Now + "','"+type+"'," + uid + ",null,"+trainerid+",null);";
+                string query = "insert into Registration(Paymentamount,method,starthour,endhour,regdate,regtype,userid,membership_type,TrainerID,S_ID) values("+400+",'Credit','" + (START.ToString() + ":00:00") + "','" + ((START + 1).ToString() + ":00:00") + "','" + DateTime.Now + "','"+type+"'," + uid + ",null,"+trainerid+",null);";
                 return dbMan.ExecuteNonQuery(query);
             }
             if (Staffchecker > 0) 
             {
-                string query = "insert into Registration(starthour,endhour,regdate,regtype,userid,membership_type,TrainerID,S_ID) values('" + (START.ToString() + ":00:00") + "','" + ((START + 1).ToString() + ":00:00") + "','" + DateTime.Now + "','"+type+"'," + uid + ",null," + trainerid + ","+Staffchecker+");";
+                string query = "insert into Registration(Paymentamount,method,starthour,endhour,regdate,regtype,userid,membership_type,TrainerID,S_ID) values('"+400+"','Credit','" + (START.ToString() + ":00:00") + "','" + ((START + 1).ToString() + ":00:00") + "','" + DateTime.Now + "','"+type+"'," + uid + ",null," + trainerid + ","+Staffchecker+");";
                 return dbMan.ExecuteNonQuery(query);
             }
             return 0;
@@ -605,7 +618,7 @@ namespace DBapplication
 
         public int insertREGPadel(int START, string type, int uid)
         {
-                string query = "insert into Registration(starthour,endhour,regdate,regtype,userid,membership_type,TrainerID,S_ID) values('" + (START.ToString() + ":00:00") + "','" + ((START + 1).ToString() + ":00:00") + "','" + DateTime.Now + "','" + type + "'," + uid + ",null,null,null);";
+                string query = "insert into Registration(Paymentamount,method,starthour,endhour,regdate,regtype,userid,membership_type,TrainerID,S_ID) values('"+250+"','Credit','" + (START.ToString() + ":00:00") + "','" + ((START + 1).ToString() + ":00:00") + "','" + DateTime.Now + "','" + type + "'," + uid + ",null,null,null);";
                 return dbMan.ExecuteNonQuery(query);
         }
 
@@ -623,6 +636,12 @@ namespace DBapplication
         public int InsertPayment(int amount, string method, int RID)
         {
             string query = "INSERT INTO Payments(amount,paymentdate,method,staffid) VALUES (" + amount + ",'" + DateTime.Now + "','" + method + "'," + RID + ");";
+            return dbMan.ExecuteNonQuery(query);
+        }
+
+        public int deletereg(int z)
+        {
+            string query = "DELETE FROM Registration WHERE registrationid ="+z+" ;";
             return dbMan.ExecuteNonQuery(query);
         }
     }
