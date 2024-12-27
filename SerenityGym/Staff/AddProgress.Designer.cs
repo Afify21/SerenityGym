@@ -33,17 +33,17 @@
             pictureBox1 = new PictureBox();
             label1 = new Label();
             panel2 = new Panel();
+            label5 = new Label();
+            textBox1 = new TextBox();
             comboBox2 = new ComboBox();
             label4 = new Label();
             label3 = new Label();
             name = new Label();
             comboBox1 = new ComboBox();
             pictureBox4 = new PictureBox();
-            Stafff = new Button();
             Userr = new Button();
             label2 = new Label();
             button1 = new Button();
-            textBox1 = new TextBox();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel2.SuspendLayout();
@@ -85,6 +85,7 @@
             // 
             // panel2
             // 
+            panel2.Controls.Add(label5);
             panel2.Controls.Add(textBox1);
             panel2.Controls.Add(comboBox2);
             panel2.Controls.Add(label4);
@@ -93,7 +94,6 @@
             panel2.Controls.Add(comboBox1);
             panel2.Controls.Add(pictureBox4);
             panel2.Controls.Add(label1);
-            panel2.Controls.Add(Stafff);
             panel2.Controls.Add(Userr);
             panel2.Controls.Add(label2);
             panel2.Controls.Add(button1);
@@ -103,6 +103,22 @@
             panel2.Name = "panel2";
             panel2.Size = new Size(610, 530);
             panel2.TabIndex = 1;
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Location = new Point(24, 135);
+            label5.Name = "label5";
+            label5.Size = new Size(146, 25);
+            label5.TabIndex = 16;
+            label5.Text = "Choose Progress";
+            // 
+            // textBox1
+            // 
+            textBox1.Location = new Point(217, 308);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(150, 31);
+            textBox1.TabIndex = 15;
             // 
             // comboBox2
             // 
@@ -136,14 +152,13 @@
             name.AutoSize = true;
             name.Location = new Point(120, 191);
             name.Name = "name";
-            name.Size = new Size(59, 25);
+            name.Size = new Size(0, 25);
             name.TabIndex = 11;
-            name.Text = "label3";
             // 
             // comboBox1
             // 
             comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(176, 127);
+            comboBox1.Location = new Point(217, 132);
             comboBox1.Name = "comboBox1";
             comboBox1.Size = new Size(182, 33);
             comboBox1.TabIndex = 10;
@@ -158,20 +173,6 @@
             pictureBox4.TabIndex = 9;
             pictureBox4.TabStop = false;
             pictureBox4.Click += pictureBox4_Click;
-            // 
-            // Stafff
-            // 
-            Stafff.BackColor = Color.FromArgb(41, 128, 185);
-            Stafff.FlatStyle = FlatStyle.Flat;
-            Stafff.Font = new Font("Century Gothic", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            Stafff.ForeColor = Color.White;
-            Stafff.Location = new Point(408, 401);
-            Stafff.Margin = new Padding(2);
-            Stafff.Name = "Stafff";
-            Stafff.Size = new Size(148, 35);
-            Stafff.TabIndex = 8;
-            Stafff.Text = "STAFF";
-            Stafff.UseVisualStyleBackColor = false;
             // 
             // Userr
             // 
@@ -215,13 +216,6 @@
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click;
             // 
-            // textBox1
-            // 
-            textBox1.Location = new Point(217, 308);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(150, 31);
-            textBox1.TabIndex = 15;
-            // 
             // AddProgress
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
@@ -251,7 +245,6 @@
         private Label label1;
         private Button button1;
         private Label label2;
-        private Button Stafff;
         private Button Userr;
         private PictureBox pictureBox4;
         private ComboBox comboBox1;
@@ -260,5 +253,6 @@
         private Label label4;
         private Label label3;
         private TextBox textBox1;
+        private Label label5;
     }
 }

@@ -32,15 +32,14 @@
             panel1 = new Panel();
             pictureBox1 = new PictureBox();
             panel2 = new Panel();
+            comboBox1 = new ComboBox();
             pictureBox4 = new PictureBox();
             label3 = new Label();
-            Userid = new TextBox();
             submit = new Button();
             dataGridView1 = new DataGridView();
             Userr = new Button();
             label2 = new Label();
             button1 = new Button();
-            comboBox1 = new ComboBox();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel2.SuspendLayout();
@@ -75,7 +74,6 @@
             panel2.Controls.Add(comboBox1);
             panel2.Controls.Add(pictureBox4);
             panel2.Controls.Add(label3);
-            panel2.Controls.Add(Userid);
             panel2.Controls.Add(submit);
             panel2.Controls.Add(dataGridView1);
             panel2.Controls.Add(Userr);
@@ -87,6 +85,14 @@
             panel2.Name = "panel2";
             panel2.Size = new Size(610, 530);
             panel2.TabIndex = 1;
+            // 
+            // comboBox1
+            // 
+            comboBox1.FormattingEnabled = true;
+            comboBox1.Location = new Point(142, 57);
+            comboBox1.Name = "comboBox1";
+            comboBox1.Size = new Size(182, 33);
+            comboBox1.TabIndex = 17;
             // 
             // pictureBox4
             // 
@@ -108,16 +114,6 @@
             label3.Size = new Size(91, 25);
             label3.TabIndex = 15;
             label3.Text = "USER ID";
-            // 
-            // Userid
-            // 
-            Userid.Font = new Font("Century Gothic", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            Userid.ForeColor = Color.FromArgb(41, 128, 185);
-            Userid.Location = new Point(158, 108);
-            Userid.Margin = new Padding(2);
-            Userid.Name = "Userid";
-            Userid.Size = new Size(118, 32);
-            Userid.TabIndex = 14;
             // 
             // submit
             // 
@@ -186,14 +182,6 @@
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click;
             // 
-            // comboBox1
-            // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(142, 57);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(182, 33);
-            comboBox1.TabIndex = 17;
-            // 
             // ViewMemberProgress
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
@@ -226,7 +214,6 @@
         private Button Userr;
         private DataGridView dataGridView1;
         private Label label3;
-        private TextBox Userid;
         private Button submit;
         private PictureBox pictureBox4;
         private ComboBox comboBox1;
