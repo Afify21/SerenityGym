@@ -93,20 +93,36 @@ namespace SerenityGym
             }
             else if (CB_Updator.Text == "First name")
             {
-                int result = controllerObj.UpdateStaffFname(TB_Update.Text, UID);
-                if (result == 0)
-                    MessageBox.Show("Update Failed!");
+                if (!string.IsNullOrWhiteSpace(TB_Update.Text) && !int.TryParse(TB_Update.Text, out _)) // Check if input is NOT a number
+                {
+                    int result = controllerObj.UpdateStaffFname(TB_Update.Text, UID);
+                    if (result == 0)
+                        MessageBox.Show("Update Failed!");
+                    else
+                        MessageBox.Show("Updated Successfully!");
+                }
                 else
-                    MessageBox.Show("Updated Successfully!");
+                {
+                    MessageBox.Show("First name cannot contain numbers!");
+                }
             }
+       
             else if (CB_Updator.Text == "Last name")
             {
-                int result = controllerObj.UpdateStaffLname(TB_Update.Text, UID);
-                if (result == 0)
-                    MessageBox.Show("Update Failed!");
+                if (!string.IsNullOrWhiteSpace(TB_Update.Text) && !int.TryParse(TB_Update.Text, out _))
+                {
+                    int result = controllerObj.UpdateStaffLname(TB_Update.Text, UID); // Assuming UpdateStaffLname is the method for last name
+                    if (result == 0)
+                        MessageBox.Show("Update Failed!");
+                    else
+                        MessageBox.Show("Updated Successfully!");
+                }
                 else
-                    MessageBox.Show("Updated Successfully!");
+                {
+                    MessageBox.Show("Last name cannot contain numbers or be empty!");
+                }
             }
+
             else if (CB_Updator.Text == "Address")
             {
                 int result = controllerObj.UpdateStaffAddress(TB_Update.Text, UID);
@@ -118,12 +134,20 @@ namespace SerenityGym
 
             else if (CB_Updator.Text == "Phone number")
             {
-                int result = controllerObj.UpdateStaffPhone(Convert.ToInt32(TB_Update.Text), UID);
-                if (result == 0)
-                    MessageBox.Show("Update Failed!");
+                if (!string.IsNullOrWhiteSpace(TB_Update.Text) && int.TryParse(TB_Update.Text, out int phoneNumber))
+                {
+                    int result = controllerObj.UpdateStaffPhone(phoneNumber, UID);
+                    if (result == 0)
+                        MessageBox.Show("Update Failed!");
+                    else
+                        MessageBox.Show("Updated Successfully!");
+                }
                 else
-                    MessageBox.Show("Updated Successfully!");
+                {
+                    MessageBox.Show("Phone number must contain only numbers!");
+                }
             }
+
         }
 
         private void deletebutton_Click(object sender, EventArgs e)
