@@ -125,7 +125,7 @@ namespace SerenityGym
 
         private void update_Click(object sender, EventArgs e)
         {
-            if (TrainCheckBox.Checked || DietCheckBox.Checked)
+            if ( TrainSplit.SelectedIndex != -1 || FoodSplit.SelectedIndex != -1)
             {
                 int result = controllerObj.UpdateTSplit(TrainSplit.Text, UID );
                 int result2 = controllerObj.UpdateFSplit(TrainSplit.Text, UID);

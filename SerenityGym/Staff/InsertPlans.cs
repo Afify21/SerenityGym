@@ -102,8 +102,19 @@ namespace SerenityGym
 
         private void update_Click(object sender, EventArgs e)
         {
-            
-            if (TrainCheckBox.Checked && DietCheckBox.Checked)
+            UID = Convert.ToInt32(Userid.Text);
+
+            if (controllerObj.hasPlan(UID))
+            {
+                if (MessageBox.Show("User already has a plan! Do you want to update?", " ", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    UpdatePlans update = new UpdatePlans(TID, UID);
+                    update.Show();
+                    return;
+                }
+                return;
+            }
+            if (TrainCheckBox.Checked && DietCheckBox.Checked && TrainSplit.SelectedIndex!=-1 && FoodSplit.SelectedIndex != -1)
             {
                 int result = controllerObj.AddTrainingPlan(UID, TID, "Training", TrainSplit.Text);
                 int result2 = controllerObj.AddDietPlan(UID, TID, "Food", FoodSplit.Text);
