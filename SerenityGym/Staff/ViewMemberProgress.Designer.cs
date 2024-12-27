@@ -32,6 +32,7 @@
             panel1 = new Panel();
             pictureBox1 = new PictureBox();
             panel2 = new Panel();
+            comboBox1 = new ComboBox();
             pictureBox4 = new PictureBox();
             label3 = new Label();
             Userid = new TextBox();
@@ -71,6 +72,7 @@
             // 
             // panel2
             // 
+            panel2.Controls.Add(comboBox1);
             panel2.Controls.Add(pictureBox4);
             panel2.Controls.Add(label3);
             panel2.Controls.Add(Userid);
@@ -86,6 +88,14 @@
             panel2.Size = new Size(610, 530);
             panel2.TabIndex = 1;
             // 
+            // comboBox1
+            // 
+            comboBox1.FormattingEnabled = true;
+            comboBox1.Location = new Point(142, 57);
+            comboBox1.Name = "comboBox1";
+            comboBox1.Size = new Size(182, 33);
+            comboBox1.TabIndex = 17;
+            // 
             // pictureBox4
             // 
             pictureBox4.Image = (Image)resources.GetObject("pictureBox4.Image");
@@ -94,7 +104,6 @@
             pictureBox4.Size = new Size(28, 37);
             pictureBox4.TabIndex = 16;
             pictureBox4.TabStop = false;
-            pictureBox4.Click += pictureBox4_Click;
             // 
             // label3
             // 
@@ -111,7 +120,7 @@
             // 
             Userid.Font = new Font("Century Gothic", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
             Userid.ForeColor = Color.FromArgb(41, 128, 185);
-            Userid.Location = new Point(158, 55);
+            Userid.Location = new Point(158, 108);
             Userid.Margin = new Padding(2);
             Userid.Name = "Userid";
             Userid.Size = new Size(118, 32);
@@ -154,7 +163,7 @@
             Userr.TabIndex = 7;
             Userr.Text = "View All Users";
             Userr.UseVisualStyleBackColor = false;
-            Userr.Click += Userr_Click;
+            Userr.Click += Userr_Click_1;
             // 
             // label2
             // 
@@ -167,7 +176,6 @@
             label2.Size = new Size(374, 39);
             label2.TabIndex = 2;
             label2.Text = "View Member Progress";
-            label2.Click += label2_Click;
             // 
             // button1
             // 
@@ -219,5 +227,6 @@
         private TextBox Userid;
         private Button submit;
         private PictureBox pictureBox4;
+        private ComboBox comboBox1;
     }
 }
