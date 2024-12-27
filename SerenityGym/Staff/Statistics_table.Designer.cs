@@ -261,7 +261,7 @@
             button2.Name = "button2";
             button2.Size = new Size(180, 47);
             button2.TabIndex = 13;
-            button2.Text = "show feedbacks";
+            button2.Text = "Show feedbacks";
             button2.UseVisualStyleBackColor = false;
             button2.Click += button2_Click;
             // 
@@ -288,7 +288,7 @@
             Stafff.Name = "Stafff";
             Stafff.Size = new Size(165, 47);
             Stafff.TabIndex = 8;
-            Stafff.Text = "view reviews";
+            Stafff.Text = "View reviews";
             Stafff.UseVisualStyleBackColor = false;
             Stafff.Click += Stafff_Click;
             // 
@@ -303,7 +303,7 @@
             Userr.Name = "Userr";
             Userr.Size = new Size(136, 47);
             Userr.TabIndex = 7;
-            Userr.Text = "PROFIT";
+            Userr.Text = "Revenue";
             Userr.UseVisualStyleBackColor = false;
             Userr.Click += Userr_Click;
             // 

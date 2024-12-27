@@ -286,7 +286,7 @@ namespace DBapplication
         }
         public DataTable Transactionstable()
         {
-            string query = "SELECT r.registrationid, p.paymentid, p.method, p.amount, p.paymentdate FROM Payments p, registration r  ; ";
+            string query = "SELECT registrationid,method, Paymentamount, regdate FROM registration   ; ";
             return dbMan.ExecuteReader(query);
         }
 
@@ -420,7 +420,7 @@ namespace DBapplication
         }
         public int ShowProfit()
         {
-            string query = "SELECT SUM(amount) FROM Payments";
+            string query = "SELECT SUM(Paymentamount) FROM Registration";
             try
             {
                 object result = dbMan.ExecuteScalar(query);
