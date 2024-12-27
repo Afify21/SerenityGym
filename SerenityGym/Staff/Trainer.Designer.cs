@@ -42,6 +42,7 @@
             B_transaction = new Button();
             label2 = new Label();
             button1 = new Button();
+            button8 = new Button();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel2.SuspendLayout();
@@ -70,6 +71,7 @@
             // 
             // panel2
             // 
+            panel2.Controls.Add(button8);
             panel2.Controls.Add(button7);
             panel2.Controls.Add(pictureBox4);
             panel2.Controls.Add(button6);
@@ -117,7 +119,7 @@
             button6.FlatStyle = FlatStyle.Flat;
             button6.Font = new Font("Century Gothic", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
             button6.ForeColor = Color.White;
-            button6.Location = new Point(98, 250);
+            button6.Location = new Point(98, 240);
             button6.Margin = new Padding(2);
             button6.Name = "button6";
             button6.Size = new Size(368, 41);
@@ -147,7 +149,7 @@
             button4.FlatStyle = FlatStyle.Flat;
             button4.Font = new Font("Century Gothic", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
             button4.ForeColor = Color.White;
-            button4.Location = new Point(98, 398);
+            button4.Location = new Point(98, 431);
             button4.Margin = new Padding(2);
             button4.Name = "button4";
             button4.Size = new Size(368, 41);
@@ -162,7 +164,7 @@
             button3.FlatStyle = FlatStyle.Flat;
             button3.Font = new Font("Century Gothic", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
             button3.ForeColor = Color.White;
-            button3.Location = new Point(98, 322);
+            button3.Location = new Point(98, 308);
             button3.Margin = new Padding(2);
             button3.Name = "button3";
             button3.Size = new Size(368, 41);
@@ -177,7 +179,7 @@
             button2.FlatStyle = FlatStyle.Flat;
             button2.Font = new Font("Century Gothic", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
             button2.ForeColor = Color.White;
-            button2.Location = new Point(98, 180);
+            button2.Location = new Point(98, 174);
             button2.Margin = new Padding(2);
             button2.Name = "button2";
             button2.Size = new Size(368, 41);
@@ -226,6 +228,21 @@
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click;
             // 
+            // button8
+            // 
+            button8.BackColor = Color.FromArgb(41, 128, 185);
+            button8.FlatStyle = FlatStyle.Flat;
+            button8.Font = new Font("Century Gothic", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            button8.ForeColor = Color.White;
+            button8.Location = new Point(98, 369);
+            button8.Margin = new Padding(2);
+            button8.Name = "button8";
+            button8.Size = new Size(368, 41);
+            button8.TabIndex = 19;
+            button8.Text = "Add Member Progress";
+            button8.UseVisualStyleBackColor = false;
+            button8.Click += button8_Click;
+            // 
             // Trainer
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
@@ -261,5 +278,6 @@
         private Button button6;
         private PictureBox pictureBox4;
         private Button button7;
+        private Button button8;
     }
 }

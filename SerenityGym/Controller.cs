@@ -225,6 +225,17 @@ namespace DBapplication
             string query = "INSERT INTO Plans (userid,staffid,plan_type,Split) VALUES (" + uid + ", " + tid + ", '" + type + "', '" + split + "')";
             return dbMan.ExecuteNonQuery(query);
         }
+        public int GetPlanID(int id)
+        {
+            string query = "SELECT planid FROM Plans WHERE userid=" + id;
+            return (int)dbMan.ExecuteScalar(query);
+        }
+        public int AddProgress(int pid,int uid, int tid, int progress, string goal)
+        {
+            string query = "INSERT INTO Tracker (planid,USER_ID,TRAINER_ID,progress,goal) VALUES (" + pid + "," + uid + ", " + tid + ", " + progress + ", '" + goal + "')";
+            return dbMan.ExecuteNonQuery(query);
+        }
+        
         public int AddDietPlan(int uid, int tid, string type, string split)
         {
             string query = "INSERT INTO Plans (userid, staffid,plan_type,Split) VALUES (" + uid + ", " + tid + ", '" + type + "', '" + split + "')";
