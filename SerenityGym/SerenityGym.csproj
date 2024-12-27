@@ -21,7 +21,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="CancelOnline.cs">
+    <Compile Update="User\CancelOnline.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Tracker.cs">
@@ -37,7 +37,7 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Staff\Statistics_table.cs" />
-    <Compile Update="OnlineReg.cs">
+    <Compile Update="User\OnlineReg.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Staff\Updatestaff.cs">
