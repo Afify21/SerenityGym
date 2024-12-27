@@ -1,12 +1,17 @@
+using DBapplication;
+
 namespace SerenityGym
 {
     public partial class User : Form
     {
         int UID;
+        Controller controllerObj;
         public User(int x)
         {
             UID = x;
             InitializeComponent();
+            controllerObj = new Controller();
+
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -62,8 +67,15 @@ namespace SerenityGym
 
         private void B_Tracker_Click(object sender, EventArgs e)
         {
-            Tracker tracker = new Tracker(UID);
-            tracker.Show();
+            if (controllerObj.hasPlan(UID))
+            {
+                Tracker tracker = new Tracker(UID);
+                tracker.Show();
+            }
+            else
+            {
+                MessageBox.Show("Your Plan is Still Under Progress");
+            }
         }
     }
 }

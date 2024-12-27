@@ -233,30 +233,30 @@ namespace DBapplication
         }
         public DataTable ViewPastSessions(int TID)
         {
-            string query = "SELECT Distinct u.fname,u.lname,r.starthour,r.endhour,r.regdate FROM Registration as r,Users as u WHERE u.userid=r.userid And TrainerID=" + TID +
+            string query = "SELECT  u.fname as FirstName,u.lname as LastName,r.starthour,r.endhour,r.regdate FROM Registration as r,Users as u WHERE u.userid=r.userid And TrainerID=" + TID +
                           " AND r.regtype='Private' AND r.regdate < '" + DateTime.Now.ToString("MM-dd-yyyy") + "'";
             return dbMan.ExecuteReader(query);
         }
 
         public DataTable ViewComingSessions(int TID)
         {
-            string query = "SELECT Distinct u.fname,u.lname,r.starthour,r.endhour,r.regdate FROM Registration as r,Users as u WHERE u.userid=r.userid And TrainerID=" + TID +
+            string query = "SELECT  u.fname as FirstName,u.lname as LastName,r.starthour,r.endhour,r.regdate FROM Registration as r,Users as u WHERE u.userid=r.userid And TrainerID=" + TID +
                           " AND r.regtype='Private' AND r.regdate >= '" + DateTime.Now.ToString("MM-dd-yyyy") + "'";
             return dbMan.ExecuteReader(query);
         }
         public DataTable ViewMemberProgress(int TID, int UID)
         {
-            string query = "SELECT * FROM Tracker WHERE TRAINER_ID=" + TID + " AND USER_ID=" + UID;
+            string query = "SELECT u.fname as FirstName,u.lname as LastName,t.progress,t.goal FROM Tracker as t, Users as u,Staff as s WHERE u.userid=t.USER_ID and s.staffid=t.TRAINER_ID and TRAINER_ID=" + TID + " AND USER_ID=" + UID;
             return dbMan.ExecuteReader(query);
         }
         public DataTable ViewMemberProgress( int UID)
         {
-            string query = "SELECT * FROM Tracker WHERE USER_ID=" + UID;
+            string query = "SELECT t.progress,t.goal FROM Tracker as t, Users as u,Staff as s WHERE u.userid=t.USER_ID and s.staffid=t.TRAINER_ID and USER_ID=" + UID;
             return dbMan.ExecuteReader(query);
         }
         public DataTable ViewAllMemberProgress(int TID)
         {
-            string query = "SELECT * FROM Tracker WHERE TRAINER_ID=" + TID;
+            string query = "SELECT u.fname as FirstName,u.lname as LastName,t.progress,t.goal FROM Tracker as t, Users as u,Staff as s WHERE u.userid=t.USER_ID and s.staffid=t.TRAINER_ID and TRAINER_ID=" + TID;
             return dbMan.ExecuteReader(query);
         }
 
