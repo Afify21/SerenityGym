@@ -473,6 +473,41 @@ namespace DBapplication
            string query = "SELECT staffid FROM Staff WHERE staffid BETWEEN 20000 AND 29999";
             return dbMan.ExecuteReader(query);
         }
+        public DataTable PopulateUserComboBox(int TID)
+        {
+            string query = "SELECT Distinct u.fname, u.lname FROM Users AS u, Plans AS p WHERE u.userid = p.userid AND p.staffid = " + TID;
+            return dbMan.ExecuteReader(query);
+        }
+        public int GetUserID(string firstName, string lastName)
+        {
+            string query = $"SELECT userid FROM Users WHERE fname = '{firstName}' AND lname = '{lastName}'";
+            DataTable result = dbMan.ExecuteReader(query);
+
+            if (result.Rows.Count > 0)
+            {
+                return Convert.ToInt32(result.Rows[0]["userid"]);
+            }
+            else
+            {
+                throw new Exception("User not found.");
+            }
+        }
+        public string GetUserName(int UID)
+        {
+            string query = $"SELECT fname, lname FROM Users WHERE userid = " + UID;
+            DataTable result = dbMan.ExecuteReader(query);
+
+            if (result.Rows.Count > 0)
+            {
+                string firstName = result.Rows[0]["fname"].ToString();
+                string lastName = result.Rows[0]["lname"].ToString();
+                return $"{firstName} {lastName}";
+            }
+            else
+            {
+                throw new Exception("User not found.");
+            }
+        }
         public int Gettraineebyid(string staffId)
         {
             int staffIdInt = Convert.ToInt32(staffId);

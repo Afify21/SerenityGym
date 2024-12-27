@@ -22,9 +22,14 @@ namespace SerenityGym
         private void Userr_Click(object sender, EventArgs e)
         {
 
-            if (Userid.Text == "" || pass.Text == "" || repass.Text == "")
+            if (string.IsNullOrWhiteSpace(Userid.Text) || string.IsNullOrWhiteSpace(pass.Text) || string.IsNullOrWhiteSpace(repass.Text))
             {
                 MessageBox.Show("Please Enter A Proper Combination");
+                return;
+            }
+            if (!int.TryParse(Userid.Text, out int UID))
+            {
+                MessageBox.Show("User ID must be a numeric value");
                 return;
             }
             UID = Convert.ToInt32(Userid.Text);
