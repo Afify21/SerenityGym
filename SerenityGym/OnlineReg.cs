@@ -11,7 +11,7 @@ namespace SerenityGym
         int RID;
         Controller controllerObj;
 
-        public OnlineReg(int x,int y)
+        public OnlineReg(int x, int y)
         {
 
             UID = x;
@@ -50,12 +50,131 @@ namespace SerenityGym
 
         private void CB_Updator_SelectedIndexChanged(object sender, EventArgs e)
         {
+            
             string type = CB_SesType.Text;
             if (type == "Private")
             {
                 CB_Trainers.Visible = true;
                 L_Trainer.Visible = true;
+                CB_Trainers.SelectedIndex = -1;
+                CB_Trainers_SelectedIndexChanged(CB_Trainers,EventArgs.Empty);
 
+            }
+            if (type == "Padel")
+            {
+                CB_Trainers.Visible = false;
+                L_Trainer.Visible = false;
+                B_T1.Visible = true;
+                B_T2.Visible = true;
+                B_T3.Visible = true;
+                B_T4.Visible = true;
+                B_T5.Visible = true;
+                B_T6.Visible = true;
+                B_T7.Visible = true;
+                B_T8.Visible = true;
+                B_T9.Visible = true;
+
+                B_T1.Enabled = true;
+                B_T1.ForeColor = Color.White;
+                B_T1.BackColor = Color.FromArgb(41, 128, 185);
+
+                B_T2.Enabled = true;
+                B_T2.ForeColor = Color.White;
+                B_T2.BackColor = Color.FromArgb(41, 128, 185);
+
+                B_T3.Enabled = true;
+                B_T3.ForeColor = Color.White;
+                B_T3.BackColor = Color.FromArgb(41, 128, 185);
+
+                B_T4.Enabled = true;
+                B_T4.ForeColor = Color.White;
+                B_T4.BackColor = Color.FromArgb(41, 128, 185);
+
+                B_T5.Enabled = true;
+                B_T5.ForeColor = Color.White;
+                B_T5.BackColor = Color.FromArgb(41, 128, 185);
+
+                B_T6.Enabled = true;
+                B_T6.ForeColor = Color.White;
+                B_T6.BackColor = Color.FromArgb(41, 128, 185);
+
+                B_T7.Enabled = true;
+                B_T7.ForeColor = Color.White;
+                B_T7.BackColor = Color.FromArgb(41, 128, 185);
+
+                B_T8.Enabled = true;
+                B_T8.ForeColor = Color.White;
+                B_T8.BackColor = Color.FromArgb(41, 128, 185);
+
+                B_T9.Enabled = true;
+                B_T9.ForeColor = Color.White;
+                B_T9.BackColor = Color.FromArgb(41, 128, 185);
+
+                DataTable result = controllerObj.GetDatesFORREGPPP();
+                if (result == null)
+                { }
+                else {
+                    for (int j = 0; j < result.Rows.Count; j++)
+                    {
+                        if ((B_T1.Text.Substring(0, 5) + ":00") == result.Rows[j]["starthour"].ToString())
+                        {
+                            B_T1.Enabled = false;
+                            B_T1.ForeColor = Color.Black;
+                            B_T1.BackColor = Color.Red;
+
+                        }
+                        if ((B_T2.Text.Substring(0, 5) + ":00") == result.Rows[j]["starthour"].ToString())
+                        {
+                            B_T2.Enabled = false;
+                            B_T2.ForeColor = Color.Black;
+                            B_T2.BackColor = Color.Red;
+                        }
+                        if ((B_T3.Text.Substring(0, 5) + ":00") == result.Rows[j]["starthour"].ToString())
+                        {
+                            B_T3.Enabled = false;
+                            B_T3.ForeColor = Color.Black;
+                            B_T3.BackColor = Color.Red;
+                        }
+                        if ((B_T4.Text.Substring(0, 5) + ":00") == result.Rows[j]["starthour"].ToString())
+                        {
+                            B_T4.Enabled = false;
+                            B_T4.ForeColor = Color.Black;
+                            B_T4.BackColor = Color.Red;
+
+                        }
+
+                        if ((B_T5.Text.Substring(0, 5) + ":00") == result.Rows[j]["starthour"].ToString())
+                        {
+                            B_T5.Enabled = false;
+                            B_T5.ForeColor = Color.Black;
+                            B_T5.BackColor = Color.Red;
+                        }
+                        if ((B_T6.Text.Substring(0, 5) + ":00") == result.Rows[j]["starthour"].ToString())
+                        {
+                            B_T6.Enabled = false;
+                            B_T6.ForeColor = Color.Black;
+                            B_T6.BackColor = Color.Red;
+                        }
+                        if ((B_T7.Text.Substring(0, 5) + ":00") == result.Rows[j]["starthour"].ToString())
+                        {
+                            B_T7.Enabled = false;
+                            B_T7.ForeColor = Color.Black;
+                            B_T7.BackColor = Color.Red;
+                        }
+                        if ((B_T8.Text.Substring(0, 5) + ":00") == result.Rows[j]["starthour"].ToString())
+                        {
+                            B_T8.Enabled = false;
+                            B_T8.ForeColor = Color.Black;
+                            B_T8.BackColor = Color.Red;
+                        }
+                        if ((B_T9.Text.Substring(0, 5) + ":00") == result.Rows[j]["starthour"].ToString())
+                        {
+                            B_T9.Enabled = false;
+                            B_T9.ForeColor = Color.Black;
+                            B_T9.BackColor = Color.Red;
+                        }
+                    }
+                }
             }
         }
 
@@ -67,7 +186,53 @@ namespace SerenityGym
         private void CB_Trainers_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (CB_Trainers.SelectedIndex == -1)
-                return;
+            { B_T1.Visible = true;
+                B_T2.Visible = true;
+                B_T3.Visible = true;
+                B_T4.Visible = true;
+                B_T5.Visible = true;
+                B_T6.Visible = true;
+                B_T7.Visible = true;
+                B_T8.Visible = true;
+                B_T9.Visible = true;
+
+                B_T1.Enabled = false;
+                B_T1.ForeColor = Color.White;
+                B_T1.BackColor = Color.FromArgb(41, 128, 185);
+
+                B_T2.Enabled = false;
+                B_T2.ForeColor = Color.White;
+                B_T2.BackColor = Color.FromArgb(41, 128, 185);
+
+                B_T3.Enabled = false;
+                B_T3.ForeColor = Color.White;
+                B_T3.BackColor = Color.FromArgb(41, 128, 185);
+
+                B_T4.Enabled = false;
+                B_T4.ForeColor = Color.White;
+                B_T4.BackColor = Color.FromArgb(41, 128, 185);
+
+                B_T5.Enabled = false;
+                B_T5.ForeColor = Color.White;
+                B_T5.BackColor = Color.FromArgb(41, 128, 185);
+
+                B_T6.Enabled = false;
+                B_T6.ForeColor = Color.White;
+                B_T6.BackColor = Color.FromArgb(41, 128, 185);
+
+                B_T7.Enabled = false;
+                B_T7.ForeColor = Color.White;
+                B_T7.BackColor = Color.FromArgb(41, 128, 185);
+
+                B_T8.Enabled = false;
+                B_T8.ForeColor = Color.White;
+                B_T8.BackColor = Color.FromArgb(41, 128, 185);
+
+                B_T9.Enabled = false;
+                B_T9.ForeColor = Color.White;
+                B_T9.BackColor = Color.FromArgb(41, 128, 185);
+            }
+            
             else
             {
                 B_T1.Visible = true;
@@ -80,10 +245,17 @@ namespace SerenityGym
                 B_T8.Visible = true;
                 B_T9.Visible = true;
             }
-            string FULL = CB_Trainers.Text;
-            int tid = controllerObj.getTrainerIDByFull(CB_Trainers.Text);
-            DataTable result = controllerObj.GetDatesFORREG(tid);
 
+            string FULL;
+            int tid;
+            DataTable result=null;
+
+            if (CB_Trainers.SelectedIndex != -1)
+            {
+                 FULL = CB_Trainers.Text;
+                 tid = controllerObj.getTrainerIDByFull(CB_Trainers.Text);
+                 result = controllerObj.GetDatesFORREG(tid);
+            }
 
             B_T1.Enabled = true;
             B_T1.ForeColor = Color.White;
@@ -132,8 +304,6 @@ namespace SerenityGym
                     B_T1.Enabled = false;
                     B_T1.ForeColor = Color.Black;
                     B_T1.BackColor = Color.Red;
-
-
 
                 }
                 if ((B_T2.Text.Substring(0, 5) + ":00") == result.Rows[j]["starthour"].ToString())
@@ -191,53 +361,185 @@ namespace SerenityGym
 
         private void Userr_Click(object sender, EventArgs e)
         {
-            int HourInteger=0;
-            if (B_T1.BackColor == Color.FromArgb(41, 128, 185)&&B_T1.Enabled==false)
+            if (CB_Trainers.Visible==true && CB_Trainers.Text == "")
             {
-                 HourInteger =Convert.ToInt16(B_T1.Text.Substring(0, 2));
+                MessageBox.Show("Please Choose Trainer");
+                return;
+            }
+
+            int HourInteger = 0;
+            if (B_T1.BackColor == Color.FromArgb(41, 128, 185) && B_T1.Enabled == false)
+            {
+                HourInteger = Convert.ToInt16(B_T1.Text.Substring(0, 2));
             }
             if (B_T2.BackColor == Color.FromArgb(41, 128, 185) && B_T2.Enabled == false)
             {
-                 HourInteger = Convert.ToInt16(B_T2.Text.Substring(0, 2));
+                HourInteger = Convert.ToInt16(B_T2.Text.Substring(0, 2));
             }
             if (B_T3.BackColor == Color.FromArgb(41, 128, 185) && B_T3.Enabled == false)
             {
-                 HourInteger = Convert.ToInt16(B_T3.Text.Substring(0, 2));
+                HourInteger = Convert.ToInt16(B_T3.Text.Substring(0, 2));
             }
             if (B_T4.BackColor == Color.FromArgb(41, 128, 185) && B_T4.Enabled == false)
             {
-                 HourInteger = Convert.ToInt16(B_T4.Text.Substring(0, 2));
+                HourInteger = Convert.ToInt16(B_T4.Text.Substring(0, 2));
             }
             if (B_T5.BackColor == Color.FromArgb(41, 128, 185) && B_T5.Enabled == false)
             {
-                 HourInteger = Convert.ToInt16(B_T5.Text.Substring(0, 2));
+                HourInteger = Convert.ToInt16(B_T5.Text.Substring(0, 2));
             }
             if (B_T6.BackColor == Color.FromArgb(41, 128, 185) && B_T6.Enabled == false)
             {
-                 HourInteger = Convert.ToInt16(B_T6.Text.Substring(0, 2));
+                HourInteger = Convert.ToInt16(B_T6.Text.Substring(0, 2));
             }
             if (B_T7.BackColor == Color.FromArgb(41, 128, 185) && B_T7.Enabled == false)
             {
-                 HourInteger = Convert.ToInt16(B_T7.Text.Substring(0, 2));
+                HourInteger = Convert.ToInt16(B_T7.Text.Substring(0, 2));
             }
             if (B_T8.BackColor == Color.FromArgb(41, 128, 185) && B_T8.Enabled == false)
             {
-                 HourInteger = Convert.ToInt16(B_T8.Text.Substring(0, 2));
+                HourInteger = Convert.ToInt16(B_T8.Text.Substring(0, 2));
             }
             if (B_T9.BackColor == Color.FromArgb(41, 128, 185) && B_T9.Enabled == false)
             {
-                 HourInteger = Convert.ToInt16(B_T9.Text.Substring(0, 2));
+                HourInteger = Convert.ToInt16(B_T9.Text.Substring(0, 2));
+            }
+            if (CB_SesType.Text == "Private")
+            {
+                if (MessageBox.Show("Do you want to confirm registeration?", " ", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    int result = controllerObj.insertREGPRIVATE(HourInteger, CB_SesType.Text, UID, CB_Trainers.Text, RID);
+                    if (result == 0)
+                        MessageBox.Show("Registeration Failed");
+                    else if (result == 1)
+                        MessageBox.Show("Registeration Successfull");
+
+                    if (B_T1.BackColor == Color.FromArgb(41, 128, 185) && B_T1.Enabled == false)
+                    {
+                        B_T1.Enabled = false;
+                        B_T1.ForeColor = Color.Black;
+                        B_T1.BackColor = Color.Red;
+                    }
+                    if (B_T2.BackColor == Color.FromArgb(41, 128, 185) && B_T2.Enabled == false)
+                    {
+                        B_T2.Enabled = false;
+                        B_T2.ForeColor = Color.Black;
+                        B_T2.BackColor = Color.Red;
+                    }
+                    if (B_T3.BackColor == Color.FromArgb(41, 128, 185) && B_T3.Enabled == false)
+                    {
+                        B_T3.Enabled = false;
+                        B_T3.ForeColor = Color.Black;
+                        B_T3.BackColor = Color.Red;
+                    }
+                    if (B_T4.BackColor == Color.FromArgb(41, 128, 185) && B_T4.Enabled == false)
+                    {
+                        B_T4.Enabled = false;
+                        B_T4.ForeColor = Color.Black;
+                        B_T4.BackColor = Color.Red;
+                    }
+                    if (B_T5.BackColor == Color.FromArgb(41, 128, 185) && B_T5.Enabled == false)
+                    {
+                        B_T5.Enabled = false;
+                        B_T5.ForeColor = Color.Black;
+                        B_T5.BackColor = Color.Red;
+                    }
+                    if (B_T6.BackColor == Color.FromArgb(41, 128, 185) && B_T6.Enabled == false)
+                    {
+                        B_T6.Enabled = false;
+                        B_T6.ForeColor = Color.Black;
+                        B_T6.BackColor = Color.Red;
+                    }
+                    if (B_T7.BackColor == Color.FromArgb(41, 128, 185) && B_T7.Enabled == false)
+                    {
+                        B_T7.Enabled = false;
+                        B_T7.ForeColor = Color.Black;
+                        B_T7.BackColor = Color.Red;
+                    }
+                    if (B_T8.BackColor == Color.FromArgb(41, 128, 185) && B_T8.Enabled == false)
+                    {
+                        B_T8.Enabled = false;
+                        B_T8.ForeColor = Color.Black;
+                        B_T8.BackColor = Color.Red;
+                    }
+                    if (B_T9.BackColor == Color.FromArgb(41, 128, 185) && B_T9.Enabled == false)
+                    {
+                        B_T9.Enabled = false;
+                        B_T9.ForeColor = Color.Black;
+                        B_T9.BackColor = Color.Red;
+                    }
+
+                }
+            }
+            else if (CB_SesType.Text == "Padel")
+            {
+                if (MessageBox.Show("Do you want to confirm registeration?", " ", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    int result = controllerObj.insertREGPadel(HourInteger, CB_SesType.Text, UID);
+                    if (result == 0)
+                        MessageBox.Show("Registeration Failed");
+                    else if (result == 1)
+                        MessageBox.Show("Registeration Successfull");
+
+                    if (B_T1.BackColor == Color.FromArgb(41, 128, 185) && B_T1.Enabled == false)
+                    {
+                        B_T1.Enabled = false;
+                        B_T1.ForeColor = Color.Black;
+                        B_T1.BackColor = Color.Red;
+                    }
+                    if (B_T2.BackColor == Color.FromArgb(41, 128, 185) && B_T2.Enabled == false)
+                    {
+                        B_T2.Enabled = false;
+                        B_T2.ForeColor = Color.Black;
+                        B_T2.BackColor = Color.Red;
+                    }
+                    if (B_T3.BackColor == Color.FromArgb(41, 128, 185) && B_T3.Enabled == false)
+                    {
+                        B_T3.Enabled = false;
+                        B_T3.ForeColor = Color.Black;
+                        B_T3.BackColor = Color.Red;
+                    }
+                    if (B_T4.BackColor == Color.FromArgb(41, 128, 185) && B_T4.Enabled == false)
+                    {
+                        B_T4.Enabled = false;
+                        B_T4.ForeColor = Color.Black;
+                        B_T4.BackColor = Color.Red;
+                    }
+                    if (B_T5.BackColor == Color.FromArgb(41, 128, 185) && B_T5.Enabled == false)
+                    {
+                        B_T5.Enabled = false;
+                        B_T5.ForeColor = Color.Black;
+                        B_T5.BackColor = Color.Red;
+                    }
+                    if (B_T6.BackColor == Color.FromArgb(41, 128, 185) && B_T6.Enabled == false)
+                    {
+                        B_T6.Enabled = false;
+                        B_T6.ForeColor = Color.Black;
+                        B_T6.BackColor = Color.Red;
+                    }
+                    if (B_T7.BackColor == Color.FromArgb(41, 128, 185) && B_T7.Enabled == false)
+                    {
+                        B_T7.Enabled = false;
+                        B_T7.ForeColor = Color.Black;
+                        B_T7.BackColor = Color.Red;
+                    }
+                    if (B_T8.BackColor == Color.FromArgb(41, 128, 185) && B_T8.Enabled == false)
+                    {
+                        B_T8.Enabled = false;
+                        B_T8.ForeColor = Color.Black;
+                        B_T8.BackColor = Color.Red;
+                    }
+                    if (B_T9.BackColor == Color.FromArgb(41, 128, 185) && B_T9.Enabled == false)
+                    {
+                        B_T9.Enabled = false;
+                        B_T9.ForeColor = Color.Black;
+                        B_T9.BackColor = Color.Red;
+                    }
+
+                }
             }
 
-            if (MessageBox.Show("Do you want to confirm registeration?", " ", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-            {
-                int result = controllerObj.insertREGPRIVATE(HourInteger,CB_SesType.Text,UID,CB_Trainers.Text,RID);
-                if (result == 0)
-                    MessageBox.Show("Registeration Failed");
-                else if (result == 1)
-                    MessageBox.Show("Registeration Successfull");
-                return;
-            }
+
         }
 
         private void B_T1_Click(object sender, EventArgs e)
@@ -590,6 +892,11 @@ namespace SerenityGym
             {
                 B_T2.Enabled = true;
             }
+        }
+
+        private void pictureBox4_Click(object sender, EventArgs e)
+        {
+            this.Hide();
         }
     }
 }

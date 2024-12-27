@@ -505,6 +505,14 @@ namespace DBapplication
             return dbMan.ExecuteReader(query);
         }
 
+        public DataTable GetDatesFORREGPPP()
+        {
+            DateTime today = DateTime.Today;
+            string date = today.ToString("yyyy-MM-dd");
+            string query = "select starthour,endhour from Registration where regtype='Padel' and regdate='" + today + "'";
+            return dbMan.ExecuteReader(query);
+        }
+
         public int getTrainerID(string fn, string ln)
         {
             string query = "Select staffid from staff where fname='" + fn + "'AND lname='" + ln + "'";
@@ -534,6 +542,7 @@ namespace DBapplication
 
         public int insertREGPRIVATE(int START, string type, int uid, string FullName, int Staffchecker)
         {
+          
             int trainerid = getTrainerIDByFull(FullName);
             if (Staffchecker == -1)
             {
@@ -547,6 +556,13 @@ namespace DBapplication
             }
             return 0;
         }
+
+        public int insertREGPadel(int START, string type, int uid)
+        {
+                string query = "insert into Registration(starthour,endhour,regdate,regtype,userid,membership_type,TrainerID,S_ID) values('" + (START.ToString() + ":00:00") + "','" + ((START + 1).ToString() + ":00:00") + "','" + DateTime.Now + "','" + type + "'," + uid + ",null,null,null);";
+                return dbMan.ExecuteNonQuery(query);
+        }
+
         public int InsertMembershipReg(int ID, string type1, string type2,int RID)
         {
             string query = "INSERT INTO Registration(starthour,endhour,regdate,regtype,userid,membership_type,TrainerID,S_ID) VALUES (NULL,NULL,'" + DateTime.Now + "','" + type1 + "'," + ID + ",'" + type2 + "',NULL," + RID + ");";
