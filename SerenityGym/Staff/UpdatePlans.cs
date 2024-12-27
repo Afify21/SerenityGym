@@ -54,7 +54,7 @@ namespace SerenityGym
                 TrainSplit.Visible = true;
 
 
-                
+
             }
             else
             {
@@ -109,7 +109,7 @@ namespace SerenityGym
 
                 dietplan.Visible = true;
                 FoodSplit.Visible = true;
-                
+
             }
             else
             {
@@ -127,7 +127,7 @@ namespace SerenityGym
         {
             if (TrainCheckBox.Checked || DietCheckBox.Checked)
             {
-                int result = controllerObj.UpdateTSplit(TrainSplit.Text, UID );
+                int result = controllerObj.UpdateTSplit(TrainSplit.Text, UID);
                 int result2 = controllerObj.UpdateFSplit(TrainSplit.Text, UID);
                 MessageBox.Show("Updated Successfully!");
                 return;
@@ -150,6 +150,11 @@ namespace SerenityGym
         private void pictureBox4_Click(object sender, EventArgs e)
         {
             this.Hide();
+
+        }
+
+        private void TrainSplit_SelectedIndexChanged(object sender, EventArgs e)
+        {
 
         }
     }

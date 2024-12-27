@@ -1,4 +1,6 @@
 using DBapplication;
+using System;
+using System.Xml.Linq;
 
 namespace SerenityGym
 {
@@ -44,6 +46,7 @@ namespace SerenityGym
 
         private void B_Update_Click(object sender, EventArgs e)
         {
+            int r;
             if (CB_Updator.Text == "Password")
             {
                 if (TB_Update.Text == TB_Updator2.Text)
@@ -59,6 +62,11 @@ namespace SerenityGym
             }
             else if (CB_Updator.Text == "First name")
             {
+                if (int.TryParse(TB_Update.Text, out r))
+                {
+                    MessageBox.Show("Please enter a valid first name (no numbers allowed)");
+                    return;
+                }
                 int result = controllerObj.UpdateUserFname(TB_Update.Text, UID);
                 if (result == 0)
                     MessageBox.Show("Update Failed!");
@@ -67,6 +75,11 @@ namespace SerenityGym
             }
             else if (CB_Updator.Text == "Last name")
             {
+                if (int.TryParse(TB_Update.Text, out r))
+                {
+                    MessageBox.Show("Please enter a valid last name (no numbers allowed)");
+                    return;
+                }
                 int result = controllerObj.UpdateUserLname(TB_Update.Text, UID);
                 if (result == 0)
                     MessageBox.Show("Update Failed!");
@@ -84,6 +97,11 @@ namespace SerenityGym
 
             else if (CB_Updator.Text == "Phone number")
             {
+                if (!int.TryParse(TB_Update.Text, out r))
+                {
+                    MessageBox.Show("Please enter a valid phone number (only digits allowed)");
+                    return;
+                }
                 int result = controllerObj.UpdateUserPhone(Convert.ToInt32(TB_Update.Text), UID);
                 if (result == 0)
                     MessageBox.Show("Update Failed!");

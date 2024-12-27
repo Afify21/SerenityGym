@@ -34,7 +34,27 @@ namespace SerenityGym
             B_T9.Visible = false;
             B_Master.Visible = false;
 
+            string z = Convert.ToString(DateTime.Now.TimeOfDay);
+            int p= Convert.ToInt32(z.Substring(0,2));
 
+            if (p > Convert.ToInt16(B_T1.Text.Substring(0, 2)))
+            { B_T1.Visible = false; }
+            if (p > Convert.ToInt16(B_T2.Text.Substring(0, 2)))
+            { B_T2.Visible = false; }
+            if (p > Convert.ToInt16(B_T3.Text.Substring(0, 2)))
+            { B_T3.Visible = false; }
+            if (p > Convert.ToInt16(B_T4.Text.Substring(0, 2)))
+            { B_T4.Visible = false; }
+            if (p > Convert.ToInt16(B_T5.Text.Substring(0, 2)))
+            { B_T5.Visible = false; }
+            if (p > Convert.ToInt16(B_T6.Text.Substring(0, 2)))
+            { B_T6.Visible = false; }
+            if (p > Convert.ToInt16(B_T7.Text.Substring(0, 2)))
+            { B_T7.Visible = false; }
+            if (p > Convert.ToInt16(B_T8.Text.Substring(0, 2)))
+            { B_T8.Visible = false; }
+            if (p > Convert.ToInt16(B_T9.Text.Substring(0, 2)))
+            { B_T9.Visible = false; }
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -58,6 +78,28 @@ namespace SerenityGym
                 L_Trainer.Visible = true;
                 CB_Trainers.SelectedIndex = -1;
                 CB_Trainers_SelectedIndexChanged(CB_Trainers,EventArgs.Empty);
+
+                string t = Convert.ToString(DateTime.Now.TimeOfDay);
+                int o = Convert.ToInt32(t.Substring(0, 2));
+
+                if (o > Convert.ToInt16(B_T1.Text.Substring(0, 2)))
+                { B_T1.Visible = false; }
+                if (o > Convert.ToInt16(B_T2.Text.Substring(0, 2)))
+                { B_T2.Visible = false; }
+                if (o > Convert.ToInt16(B_T3.Text.Substring(0, 2)))
+                { B_T3.Visible = false; }
+                if (o > Convert.ToInt16(B_T4.Text.Substring(0, 2)))
+                { B_T4.Visible = false; }
+                if (o > Convert.ToInt16(B_T5.Text.Substring(0, 2)))
+                { B_T5.Visible = false; }
+                if (o > Convert.ToInt16(B_T6.Text.Substring(0, 2)))
+                { B_T6.Visible = false; }
+                if (o > Convert.ToInt16(B_T7.Text.Substring(0, 2)))
+                { B_T7.Visible = false; }
+                if (o > Convert.ToInt16(B_T8.Text.Substring(0, 2)))
+                { B_T8.Visible = false; }
+                if (o > Convert.ToInt16(B_T9.Text.Substring(0, 2)))
+                { B_T9.Visible = false; }
 
             }
             if (type == "Padel")
@@ -176,6 +218,27 @@ namespace SerenityGym
                     }
                 }
             }
+            string z = Convert.ToString(DateTime.Now.TimeOfDay);
+            int p = Convert.ToInt32(z.Substring(0, 2));
+
+            if (p > Convert.ToInt16(B_T1.Text.Substring(0, 2)))
+            { B_T1.Visible = false; }
+            if (p > Convert.ToInt16(B_T2.Text.Substring(0, 2)))
+            { B_T2.Visible = false; }
+            if (p > Convert.ToInt16(B_T3.Text.Substring(0, 2)))
+            { B_T3.Visible = false; }
+            if (p > Convert.ToInt16(B_T4.Text.Substring(0, 2)))
+            { B_T4.Visible = false; }
+            if (p > Convert.ToInt16(B_T5.Text.Substring(0, 2)))
+            { B_T5.Visible = false; }
+            if (p > Convert.ToInt16(B_T6.Text.Substring(0, 2)))
+            { B_T6.Visible = false; }
+            if (p > Convert.ToInt16(B_T7.Text.Substring(0, 2)))
+            { B_T7.Visible = false; }
+            if (p > Convert.ToInt16(B_T8.Text.Substring(0, 2)))
+            { B_T8.Visible = false; }
+            if (p > Convert.ToInt16(B_T9.Text.Substring(0, 2)))
+            { B_T9.Visible = false; }
         }
 
         private void panel2_Paint(object sender, PaintEventArgs e)
@@ -244,6 +307,28 @@ namespace SerenityGym
                 B_T7.Visible = true;
                 B_T8.Visible = true;
                 B_T9.Visible = true;
+
+                string z = Convert.ToString(DateTime.Now.TimeOfDay);
+                int p = Convert.ToInt32(z.Substring(0, 2));
+
+                if (p > Convert.ToInt16(B_T1.Text.Substring(0, 2)))
+                { B_T1.Visible = false; }
+                if (p > Convert.ToInt16(B_T2.Text.Substring(0, 2)))
+                { B_T2.Visible = false; }
+                if (p > Convert.ToInt16(B_T3.Text.Substring(0, 2)))
+                { B_T3.Visible = false; }
+                if (p > Convert.ToInt16(B_T4.Text.Substring(0, 2)))
+                { B_T4.Visible = false; }
+                if (p > Convert.ToInt16(B_T5.Text.Substring(0, 2)))
+                { B_T5.Visible = false; }
+                if (p > Convert.ToInt16(B_T6.Text.Substring(0, 2)))
+                { B_T6.Visible = false; }
+                if (p > Convert.ToInt16(B_T7.Text.Substring(0, 2)))
+                { B_T7.Visible = false; }
+                if (p > Convert.ToInt16(B_T8.Text.Substring(0, 2)))
+                { B_T8.Visible = false; }
+                if (p > Convert.ToInt16(B_T9.Text.Substring(0, 2)))
+                { B_T9.Visible = false; }
             }
 
             string FULL;
@@ -357,6 +442,7 @@ namespace SerenityGym
                     B_T9.BackColor = Color.Red;
                 }
             }
+
         }
 
         private void Userr_Click(object sender, EventArgs e)
@@ -538,7 +624,27 @@ namespace SerenityGym
 
                 }
             }
+            string z = Convert.ToString(DateTime.Now.TimeOfDay);
+            int p = Convert.ToInt32(z.Substring(0, 2));
 
+            if (p > Convert.ToInt16(B_T1.Text.Substring(0, 2)))
+            { B_T1.Visible = false; }
+            if (p > Convert.ToInt16(B_T2.Text.Substring(0, 2)))
+            { B_T2.Visible = false; }
+            if (p > Convert.ToInt16(B_T3.Text.Substring(0, 2)))
+            { B_T3.Visible = false; }
+            if (p > Convert.ToInt16(B_T4.Text.Substring(0, 2)))
+            { B_T4.Visible = false; }
+            if (p > Convert.ToInt16(B_T5.Text.Substring(0, 2)))
+            { B_T5.Visible = false; }
+            if (p > Convert.ToInt16(B_T6.Text.Substring(0, 2)))
+            { B_T6.Visible = false; }
+            if (p > Convert.ToInt16(B_T7.Text.Substring(0, 2)))
+            { B_T7.Visible = false; }
+            if (p > Convert.ToInt16(B_T8.Text.Substring(0, 2)))
+            { B_T8.Visible = false; }
+            if (p > Convert.ToInt16(B_T9.Text.Substring(0, 2)))
+            { B_T9.Visible = false; }
 
         }
 

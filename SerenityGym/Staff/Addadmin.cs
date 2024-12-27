@@ -70,5 +70,14 @@ namespace SerenityGym
             }
         }
 
+        private void mgrid_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void num_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

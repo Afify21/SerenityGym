@@ -101,12 +101,13 @@
             panel2.Name = "panel2";
             panel2.Size = new Size(488, 424);
             panel2.TabIndex = 1;
+            panel2.Paint += panel2_Paint;
             // 
             // pictureBox4
             // 
             pictureBox4.Image = (Image)resources.GetObject("pictureBox4.Image");
             pictureBox4.Location = new Point(2, 2);
-            pictureBox4.Margin = new Padding(2, 2, 2, 2);
+            pictureBox4.Margin = new Padding(2);
             pictureBox4.Name = "pictureBox4";
             pictureBox4.Size = new Size(22, 30);
             pictureBox4.TabIndex = 8;

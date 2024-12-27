@@ -21,6 +21,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="CancelOnline.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Tracker.cs">
       <SubType>Form</SubType>
     </Compile>
