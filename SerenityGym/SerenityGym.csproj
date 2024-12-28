@@ -41,7 +41,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="UserDetails.cs">
+    <Compile Update="User\UserDetails.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Surprise.cs">
