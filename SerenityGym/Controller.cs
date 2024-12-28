@@ -503,6 +503,11 @@ namespace DBapplication
                 throw new Exception("User not found.");
             }
         }
+        public DataTable GetFullMembership()
+        {
+            string query = "SELECT * FROM Membership";
+            return dbMan.ExecuteReader(query);
+        }
         public string GetUserName(int UID)
         {
             string query = $"SELECT fname, lname FROM Users WHERE userid = " + UID;
@@ -615,18 +620,66 @@ namespace DBapplication
             }
             return 0;
         }
+        public int insertREGPRIVATE2(int START,string method, string type, int uid, string FullName, int Staffchecker)
+        {
+
+            int trainerid = getTrainerIDByFull(FullName);
+            if (Staffchecker == -1)
+            {
+                string query = "insert into Registration(Paymentamount,method,starthour,endhour,regdate,regtype,userid,membership_type,TrainerID,S_ID) values(" + 400 + ",'"+method+"','" + (START.ToString() + ":00:00") + "','" + ((START + 1).ToString() + ":00:00") + "','" + DateTime.Now + "','" + type + "'," + uid + ",null," + trainerid + ",null);";
+                return dbMan.ExecuteNonQuery(query);
+            }
+            if (Staffchecker > 0)
+            {
+                string query = "insert into Registration(Paymentamount,method,starthour,endhour,regdate,regtype,userid,membership_type,TrainerID,S_ID) values('" + 400 + "','Credit','" + (START.ToString() + ":00:00") + "','" + ((START + 1).ToString() + ":00:00") + "','" + DateTime.Now + "','" + type + "'," + uid + ",null," + trainerid + "," + Staffchecker + ");";
+                return dbMan.ExecuteNonQuery(query);
+            }
+            return 0;
+        }
 
         public int insertREGPadel(int START, string type, int uid)
         {
                 string query = "insert into Registration(Paymentamount,method,starthour,endhour,regdate,regtype,userid,membership_type,TrainerID,S_ID) values('"+250+"','Credit','" + (START.ToString() + ":00:00") + "','" + ((START + 1).ToString() + ":00:00") + "','" + DateTime.Now + "','" + type + "'," + uid + ",null,null,null);";
                 return dbMan.ExecuteNonQuery(query);
         }
-
-        public int InsertMembershipReg(int ID, string type1, string type2,int RID)
+        public int insertREGPadel2(int START,string method, string type, int uid, int RID)
         {
-            string query = "INSERT INTO Registration(starthour,endhour,regdate,regtype,userid,membership_type,TrainerID,S_ID) VALUES (NULL,NULL,'" + DateTime.Now + "','" + type1 + "'," + ID + ",'" + type2 + "',NULL," + RID + ");";
+            string query = "insert into Registration(Paymentamount,method,starthour,endhour,regdate,regtype,userid,membership_type,TrainerID,S_ID) values('" + 250 + "','"+method+"','" + (START.ToString() + ":00:00") + "','" + ((START + 1).ToString() + ":00:00") + "','" + DateTime.Now + "','" + type + "'," + uid + ",null,null,"+RID+");";
+            return dbMan.ExecuteNonQuery(query);
+        }
+
+        public int InsertMembershipReg(int amount, string method,int ID, string type1, string type2,int RID)
+        {
+            string query = "INSERT INTO Registration(Paymentamount,method,starthour,endhour,regdate,regtype,userid,membership_type,TrainerID,S_ID) VALUES ('"+amount+"','"+method+"',NULL,NULL,'" + DateTime.Now + "','" + type1 + "'," + ID + ",'" + type2 + "',NULL," + RID + ");";
             return dbMan.ExecuteNonQuery(query);
 
+        }
+        public int UpdateUserMembership(string type, int id)
+        {
+            
+            if (type == "Bronze")
+            {
+               string query = "UPDATE Users SET membership_type='" + type + "', expiry_d='" + DateTime.Now.AddDays(30) + "' WHERE userid =" + id;
+                return dbMan.ExecuteNonQuery(query);
+            }
+            else if (type == "Silver")
+            {
+               string query = "UPDATE Users SET membership_type='" + type + "', expiry_d='" + DateTime.Now.AddDays(90) + "' WHERE userid =" + id;
+                return dbMan.ExecuteNonQuery(query);
+            }
+            else if (type == "Gold")
+            {
+              string  query = "UPDATE Users SET membership_type='" + type + "', expiry_d='" + DateTime.Now.AddDays(180) + "' WHERE userid =" + id;
+                return dbMan.ExecuteNonQuery(query);
+            }
+            else if (type == "Platinum")
+            {
+              string  query = "UPDATE Users SET membership_type='" + type + "', expiry_d='" + DateTime.Now.AddDays(360) + "' WHERE userid =" + id;
+                return dbMan.ExecuteNonQuery(query);
+            }
+            return 0;
+            
+            
         }
         public int GetCost(string type)
         {
