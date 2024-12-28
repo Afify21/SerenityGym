@@ -577,6 +577,12 @@ namespace DBapplication
             return dbMan.ExecuteReader(query);
         }
 
+        public DataTable GETMYDET(int x)
+        { 
+            string query = "select * from Users Where userid="+x+"";
+            return dbMan.ExecuteReader(query);
+        }
+
         public int getTrainerID(string fn, string ln)
         {
             string query = "Select staffid from staff where fname='" + fn + "'AND lname='" + ln + "'";

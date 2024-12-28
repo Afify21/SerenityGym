@@ -88,5 +88,12 @@ namespace SerenityGym
             CancelOnline cancelOnline = new CancelOnline(UID);
             cancelOnline.Show();
         }
+
+        private void B_MyD_Click(object sender, EventArgs e)
+        {
+            UserDetails userDetails = new UserDetails(UID);
+            userDetails.Show();
+
+        }
     }
 }
