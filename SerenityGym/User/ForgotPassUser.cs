@@ -33,6 +33,11 @@ namespace SerenityGym
                 return;
             }
             UID = Convert.ToInt32(Userid.Text);
+            if (pass.Text.Length < 6)
+            {
+                MessageBox.Show("Please enter a password of appropriate length (minimum 6 characters).");
+                return;
+            }
             if (pass.Text == repass.Text)
             {
                 int result = controllerObj.UpdateUserPass(pass.Text, UID);

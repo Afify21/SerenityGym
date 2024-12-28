@@ -179,6 +179,7 @@
             pass.PasswordChar = '*';
             pass.Size = new Size(125, 27);
             pass.TabIndex = 12;
+            pass.TextChanged += pass_TextChanged;
             // 
             // add
             // 

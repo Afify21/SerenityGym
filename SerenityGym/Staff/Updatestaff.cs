@@ -82,7 +82,11 @@ namespace SerenityGym
             int UID = Convert.ToInt32(staffidbox.Text);
             if (CB_Updator.Text == "Password")
             {
-
+                if (TB_Update.Text.Length < 6)
+                {
+                    MessageBox.Show("Please enter a password of appropriate length (minimum 6 characters).");
+                    return;
+                }
                 int result = controllerObj.UpdateStaffPass(TB_Update.Text, UID);
                 if (result == 0)
                     MessageBox.Show("Update Failed! ID may not exist");
