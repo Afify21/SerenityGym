@@ -501,7 +501,6 @@ namespace SerenityGym
             {
                 if (MessageBox.Show("Do you want to confirm registeration?", " ", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                    int result = controllerObj.insertREGPRIVATE2(HourInteger, payment.Text, CB_SesType.Text, Convert.ToInt32(userd.Text), CB_Trainers.Text, RID);
                     if (userd.Text == "" || controllerObj.CheckUserID(Convert.ToInt32(userd.Text)) == 0)
                     {
                         MessageBox.Show("Please enter a valid userid");
@@ -579,7 +578,6 @@ namespace SerenityGym
                         MessageBox.Show("Please enter a valid userid");
                         return;
                     }
-                    int result = controllerObj.insertREGPadel2(HourInteger,payment.Text, CB_SesType.Text, Convert.ToInt32(userd.Text),RID);
                     int result = controllerObj.insertREGPadel2(HourInteger, payment.Text, CB_SesType.Text, Convert.ToInt32(userd.Text), RID);
                     if (result == 0)
                         MessageBox.Show("Registeration Failed");
