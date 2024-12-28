@@ -501,6 +501,11 @@ namespace SerenityGym
             {
                 if (MessageBox.Show("Do you want to confirm registeration?", " ", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
+                    if (userd.Text == "" || controllerObj.CheckUserID(Convert.ToInt32(userd.Text)) == 0)
+                    {
+                        MessageBox.Show("Please enter a valid userid");
+                        return;
+                    }
                     int result = controllerObj.insertREGPRIVATE2(HourInteger,payment.Text, CB_SesType.Text, Convert.ToInt32(userd.Text), CB_Trainers.Text, RID);
                     if (result == 0)
                         MessageBox.Show("Registeration Failed");
@@ -568,6 +573,11 @@ namespace SerenityGym
             {
                 if (MessageBox.Show("Do you want to confirm registeration?", " ", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
+                    if (userd.Text == "" || controllerObj.CheckUserID(Convert.ToInt32(userd.Text)) == 0)
+                    {
+                        MessageBox.Show("Please enter a valid userid");
+                        return;
+                    }
                     int result = controllerObj.insertREGPadel2(HourInteger,payment.Text, CB_SesType.Text, Convert.ToInt32(userd.Text),RID);
                     if (result == 0)
                         MessageBox.Show("Registeration Failed");
@@ -635,12 +645,17 @@ namespace SerenityGym
             {
                 if(comboBox1.SelectedIndex==-1)
                 {
-                    MessageBox.Show("Please select a membership type");
+                    MessageBox.Show("Please select a membership type.");
                     return;
                 }
                 if(userd.Text=="" || controllerObj.CheckUserID(Convert.ToInt32(userd.Text))==0)
                 {
-                    MessageBox.Show("Please enter a valid userid");
+                    MessageBox.Show("Please enter a valid userid.");
+                    return;
+                }
+                if(payment.SelectedIndex==-1)
+                {
+                    MessageBox.Show("Please select a payment method.");
                     return;
                 }
                 string type = comboBox1.Text;
