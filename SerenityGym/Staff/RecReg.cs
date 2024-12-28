@@ -12,7 +12,7 @@ namespace SerenityGym
         int RID;
         Controller controllerObj;
 
-        public RecReg(int x,int y)
+        public RecReg(int x, int y)
         {
 
             UID = x;
@@ -56,7 +56,7 @@ namespace SerenityGym
 
         private void CB_Updator_SelectedIndexChanged(object sender, EventArgs e)
         {
-          
+
             string type = CB_SesType.Text;
             if (type == "Private")
             {
@@ -209,7 +209,7 @@ namespace SerenityGym
                     }
                 }
             }
-            else if (type=="Membership")
+            else if (type == "Membership")
             {
                 label5.Visible = true;
                 comboBox1.Visible = true;
@@ -250,7 +250,7 @@ namespace SerenityGym
 
         private void panel2_Paint(object sender, PaintEventArgs e)
         {
-            
+
         }
 
         private void CB_Trainers_SelectedIndexChanged(object sender, EventArgs e)
@@ -501,7 +501,7 @@ namespace SerenityGym
             {
                 if (MessageBox.Show("Do you want to confirm registeration?", " ", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                    int result = controllerObj.insertREGPRIVATE2(HourInteger,payment.Text, CB_SesType.Text, Convert.ToInt32(userd.Text), CB_Trainers.Text, RID);
+                    int result = controllerObj.insertREGPRIVATE2(HourInteger, payment.Text, CB_SesType.Text, Convert.ToInt32(userd.Text), CB_Trainers.Text, RID);
                     if (result == 0)
                         MessageBox.Show("Registeration Failed");
                     else if (result == 1)
@@ -568,7 +568,7 @@ namespace SerenityGym
             {
                 if (MessageBox.Show("Do you want to confirm registeration?", " ", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                    int result = controllerObj.insertREGPadel2(HourInteger,payment.Text, CB_SesType.Text, Convert.ToInt32(userd.Text),RID);
+                    int result = controllerObj.insertREGPadel2(HourInteger, payment.Text, CB_SesType.Text, Convert.ToInt32(userd.Text), RID);
                     if (result == 0)
                         MessageBox.Show("Registeration Failed");
                     else if (result == 1)
@@ -631,22 +631,22 @@ namespace SerenityGym
 
                 }
             }
-            else if(CB_SesType.Text=="Membership")
+            else if (CB_SesType.Text == "Membership")
             {
-                if(comboBox1.SelectedIndex==-1)
+                if (comboBox1.SelectedIndex == -1)
                 {
                     MessageBox.Show("Please select a membership type");
                     return;
                 }
-                if(userd.Text=="" || controllerObj.CheckUserID(Convert.ToInt32(userd.Text))==0)
+                if (userd.Text == "" || controllerObj.CheckUserID(Convert.ToInt32(userd.Text)) == 0)
                 {
                     MessageBox.Show("Please enter a valid userid");
                     return;
                 }
                 string type = comboBox1.Text;
                 int cost = Convert.ToInt32(comboBox1.SelectedValue);
-                int result = controllerObj.InsertMembershipReg(cost,payment.Text,Convert.ToInt32(userd.Text), CB_SesType.Text, type, RID);
-               int check = controllerObj.UpdateUserMembership(type, Convert.ToInt32(userd.Text));
+                int result = controllerObj.InsertMembershipReg(cost, payment.Text, Convert.ToInt32(userd.Text), CB_SesType.Text, type, RID);
+                int check = controllerObj.UpdateUserMembership(type, Convert.ToInt32(userd.Text));
                 if (result == 0 || check == 0)
                     MessageBox.Show("Registeration Failed");
                 else if (result == 1)
@@ -1026,6 +1026,11 @@ namespace SerenityGym
             {
                 B_T2.Enabled = true;
             }
+        }
+
+        private void pictureBox4_Click(object sender, EventArgs e)
+        {
+            this.Hide();
         }
     }
 }

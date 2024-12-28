@@ -189,6 +189,7 @@
             pictureBox4.Size = new Size(22, 30);
             pictureBox4.TabIndex = 30;
             pictureBox4.TabStop = false;
+            pictureBox4.Click += pictureBox4_Click;
             // 
             // B_T8
             // 

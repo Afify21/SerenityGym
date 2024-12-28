@@ -43,6 +43,7 @@
             B_Feedback = new Button();
             Userr = new Button();
             button1 = new Button();
+            B_MyD = new Button();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
@@ -99,6 +100,7 @@
             // 
             // panel2
             // 
+            panel2.Controls.Add(B_MyD);
             panel2.Controls.Add(B_Cancel);
             panel2.Controls.Add(button7);
             panel2.Controls.Add(pictureBox4);
@@ -163,7 +165,7 @@
             B_Tracker.FlatStyle = FlatStyle.Flat;
             B_Tracker.Font = new Font("Century Gothic", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
             B_Tracker.ForeColor = Color.White;
-            B_Tracker.Location = new Point(67, 69);
+            B_Tracker.Location = new Point(67, 35);
             B_Tracker.Margin = new Padding(2);
             B_Tracker.Name = "B_Tracker";
             B_Tracker.Size = new Size(351, 33);
@@ -193,7 +195,7 @@
             B_Registeration.FlatStyle = FlatStyle.Flat;
             B_Registeration.Font = new Font("Century Gothic", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
             B_Registeration.ForeColor = Color.White;
-            B_Registeration.Location = new Point(67, 127);
+            B_Registeration.Location = new Point(67, 90);
             B_Registeration.Margin = new Padding(2);
             B_Registeration.Name = "B_Registeration";
             B_Registeration.Size = new Size(351, 36);
@@ -247,6 +249,21 @@
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click;
             // 
+            // B_MyD
+            // 
+            B_MyD.BackColor = Color.FromArgb(41, 128, 185);
+            B_MyD.FlatStyle = FlatStyle.Flat;
+            B_MyD.Font = new Font("Century Gothic", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            B_MyD.ForeColor = Color.White;
+            B_MyD.Location = new Point(67, 144);
+            B_MyD.Margin = new Padding(2);
+            B_MyD.Name = "B_MyD";
+            B_MyD.Size = new Size(351, 28);
+            B_MyD.TabIndex = 22;
+            B_MyD.Text = "My Details";
+            B_MyD.UseVisualStyleBackColor = false;
+            B_MyD.Click += B_MyD_Click;
+            // 
             // User
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -286,5 +303,6 @@
         private PictureBox pictureBox4;
         private Button button7;
         private Button B_Cancel;
+        private Button B_MyD;
     }
 }
