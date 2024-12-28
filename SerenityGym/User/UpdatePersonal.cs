@@ -47,8 +47,14 @@ namespace SerenityGym
         private void B_Update_Click(object sender, EventArgs e)
         {
             int r;
+
             if (CB_Updator.Text == "Password")
             {
+                if (TB_Update.Text.Length < 6)
+                {
+                    MessageBox.Show("Please enter a password of appropriate length (minimum 6 characters).");
+                    return;
+                }
                 if (TB_Update.Text == TB_Updator2.Text)
                 {
                     int result = controllerObj.UpdateUserPass(TB_Updator2.Text, UID);

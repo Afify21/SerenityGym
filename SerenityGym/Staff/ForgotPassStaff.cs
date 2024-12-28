@@ -22,6 +22,11 @@ namespace SerenityGym
 
         private void Userr_Click(object sender, EventArgs e)
         {
+            if (pass.Text.Length < 6)
+            {
+                MessageBox.Show("Please enter a password of appropriate length (minimum 6 characters).");
+                return;
+            }
             if (string.IsNullOrWhiteSpace(Staffid.Text) || string.IsNullOrWhiteSpace(pass.Text) || string.IsNullOrWhiteSpace(repass.Text))
             {
                 MessageBox.Show("Please Enter A Proper Combination");

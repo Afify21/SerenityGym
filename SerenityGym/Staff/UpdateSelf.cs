@@ -33,17 +33,17 @@ namespace SerenityGym
         {
             int b;
             bool y = false;
-            if(int.TryParse(fname.Text, out b) && fname.Text!="")
+            if (int.TryParse(fname.Text, out b) && fname.Text != "")
             {
                 MessageBox.Show("Please enter a valid First Name");
                 return;
             }
-            if (int.TryParse(lname.Text, out b) && lname.Text!="")
+            if (int.TryParse(lname.Text, out b) && lname.Text != "")
             {
                 MessageBox.Show("Please enter a valid Last Name");
                 return;
             }
-            if (!int.TryParse(num.Text, out b) && num.Text!="")
+            if (!int.TryParse(num.Text, out b) && num.Text != "")
             {
                 MessageBox.Show("Please enter a valid Phone Number");
                 return;
@@ -90,7 +90,7 @@ namespace SerenityGym
             }
 
 
-            if(y)
+            if (y)
             {
                 MessageBox.Show("Updated Successfully!");
             }
@@ -98,6 +98,11 @@ namespace SerenityGym
             {
                 MessageBox.Show("Nothing has been Updated");
             }
+        }
+
+        private void pass_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
