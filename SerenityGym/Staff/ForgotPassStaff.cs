@@ -22,9 +22,19 @@ namespace SerenityGym
 
         private void Userr_Click(object sender, EventArgs e)
         {
-            if (Staffid.Text == "" || pass.Text == "" || repass.Text == "")
+            if (pass.Text.Length < 6)
+            {
+                MessageBox.Show("Please enter a password of appropriate length (minimum 6 characters).");
+                return;
+            }
+            if (string.IsNullOrWhiteSpace(Staffid.Text) || string.IsNullOrWhiteSpace(pass.Text) || string.IsNullOrWhiteSpace(repass.Text))
             {
                 MessageBox.Show("Please Enter A Proper Combination");
+                return;
+            }
+            if (!int.TryParse(Staffid.Text, out int SID))
+            {
+                MessageBox.Show("Staff ID must be a numeric value");
                 return;
             }
             SID = Convert.ToInt32(Staffid.Text);
@@ -39,6 +49,12 @@ namespace SerenityGym
             else
                 MessageBox.Show("Passwords dont match");
         }
+
+        private void pictureBox4_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+
+        }
     }
-    }
+}
 

@@ -43,6 +43,7 @@
             pictureBox2 = new PictureBox();
             label2 = new Label();
             button1 = new Button();
+            pictureBox4 = new PictureBox();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel2.SuspendLayout();
@@ -50,6 +51,7 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
             SuspendLayout();
             // 
             // panel1
@@ -94,6 +96,7 @@
             panel2.Controls.Add(panel3);
             panel2.Controls.Add(label2);
             panel2.Controls.Add(button1);
+            panel2.Controls.Add(pictureBox4);
             panel2.Dock = DockStyle.Fill;
             panel2.Location = new Point(300, 0);
             panel2.Margin = new Padding(2);
@@ -223,6 +226,16 @@
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click;
             // 
+            // pictureBox4
+            // 
+            pictureBox4.Image = (Image)resources.GetObject("pictureBox4.Image");
+            pictureBox4.Location = new Point(5, 10);
+            pictureBox4.Name = "pictureBox4";
+            pictureBox4.Size = new Size(28, 37);
+            pictureBox4.TabIndex = 7;
+            pictureBox4.TabStop = false;
+            pictureBox4.Click += pictureBox4_Click;
+            // 
             // StaffLogin
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
@@ -247,6 +260,7 @@
             panel3.ResumeLayout(false);
             panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
             ResumeLayout(false);
         }
 
@@ -266,5 +280,6 @@
         private TextBox TB_Pass;
         private Button Login;
         private Button button3;
+        private PictureBox pictureBox4;
     }
 }

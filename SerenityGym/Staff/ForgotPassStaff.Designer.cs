@@ -28,10 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ForgotPassStaff));
             panel1 = new Panel();
             pictureBox1 = new PictureBox();
             label1 = new Label();
             panel2 = new Panel();
+            pictureBox4 = new PictureBox();
             repass = new TextBox();
             pass = new TextBox();
             label4 = new Label();
@@ -43,6 +45,7 @@
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
             SuspendLayout();
             // 
             // panel1
@@ -80,6 +83,7 @@
             // 
             // panel2
             // 
+            panel2.Controls.Add(pictureBox4);
             panel2.Controls.Add(repass);
             panel2.Controls.Add(pass);
             panel2.Controls.Add(label4);
@@ -95,6 +99,16 @@
             panel2.Name = "panel2";
             panel2.Size = new Size(610, 530);
             panel2.TabIndex = 1;
+            // 
+            // pictureBox4
+            // 
+            pictureBox4.Image = (Image)resources.GetObject("pictureBox4.Image");
+            pictureBox4.Location = new Point(0, 3);
+            pictureBox4.Name = "pictureBox4";
+            pictureBox4.Size = new Size(28, 37);
+            pictureBox4.TabIndex = 8;
+            pictureBox4.TabStop = false;
+            pictureBox4.Click += pictureBox4_Click;
             // 
             // repass
             // 
@@ -209,6 +223,7 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
             ResumeLayout(false);
         }
 
@@ -226,5 +241,6 @@
         private Label label3;
         private TextBox repass;
         private TextBox pass;
+        private PictureBox pictureBox4;
     }
 }
