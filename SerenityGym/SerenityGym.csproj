@@ -6,17 +6,108 @@
     <Nullable>enable</Nullable>
     <UseWindowsForms>true</UseWindowsForms>
     <ImplicitUsings>enable</ImplicitUsings>
+    <ReferencePath>C:\Program Files (x86)\SAP BusinessObjects\Crystal Reports for .NET Framework 4.0\Common\SAP BusinessObjects Enterprise XI 4.0\win64_x64\dotnet\</ReferencePath>
   </PropertyGroup>
+
+  <ItemGroup>
+    <COMReference Include="WMPLib">
+      <WrapperTool>tlbimp</WrapperTool>
+      <VersionMinor>0</VersionMinor>
+      <VersionMajor>1</VersionMajor>
+      <Guid>6bf52a50-394a-11d3-b153-00c04f79faa6</Guid>
+      <Lcid>0</Lcid>
+      <Isolated>false</Isolated>
+      <EmbedInteropTypes>true</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="AxWMPLib">
+      <WrapperTool>aximp</WrapperTool>
+      <VersionMinor>0</VersionMinor>
+      <VersionMajor>1</VersionMajor>
+      <Guid>6bf52a50-394a-11d3-b153-00c04f79faa6</Guid>
+      <Lcid>0</Lcid>
+      <Isolated>false</Isolated>
+    </COMReference>
+  </ItemGroup>
 
   <ItemGroup>
     <None Include="DBapplication.csproj" />
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.ReportingServices.ReportViewerControl.WebForms" Version="150.1652.0" />
+    <PackageReference Include="Microsoft.ReportViewer.Common" Version="10.0.40219.1" />
+    <PackageReference Include="ReportViewerCore.NETCore" Version="15.1.25" />
     <PackageReference Include="System.Data.SqlClient" Version="4.9.0" />
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="User\UserDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Staff\AddProgress.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="User\CancelOnline.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Staff\Tracker.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Staff\Addadmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Staff\RecReg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Staff\Register.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Staff\Statistics_table.cs" />
+    <Compile Update="User\OnlineReg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Staff\Updatestaff.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Staff\Transactions_table.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="DataSet1.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Update="User\GetMYNotis.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Staff\ComingSessions.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Staff\ViewMemberProgress.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Staff\PastSessions.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Staff\InsertPlans.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Staff\UpdatePlans.cs" />
+    <Compile Update="Staff\SendNotif.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Staff\UpdateSelf.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Staff\SignUp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Staff\UpdateUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="User\UserFeedB.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Staff\ForgotPassStaff.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -59,6 +150,17 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="DataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet1.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Service Include="{c0c07587-41a7-46c8-8fbd-3f9c8ebe2ddc}" />
   </ItemGroup>
 
 </Project>

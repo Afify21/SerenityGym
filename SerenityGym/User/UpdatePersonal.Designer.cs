@@ -28,10 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UpdatePersonal));
             panel1 = new Panel();
             pictureBox1 = new PictureBox();
             label4 = new Label();
             panel2 = new Panel();
+            pictureBox4 = new PictureBox();
             TB_Updator2 = new TextBox();
             TB_Update = new TextBox();
             CB_Updator = new ComboBox();
@@ -43,6 +45,7 @@
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
             SuspendLayout();
             // 
             // panel1
@@ -81,6 +84,7 @@
             // 
             // panel2
             // 
+            panel2.Controls.Add(pictureBox4);
             panel2.Controls.Add(TB_Updator2);
             panel2.Controls.Add(TB_Update);
             panel2.Controls.Add(CB_Updator);
@@ -96,8 +100,19 @@
             panel2.Name = "panel2";
             panel2.Size = new Size(486, 424);
             panel2.TabIndex = 1;
-/*            panel2.Paint += this.panel2_Paint;
-*/            // 
+            panel2.Paint += panel2_Paint;
+            // 
+            // pictureBox4
+            // 
+            pictureBox4.Image = (Image)resources.GetObject("pictureBox4.Image");
+            pictureBox4.Location = new Point(2, 2);
+            pictureBox4.Margin = new Padding(2, 2, 2, 2);
+            pictureBox4.Name = "pictureBox4";
+            pictureBox4.Size = new Size(22, 30);
+            pictureBox4.TabIndex = 8;
+            pictureBox4.TabStop = false;
+            pictureBox4.Click += pictureBox4_Click;
+            // 
             // TB_Updator2
             // 
             TB_Updator2.Font = new Font("Century Gothic", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -152,6 +167,7 @@
             label2.Size = new Size(96, 21);
             label2.TabIndex = 9;
             label2.Text = "Category";
+            label2.Click += label2_Click;
             // 
             // B_Update
             // 
@@ -212,6 +228,7 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
             ResumeLayout(false);
         }
 
@@ -229,5 +246,6 @@
         private ComboBox CB_Updator;
         private TextBox TB_Updator2;
         private TextBox TB_Update;
+        private PictureBox pictureBox4;
     }
 }

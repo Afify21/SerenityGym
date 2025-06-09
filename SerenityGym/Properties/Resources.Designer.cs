@@ -63,6 +63,36 @@ namespace SerenityGym.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap arrow_small_left__1_ {
+            get {
+                object obj = ResourceManager.GetObject("arrow-small-left (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap arrow_small_left__2_ {
+            get {
+                object obj = ResourceManager.GetObject("arrow-small-left (2)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap arrow_small_left__3_ {
+            get {
+                object obj = ResourceManager.GetObject("arrow-small-left (3)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Sports_Dumbbell_icon {
             get {
                 object obj = ResourceManager.GetObject("Sports-Dumbbell-icon", resourceCulture);

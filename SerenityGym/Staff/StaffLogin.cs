@@ -48,6 +48,12 @@ namespace SerenityGym
 
             if (result == 1)
             {
+                int Clockedin = controllerObj.IsClockedInCheck(Convert.ToInt32(TB_id.Text));
+                if (Clockedin == 0)
+                {
+                    controllerObj.ClockIn(Convert.ToInt32(TB_id.Text));
+                }
+
                 if (givenid >= 10000 && givenid <= 19999)
                 {
                     Receptionist receptionist = new Receptionist(Convert.ToInt32(TB_id.Text));
@@ -88,6 +94,15 @@ namespace SerenityGym
             forgotpass.Show();
         }
 
-        
+        private void pictureBox4_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+
+        }
+
+        private void pictureBox5_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

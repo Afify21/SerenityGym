@@ -33,6 +33,7 @@
             label1 = new Label();
             pictureBox1 = new PictureBox();
             panel2 = new Panel();
+            pictureBox4 = new PictureBox();
             button3 = new Button();
             Login = new Button();
             panel4 = new Panel();
@@ -46,6 +47,7 @@
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
             panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             panel3.SuspendLayout();
@@ -59,7 +61,7 @@
             panel1.Controls.Add(pictureBox1);
             panel1.Dock = DockStyle.Left;
             panel1.Location = new Point(0, 0);
-            panel1.Margin = new Padding(2, 2, 2, 2);
+            panel1.Margin = new Padding(2);
             panel1.Name = "panel1";
             panel1.Size = new Size(240, 424);
             panel1.TabIndex = 0;
@@ -79,7 +81,7 @@
             // 
             pictureBox1.Image = Properties.Resources.Sports_Dumbbell_icon;
             pictureBox1.Location = new Point(76, 45);
-            pictureBox1.Margin = new Padding(2, 2, 2, 2);
+            pictureBox1.Margin = new Padding(2);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(94, 81);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
@@ -88,6 +90,7 @@
             // 
             // panel2
             // 
+            panel2.Controls.Add(pictureBox4);
             panel2.Controls.Add(button3);
             panel2.Controls.Add(Login);
             panel2.Controls.Add(panel4);
@@ -96,11 +99,22 @@
             panel2.Controls.Add(button1);
             panel2.Dock = DockStyle.Fill;
             panel2.Location = new Point(240, 0);
-            panel2.Margin = new Padding(2, 2, 2, 2);
+            panel2.Margin = new Padding(2);
             panel2.Name = "panel2";
             panel2.Size = new Size(360, 424);
             panel2.TabIndex = 1;
             panel2.Paint += panel2_Paint;
+            // 
+            // pictureBox4
+            // 
+            pictureBox4.Image = (Image)resources.GetObject("pictureBox4.Image");
+            pictureBox4.Location = new Point(2, 2);
+            pictureBox4.Margin = new Padding(2, 2, 2, 2);
+            pictureBox4.Name = "pictureBox4";
+            pictureBox4.Size = new Size(22, 30);
+            pictureBox4.TabIndex = 8;
+            pictureBox4.TabStop = false;
+            pictureBox4.Click += pictureBox4_Click;
             // 
             // button3
             // 
@@ -110,7 +124,7 @@
             button3.Font = new Font("Century Gothic", 8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             button3.ForeColor = Color.FromArgb(41, 128, 185);
             button3.Location = new Point(164, 290);
-            button3.Margin = new Padding(2, 2, 2, 2);
+            button3.Margin = new Padding(2);
             button3.Name = "button3";
             button3.Size = new Size(158, 46);
             button3.TabIndex = 6;
@@ -125,7 +139,7 @@
             Login.Font = new Font("Century Gothic", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
             Login.ForeColor = Color.White;
             Login.Location = new Point(19, 290);
-            Login.Margin = new Padding(2, 2, 2, 2);
+            Login.Margin = new Padding(2);
             Login.Name = "Login";
             Login.Size = new Size(118, 46);
             Login.TabIndex = 5;
@@ -139,7 +153,7 @@
             panel4.Controls.Add(Pass);
             panel4.Controls.Add(pictureBox3);
             panel4.Location = new Point(0, 205);
-            panel4.Margin = new Padding(2, 2, 2, 2);
+            panel4.Margin = new Padding(2);
             panel4.Name = "panel4";
             panel4.Size = new Size(360, 38);
             panel4.TabIndex = 4;
@@ -148,7 +162,7 @@
             // 
             Pass.Font = new Font("Century Gothic", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
             Pass.Location = new Point(38, 5);
-            Pass.Margin = new Padding(2, 2, 2, 2);
+            Pass.Margin = new Padding(2);
             Pass.Name = "Pass";
             Pass.Size = new Size(297, 28);
             Pass.TabIndex = 5;
@@ -158,7 +172,7 @@
             // 
             pictureBox3.Image = (Image)resources.GetObject("pictureBox3.Image");
             pictureBox3.Location = new Point(5, 8);
-            pictureBox3.Margin = new Padding(2, 2, 2, 2);
+            pictureBox3.Margin = new Padding(2);
             pictureBox3.Name = "pictureBox3";
             pictureBox3.Size = new Size(59, 57);
             pictureBox3.TabIndex = 5;
@@ -170,7 +184,7 @@
             panel3.Controls.Add(Userr);
             panel3.Controls.Add(pictureBox2);
             panel3.Location = new Point(0, 148);
-            panel3.Margin = new Padding(2, 2, 2, 2);
+            panel3.Margin = new Padding(2);
             panel3.Name = "panel3";
             panel3.Size = new Size(360, 38);
             panel3.TabIndex = 3;
@@ -180,16 +194,17 @@
             Userr.Font = new Font("Century Gothic", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
             Userr.ForeColor = Color.FromArgb(41, 128, 185);
             Userr.Location = new Point(38, 5);
-            Userr.Margin = new Padding(2, 2, 2, 2);
+            Userr.Margin = new Padding(2);
             Userr.Name = "Userr";
             Userr.Size = new Size(297, 28);
             Userr.TabIndex = 1;
+            Userr.TextChanged += Userr_TextChanged;
             // 
             // pictureBox2
             // 
             pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
             pictureBox2.Location = new Point(5, 8);
-            pictureBox2.Margin = new Padding(2, 2, 2, 2);
+            pictureBox2.Margin = new Padding(2);
             pictureBox2.Name = "pictureBox2";
             pictureBox2.Size = new Size(59, 57);
             pictureBox2.TabIndex = 0;
@@ -215,7 +230,7 @@
             button1.Font = new Font("Verdana", 16F, FontStyle.Bold, GraphicsUnit.Point, 0);
             button1.ForeColor = Color.FromArgb(41, 128, 185);
             button1.Location = new Point(328, 0);
-            button1.Margin = new Padding(2, 2, 2, 2);
+            button1.Margin = new Padding(2);
             button1.Name = "button1";
             button1.Size = new Size(32, 32);
             button1.TabIndex = 0;
@@ -232,7 +247,7 @@
             Controls.Add(panel2);
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
-            Margin = new Padding(2, 2, 2, 2);
+            Margin = new Padding(2);
             Name = "UserLogin";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Form1";
@@ -241,6 +256,7 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
             panel4.ResumeLayout(false);
             panel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
@@ -266,5 +282,6 @@
         private TextBox Pass;
         private Button Login;
         private Button button3;
+        private PictureBox pictureBox4;
     }
 }
