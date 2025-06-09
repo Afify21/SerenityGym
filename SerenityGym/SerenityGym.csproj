@@ -44,9 +44,6 @@
     <Compile Update="User\UserDetails.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Surprise.cs">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Update="Staff\AddProgress.cs">
       <SubType>Form</SubType>
     </Compile>

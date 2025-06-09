@@ -39,13 +39,11 @@
             pictureBox2 = new PictureBox();
             label2 = new Label();
             button1 = new Button();
-            pictureBox4 = new PictureBox();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
             SuspendLayout();
             // 
             // panel1
@@ -55,7 +53,7 @@
             panel1.Controls.Add(pictureBox1);
             panel1.Dock = DockStyle.Left;
             panel1.Location = new Point(0, 0);
-            panel1.Margin = new Padding(2, 2, 2, 2);
+            panel1.Margin = new Padding(2);
             panel1.Name = "panel1";
             panel1.Size = new Size(240, 424);
             panel1.TabIndex = 0;
@@ -75,7 +73,7 @@
             // 
             pictureBox1.Image = Properties.Resources.Sports_Dumbbell_icon;
             pictureBox1.Location = new Point(76, 45);
-            pictureBox1.Margin = new Padding(2, 2, 2, 2);
+            pictureBox1.Margin = new Padding(2);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(94, 81);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
@@ -84,7 +82,6 @@
             // 
             // panel2
             // 
-            panel2.Controls.Add(pictureBox4);
             panel2.Controls.Add(Stafff);
             panel2.Controls.Add(Userr);
             panel2.Controls.Add(pictureBox3);
@@ -93,7 +90,7 @@
             panel2.Controls.Add(button1);
             panel2.Dock = DockStyle.Fill;
             panel2.Location = new Point(240, 0);
-            panel2.Margin = new Padding(2, 2, 2, 2);
+            panel2.Margin = new Padding(2);
             panel2.Name = "panel2";
             panel2.Size = new Size(360, 424);
             panel2.TabIndex = 1;
@@ -105,7 +102,7 @@
             Stafff.Font = new Font("Century Gothic", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
             Stafff.ForeColor = Color.White;
             Stafff.Location = new Point(192, 254);
-            Stafff.Margin = new Padding(2, 2, 2, 2);
+            Stafff.Margin = new Padding(2);
             Stafff.Name = "Stafff";
             Stafff.Size = new Size(118, 28);
             Stafff.TabIndex = 8;
@@ -120,7 +117,7 @@
             Userr.Font = new Font("Century Gothic", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
             Userr.ForeColor = Color.White;
             Userr.Location = new Point(50, 254);
-            Userr.Margin = new Padding(2, 2, 2, 2);
+            Userr.Margin = new Padding(2);
             Userr.Name = "Userr";
             Userr.Size = new Size(118, 28);
             Userr.TabIndex = 7;
@@ -132,7 +129,7 @@
             // 
             pictureBox3.Image = (Image)resources.GetObject("pictureBox3.Image");
             pictureBox3.Location = new Point(212, 170);
-            pictureBox3.Margin = new Padding(2, 2, 2, 2);
+            pictureBox3.Margin = new Padding(2);
             pictureBox3.Name = "pictureBox3";
             pictureBox3.Size = new Size(69, 79);
             pictureBox3.SizeMode = PictureBoxSizeMode.Zoom;
@@ -143,7 +140,7 @@
             // 
             pictureBox2.Image = Properties.Resources.User;
             pictureBox2.Location = new Point(87, 188);
-            pictureBox2.Margin = new Padding(2, 2, 2, 2);
+            pictureBox2.Margin = new Padding(2);
             pictureBox2.Name = "pictureBox2";
             pictureBox2.Size = new Size(50, 42);
             pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
@@ -170,25 +167,13 @@
             button1.Font = new Font("Verdana", 16F, FontStyle.Bold, GraphicsUnit.Point, 0);
             button1.ForeColor = Color.FromArgb(41, 128, 185);
             button1.Location = new Point(328, 0);
-            button1.Margin = new Padding(2, 2, 2, 2);
+            button1.Margin = new Padding(2);
             button1.Name = "button1";
             button1.Size = new Size(32, 32);
             button1.TabIndex = 0;
             button1.Text = "X";
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click;
-            // 
-            // pictureBox4
-            // 
-            pictureBox4.Image = (Image)resources.GetObject("pictureBox4.Image");
-            pictureBox4.Location = new Point(330, 398);
-            pictureBox4.Margin = new Padding(2);
-            pictureBox4.Name = "pictureBox4";
-            pictureBox4.Size = new Size(30, 26);
-            pictureBox4.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox4.TabIndex = 2;
-            pictureBox4.TabStop = false;
-            pictureBox4.Click += pictureBox4_Click;
             // 
             // Welcome
             // 
@@ -199,7 +184,7 @@
             Controls.Add(panel2);
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
-            Margin = new Padding(2, 2, 2, 2);
+            Margin = new Padding(2);
             Name = "Welcome";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Form1";
@@ -210,7 +195,6 @@
             panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
             ResumeLayout(false);
         }
 
@@ -226,6 +210,5 @@
         private PictureBox pictureBox2;
         private Button Stafff;
         private Button Userr;
-        private PictureBox pictureBox4;
     }
 }

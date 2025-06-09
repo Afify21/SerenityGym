@@ -34,10 +34,5 @@ namespace SerenityGym
             staffLogin.Show();
         }
 
-        private void pictureBox4_Click(object sender, EventArgs e)
-        {
-            Surprise surprise = new Surprise();
-            surprise.Show();
-        }
     }
 }
